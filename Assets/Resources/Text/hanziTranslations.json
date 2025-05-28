@@ -1,7 +1,7 @@
 ﻿{
   "hanziSpeakTitle": {
-    "en": "HanziTalk",
-    "de": "HanziTalk",
+    "en": "HanziSpeak",
+    "de": "HanziSpeak",
     "fr": "HanziParle",
     "it": "HanziParla",
     "es": "HanziHabla",
@@ -10,11 +10,11 @@
     "ru": "ХаньцзыРечь"
   },
   "introText": {
-    "en": "Get familiar with the Chinese characters by calling their pronunciation before they reach you!",
-    "de": "Lerne chinesische Zeichen kennen, indem du sie aussprichst, bevor sie dich erreichen!",
-    "fr": "Apprends les caractères chinois en les prononçant avant qu'ils ne t'atteignent !",
-    "it": "Impara i caratteri cinesi pronunciandoli prima che ti arrivino addosso!",
-    "es": "Aprende los caracteres chinos diciendo cómo se pronuncian antes de que te alcancen.",
+    "en": "Get familiar with Chinese characters by calling their pronunciation before they reach you!",
+    "de": "Lerne Chinesische Zeichen kennen, indem du sie aussprichst, bevor sie dich erreichen!",
+    "fr": "Apprends des caractères Chinois en les prononçant avant qu'ils ne t'atteignent !",
+    "it": "Impara i caratteri Cinesi pronunciandoli prima che ti arrivino addosso!",
+    "es": "Aprende los caracteres Chinos diciendo cómo se pronuncian antes de que te alcancen.",
     "ja": "漢字が来る前に読み方を言って、どんどん覚えよう！",
     "ko": "한자가 다가오기 전에 발음을 외쳐 보세요!",
     "ru": "Произноси китайские иероглифы до того, как они тебя достигнут!"
@@ -22,7 +22,7 @@
   "startButton": {
     "en": "Start",
     "de": "Los geht’s",
-    "fr": "C'est parti",
+    "fr": "Allons-y!",
     "it": "Inizia",
     "es": "¡Vamos!",
     "ja": "スタート",
@@ -88,76 +88,6 @@
     "ja": "カテゴリー",
     "ko": "카테고리",
     "ru": "Категория"
-  },
-  "hsk1": {
-    "en": "HSK1",
-    "de": "HSK1",
-    "fr": "HSK1",
-    "it": "HSK1",
-    "es": "HSK1",
-    "ja": "HSK1",
-    "ko": "HSK1",
-    "ru": "HSK1"
-  },
-  "hsk2": {
-    "en": "HSK2",
-    "de": "HSK2",
-    "fr": "HSK2",
-    "it": "HSK2",
-    "es": "HSK2",
-    "ja": "HSK2",
-    "ko": "HSK2",
-    "ru": "HSK2"
-  },
-  "hsk3": {
-    "en": "HSK3",
-    "de": "HSK3",
-    "fr": "HSK3",
-    "it": "HSK3",
-    "es": "HSK3",
-    "ja": "HSK3",
-    "ko": "HSK3",
-    "ru": "HSK3"
-  },
-  "hsk4to6": {
-    "en": "HSK4-6",
-    "de": "HSK4-6",
-    "fr": "HSK4-6",
-    "it": "HSK4-6",
-    "es": "HSK4-6",
-    "ja": "HSK4-6",
-    "ko": "HSK4-6",
-    "ru": "HSK4-6"
-  },
-  "numbers": {
-    "en": "Numbers",
-    "de": "Zahlen",
-    "fr": "Nombres",
-    "it": "Numeri",
-    "es": "Números",
-    "ja": "数字",
-    "ko": "숫자",
-    "ru": "Числа"
-  },
-  "animals": {
-    "en": "Animals",
-    "de": "Tiere",
-    "fr": "Animaux",
-    "it": "Animali",
-    "es": "Animales",
-    "ja": "動物",
-    "ko": "동물",
-    "ru": "Животные"
-  },
-  "family": {
-    "en": "Family",
-    "de": "Familie",
-    "fr": "Famille",
-    "it": "Famiglia",
-    "es": "Familia",
-    "ja": "家族",
-    "ko": "가족",
-    "ru": "Семья"
   },
   "score": {
     "en": "Score",

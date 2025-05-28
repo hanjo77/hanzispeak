@@ -1,13 +1,17 @@
-﻿using NUnit.Framework;
+﻿using Newtonsoft.Json;
+using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Linq.Expressions;
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.Windows;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class HanziSpawner : MonoBehaviour
@@ -86,9 +90,8 @@ public class HanziSpawner : MonoBehaviour
 
     void OnVoiceInput(string jsonResult)
     {
-        if (jsonResult.Contains(activeHanzi.hanziText))
+        if (ValidateHanzi(jsonResult))
         {
-            UnityEngine.Debug.Log($"Correct! Found {activeHanzi.hanziText} in: {jsonResult}");
             GameManager.Instance.SetScore(score++);
             activeHanzi.OnRecognized();
         }
@@ -160,4 +163,49 @@ public class HanziSpawner : MonoBehaviour
         activeHanzi = newChar.AddComponent<HanziCharacter>();
         activeHanzi.hanziText = prefab.name;
     }
+
+    private bool ValidateHanzi(string validationJson)
+    {
+        Regex HanziRegex = new Regex(@"[\u4e00-\u9fff]+");
+
+        TextAsset jsonFile = Resources.Load<TextAsset>("Text/hanziPinyin");
+        if (jsonFile == null)
+        {
+            UnityEngine.Debug.LogError("Pinyin database not found!");
+            return false;
+        }
+        Dictionary<string, List<string>> pinyinData = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(jsonFile.text);
+        string currentHanzi = HanziRegex.Matches(activeHanzi.name).First().Value;
+        string currentPinyin = pinyinData.FirstOrDefault(x => x.Value.Contains(currentHanzi)).Key;
+
+        MatchCollection matches = HanziRegex.Matches(validationJson);
+
+        foreach (Match match in matches)
+        {
+            string matchPinyin = pinyinData.FirstOrDefault(x => x.Value.Contains(match.Value)).Key;
+
+            UnityEngine.Debug.Log($"... trying {matchPinyin} for {currentPinyin}");
+            if (matchPinyin == currentPinyin)
+            {
+                UnityEngine.Debug.Log($"... with SUCCESS!!!");
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
+
+
+[Serializable]
+public class PinyinDictionaryWrapper
+{
+    public List<PinyinEntry> entries;
+}
+
+[Serializable]
+public class PinyinEntry
+{
+    public string hanzi;
+    public List<string> pinyin;
 }

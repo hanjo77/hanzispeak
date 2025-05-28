@@ -33,7 +33,6 @@ public class SettingsView : AppView
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.DeleteAll();
         HanziCategoryDB.Initialize();
 
         categories = HanziCategoryDB.Categories;
