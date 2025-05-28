@@ -1,0 +1,56 @@
+newmtl black_micro
+Kd 0.164706 0.164706 0.164706
+Ke 0 0 0
+Ka 0.35 0.35 0.35
+Ks 0.07 0.07 0.07
+Ns 50
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl shure_label
+Kd 0.831373 0.831373 0.831373
+Ke 0 0 0
+Ka 0.8 0.8 0.8
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 0.85 0.85 0.85
+map_Kd J:3D/Training/Microphone/Shure/SHURE_logo.jpg
+
+newmtl steel_base
+Kd 0.666667 0.666667 0.666667
+Ke 0 0 0
+Ka 0.8 0.8 0.8
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 0.85 0.85 0.85
+
+newmtl steel_gray
+Kd 0.333333 0.333333 0.333333
+Ke 0 0 0
+Ka 0.8 0.8 0.8
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 0.85 0.85 0.85
+
+newmtl steel_lines
+Kd 0.666667 0.666667 0.666667
+Ke 0 0 0
+Ka 0.8 0.8 0.8
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 0.85 0.85 0.85
+

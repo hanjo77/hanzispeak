@@ -10,7 +10,17 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/ios
+/*DoNotShip
+/Python/fbx
+/Python/glb
+/Python/pngs
+/Python/audio
+/Fonts
+/Videos
 *.log
+*.otf
+*.ttf
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data

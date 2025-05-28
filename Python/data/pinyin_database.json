@@ -1,0 +1,1806 @@
+[
+  {
+    "hanzi": "一",
+    "pinyin": "yi1"
+  },
+  {
+    "hanzi": "七",
+    "pinyin": "qi1"
+  },
+  {
+    "hanzi": "三",
+    "pinyin": "san1"
+  },
+  {
+    "hanzi": "上",
+    "pinyin": "shang4"
+  },
+  {
+    "hanzi": "下",
+    "pinyin": "xia4"
+  },
+  {
+    "hanzi": "不",
+    "pinyin": "bu4"
+  },
+  {
+    "hanzi": "专",
+    "pinyin": "zhuan1"
+  },
+  {
+    "hanzi": "业",
+    "pinyin": "ye4"
+  },
+  {
+    "hanzi": "东",
+    "pinyin": "dong1"
+  },
+  {
+    "hanzi": "个",
+    "pinyin": "ge4"
+  },
+  {
+    "hanzi": "中",
+    "pinyin": "zhong1"
+  },
+  {
+    "hanzi": "为",
+    "pinyin": "wei4"
+  },
+  {
+    "hanzi": "主",
+    "pinyin": "zhu3"
+  },
+  {
+    "hanzi": "么",
+    "pinyin": "me"
+  },
+  {
+    "hanzi": "义",
+    "pinyin": "yi4"
+  },
+  {
+    "hanzi": "乐",
+    "pinyin": "le4"
+  },
+  {
+    "hanzi": "九",
+    "pinyin": "jiu3"
+  },
+  {
+    "hanzi": "也",
+    "pinyin": "ye3"
+  },
+  {
+    "hanzi": "习",
+    "pinyin": "xi2"
+  },
+  {
+    "hanzi": "乡",
+    "pinyin": "xiang1"
+  },
+  {
+    "hanzi": "书",
+    "pinyin": "shu1"
+  },
+  {
+    "hanzi": "买",
+    "pinyin": "mai3"
+  },
+  {
+    "hanzi": "了",
+    "pinyin": "le"
+  },
+  {
+    "hanzi": "争",
+    "pinyin": "zheng1"
+  },
+  {
+    "hanzi": "事",
+    "pinyin": "shi4"
+  },
+  {
+    "hanzi": "二",
+    "pinyin": "er4"
+  },
+  {
+    "hanzi": "五",
+    "pinyin": "wu3"
+  },
+  {
+    "hanzi": "京",
+    "pinyin": "jing1"
+  },
+  {
+    "hanzi": "亲",
+    "pinyin": "qin1"
+  },
+  {
+    "hanzi": "人",
+    "pinyin": "ren2"
+  },
+  {
+    "hanzi": "什",
+    "pinyin": "shen2"
+  },
+  {
+    "hanzi": "介",
+    "pinyin": "jie4"
+  },
+  {
+    "hanzi": "从",
+    "pinyin": "cong2"
+  },
+  {
+    "hanzi": "他",
+    "pinyin": "ta1"
+  },
+  {
+    "hanzi": "以",
+    "pinyin": "yi3"
+  },
+  {
+    "hanzi": "们",
+    "pinyin": "men"
+  },
+  {
+    "hanzi": "件",
+    "pinyin": "jian4"
+  },
+  {
+    "hanzi": "价",
+    "pinyin": "jia4"
+  },
+  {
+    "hanzi": "任",
+    "pinyin": "ren4"
+  },
+  {
+    "hanzi": "份",
+    "pinyin": "fen4"
+  },
+  {
+    "hanzi": "伊",
+    "pinyin": "yi1"
+  },
+  {
+    "hanzi": "优",
+    "pinyin": "you1"
+  },
+  {
+    "hanzi": "会",
+    "pinyin": "hui4"
+  },
+  {
+    "hanzi": "传",
+    "pinyin": "chuan2"
+  },
+  {
+    "hanzi": "伤",
+    "pinyin": "shang1"
+  },
+  {
+    "hanzi": "但",
+    "pinyin": "dan4"
+  },
+  {
+    "hanzi": "低",
+    "pinyin": "di1"
+  },
+  {
+    "hanzi": "佛",
+    "pinyin": "fu2"
+  },
+  {
+    "hanzi": "作",
+    "pinyin": "zuo4"
+  },
+  {
+    "hanzi": "你",
+    "pinyin": "ni3"
+  },
+  {
+    "hanzi": "保",
+    "pinyin": "bao3"
+  },
+  {
+    "hanzi": "信",
+    "pinyin": "xin4"
+  },
+  {
+    "hanzi": "修",
+    "pinyin": "xiu1"
+  },
+  {
+    "hanzi": "健",
+    "pinyin": "jian4"
+  },
+  {
+    "hanzi": "兄",
+    "pinyin": "xiong1"
+  },
+  {
+    "hanzi": "先",
+    "pinyin": "xian1"
+  },
+  {
+    "hanzi": "全",
+    "pinyin": "quan2"
+  },
+  {
+    "hanzi": "八",
+    "pinyin": "ba1"
+  },
+  {
+    "hanzi": "公",
+    "pinyin": "gong1"
+  },
+  {
+    "hanzi": "六",
+    "pinyin": "liu4"
+  },
+  {
+    "hanzi": "兰",
+    "pinyin": "lan2"
+  },
+  {
+    "hanzi": "关",
+    "pinyin": "guan1"
+  },
+  {
+    "hanzi": "兴",
+    "pinyin": "xing1"
+  },
+  {
+    "hanzi": "养",
+    "pinyin": "yang3"
+  },
+  {
+    "hanzi": "再",
+    "pinyin": "zai4"
+  },
+  {
+    "hanzi": "写",
+    "pinyin": "xie3"
+  },
+  {
+    "hanzi": "农",
+    "pinyin": "nong2"
+  },
+  {
+    "hanzi": "决",
+    "pinyin": "jue2"
+  },
+  {
+    "hanzi": "冷",
+    "pinyin": "leng3"
+  },
+  {
+    "hanzi": "准",
+    "pinyin": "zhun3"
+  },
+  {
+    "hanzi": "出",
+    "pinyin": "chu1"
+  },
+  {
+    "hanzi": "分",
+    "pinyin": "fen1"
+  },
+  {
+    "hanzi": "划",
+    "pinyin": "hua4"
+  },
+  {
+    "hanzi": "创",
+    "pinyin": "chuang4"
+  },
+  {
+    "hanzi": "判",
+    "pinyin": "pan4"
+  },
+  {
+    "hanzi": "利",
+    "pinyin": "li4"
+  },
+  {
+    "hanzi": "别",
+    "pinyin": "bie2"
+  },
+  {
+    "hanzi": "到",
+    "pinyin": "dao4"
+  },
+  {
+    "hanzi": "前",
+    "pinyin": "qian2"
+  },
+  {
+    "hanzi": "办",
+    "pinyin": "ban4"
+  },
+  {
+    "hanzi": "功",
+    "pinyin": "gong1"
+  },
+  {
+    "hanzi": "务",
+    "pinyin": "wu4"
+  },
+  {
+    "hanzi": "劣",
+    "pinyin": "lie4"
+  },
+  {
+    "hanzi": "动",
+    "pinyin": "dong4"
+  },
+  {
+    "hanzi": "助",
+    "pinyin": "zhu4"
+  },
+  {
+    "hanzi": "势",
+    "pinyin": "shi4"
+  },
+  {
+    "hanzi": "化",
+    "pinyin": "hua4"
+  },
+  {
+    "hanzi": "北",
+    "pinyin": "bei3"
+  },
+  {
+    "hanzi": "医",
+    "pinyin": "yi1"
+  },
+  {
+    "hanzi": "十",
+    "pinyin": "shi2"
+  },
+  {
+    "hanzi": "单",
+    "pinyin": "dan1"
+  },
+  {
+    "hanzi": "南",
+    "pinyin": "nan2"
+  },
+  {
+    "hanzi": "博",
+    "pinyin": "bo2"
+  },
+  {
+    "hanzi": "危",
+    "pinyin": "wei1"
+  },
+  {
+    "hanzi": "历",
+    "pinyin": "li4"
+  },
+  {
+    "hanzi": "去",
+    "pinyin": "qu4"
+  },
+  {
+    "hanzi": "友",
+    "pinyin": "you3"
+  },
+  {
+    "hanzi": "反",
+    "pinyin": "fan3"
+  },
+  {
+    "hanzi": "发",
+    "pinyin": "fa1"
+  },
+  {
+    "hanzi": "口",
+    "pinyin": "kou3"
+  },
+  {
+    "hanzi": "只",
+    "pinyin": "zhi3"
+  },
+  {
+    "hanzi": "叫",
+    "pinyin": "jiao4"
+  },
+  {
+    "hanzi": "可",
+    "pinyin": "ke3"
+  },
+  {
+    "hanzi": "史",
+    "pinyin": "shi3"
+  },
+  {
+    "hanzi": "右",
+    "pinyin": "you4"
+  },
+  {
+    "hanzi": "司",
+    "pinyin": "si1"
+  },
+  {
+    "hanzi": "吃",
+    "pinyin": "chi1"
+  },
+  {
+    "hanzi": "合",
+    "pinyin": "he2"
+  },
+  {
+    "hanzi": "同",
+    "pinyin": "tong2"
+  },
+  {
+    "hanzi": "名",
+    "pinyin": "ming2"
+  },
+  {
+    "hanzi": "后",
+    "pinyin": "hou4"
+  },
+  {
+    "hanzi": "吗",
+    "pinyin": "ma"
+  },
+  {
+    "hanzi": "吧",
+    "pinyin": "ba"
+  },
+  {
+    "hanzi": "听",
+    "pinyin": "ting1"
+  },
+  {
+    "hanzi": "告",
+    "pinyin": "gao4"
+  },
+  {
+    "hanzi": "员",
+    "pinyin": "yuan2"
+  },
+  {
+    "hanzi": "呢",
+    "pinyin": "ne"
+  },
+  {
+    "hanzi": "命",
+    "pinyin": "ming4"
+  },
+  {
+    "hanzi": "和",
+    "pinyin": "he2"
+  },
+  {
+    "hanzi": "品",
+    "pinyin": "pin3"
+  },
+  {
+    "hanzi": "哪",
+    "pinyin": "na3"
+  },
+  {
+    "hanzi": "哲",
+    "pinyin": "zhe2"
+  },
+  {
+    "hanzi": "唱",
+    "pinyin": "chang4"
+  },
+  {
+    "hanzi": "商",
+    "pinyin": "shang1"
+  },
+  {
+    "hanzi": "喜",
+    "pinyin": "xi3"
+  },
+  {
+    "hanzi": "喝",
+    "pinyin": "he1"
+  },
+  {
+    "hanzi": "四",
+    "pinyin": "si4"
+  },
+  {
+    "hanzi": "因",
+    "pinyin": "yin1"
+  },
+  {
+    "hanzi": "园",
+    "pinyin": "yuan2"
+  },
+  {
+    "hanzi": "困",
+    "pinyin": "kun4"
+  },
+  {
+    "hanzi": "国",
+    "pinyin": "guo2"
+  },
+  {
+    "hanzi": "图",
+    "pinyin": "tu2"
+  },
+  {
+    "hanzi": "在",
+    "pinyin": "zai4"
+  },
+  {
+    "hanzi": "地",
+    "pinyin": "di4"
+  },
+  {
+    "hanzi": "场",
+    "pinyin": "chang3"
+  },
+  {
+    "hanzi": "城",
+    "pinyin": "cheng2"
+  },
+  {
+    "hanzi": "基",
+    "pinyin": "ji1"
+  },
+  {
+    "hanzi": "境",
+    "pinyin": "jing4"
+  },
+  {
+    "hanzi": "多",
+    "pinyin": "duo1"
+  },
+  {
+    "hanzi": "大",
+    "pinyin": "da4"
+  },
+  {
+    "hanzi": "天",
+    "pinyin": "tian1"
+  },
+  {
+    "hanzi": "太",
+    "pinyin": "tai4"
+  },
+  {
+    "hanzi": "失",
+    "pinyin": "shi1"
+  },
+  {
+    "hanzi": "好",
+    "pinyin": "hao3"
+  },
+  {
+    "hanzi": "如",
+    "pinyin": "ru2"
+  },
+  {
+    "hanzi": "妹",
+    "pinyin": "mei4"
+  },
+  {
+    "hanzi": "姐",
+    "pinyin": "jie3"
+  },
+  {
+    "hanzi": "姻",
+    "pinyin": "yin1"
+  },
+  {
+    "hanzi": "婚",
+    "pinyin": "hun1"
+  },
+  {
+    "hanzi": "子",
+    "pinyin": "zi"
+  },
+  {
+    "hanzi": "字",
+    "pinyin": "zi4"
+  },
+  {
+    "hanzi": "季",
+    "pinyin": "ji4"
+  },
+  {
+    "hanzi": "学",
+    "pinyin": "xue2"
+  },
+  {
+    "hanzi": "宇",
+    "pinyin": "yu3"
+  },
+  {
+    "hanzi": "宗",
+    "pinyin": "zong1"
+  },
+  {
+    "hanzi": "宙",
+    "pinyin": "zhou4"
+  },
+  {
+    "hanzi": "定",
+    "pinyin": "ding4"
+  },
+  {
+    "hanzi": "实",
+    "pinyin": "shi2"
+  },
+  {
+    "hanzi": "室",
+    "pinyin": "shi4"
+  },
+  {
+    "hanzi": "害",
+    "pinyin": "hai4"
+  },
+  {
+    "hanzi": "家",
+    "pinyin": "jia1"
+  },
+  {
+    "hanzi": "容",
+    "pinyin": "rong2"
+  },
+  {
+    "hanzi": "对",
+    "pinyin": "dui4"
+  },
+  {
+    "hanzi": "导",
+    "pinyin": "dao3"
+  },
+  {
+    "hanzi": "小",
+    "pinyin": "xiao3"
+  },
+  {
+    "hanzi": "少",
+    "pinyin": "shao3"
+  },
+  {
+    "hanzi": "就",
+    "pinyin": "jiu4"
+  },
+  {
+    "hanzi": "居",
+    "pinyin": "ju1"
+  },
+  {
+    "hanzi": "展",
+    "pinyin": "zhan3"
+  },
+  {
+    "hanzi": "工",
+    "pinyin": "gong1"
+  },
+  {
+    "hanzi": "左",
+    "pinyin": "zuo3"
+  },
+  {
+    "hanzi": "市",
+    "pinyin": "shi4"
+  },
+  {
+    "hanzi": "师",
+    "pinyin": "shi1"
+  },
+  {
+    "hanzi": "帮",
+    "pinyin": "bang1"
+  },
+  {
+    "hanzi": "平",
+    "pinyin": "ping2"
+  },
+  {
+    "hanzi": "年",
+    "pinyin": "nian2"
+  },
+  {
+    "hanzi": "幸",
+    "pinyin": "xing4"
+  },
+  {
+    "hanzi": "广",
+    "pinyin": "guang3"
+  },
+  {
+    "hanzi": "床",
+    "pinyin": "chuang2"
+  },
+  {
+    "hanzi": "应",
+    "pinyin": "ying1"
+  },
+  {
+    "hanzi": "店",
+    "pinyin": "dian4"
+  },
+  {
+    "hanzi": "府",
+    "pinyin": "fu3"
+  },
+  {
+    "hanzi": "度",
+    "pinyin": "du4"
+  },
+  {
+    "hanzi": "康",
+    "pinyin": "kang1"
+  },
+  {
+    "hanzi": "建",
+    "pinyin": "jian4"
+  },
+  {
+    "hanzi": "开",
+    "pinyin": "kai1"
+  },
+  {
+    "hanzi": "弟",
+    "pinyin": "di4"
+  },
+  {
+    "hanzi": "当",
+    "pinyin": "dang1"
+  },
+  {
+    "hanzi": "影",
+    "pinyin": "ying3"
+  },
+  {
+    "hanzi": "很",
+    "pinyin": "hen3"
+  },
+  {
+    "hanzi": "律",
+    "pinyin": "lv4"
+  },
+  {
+    "hanzi": "得",
+    "pinyin": "de2"
+  },
+  {
+    "hanzi": "德",
+    "pinyin": "de2"
+  },
+  {
+    "hanzi": "心",
+    "pinyin": "xin1"
+  },
+  {
+    "hanzi": "志",
+    "pinyin": "zhi4"
+  },
+  {
+    "hanzi": "快",
+    "pinyin": "kuai4"
+  },
+  {
+    "hanzi": "态",
+    "pinyin": "tai4"
+  },
+  {
+    "hanzi": "怎",
+    "pinyin": "zen3"
+  },
+  {
+    "hanzi": "怕",
+    "pinyin": "pa4"
+  },
+  {
+    "hanzi": "思",
+    "pinyin": "si1"
+  },
+  {
+    "hanzi": "息",
+    "pinyin": "xi1"
+  },
+  {
+    "hanzi": "情",
+    "pinyin": "qing2"
+  },
+  {
+    "hanzi": "想",
+    "pinyin": "xiang3"
+  },
+  {
+    "hanzi": "意",
+    "pinyin": "yi4"
+  },
+  {
+    "hanzi": "感",
+    "pinyin": "gan3"
+  },
+  {
+    "hanzi": "慢",
+    "pinyin": "man4"
+  },
+  {
+    "hanzi": "成",
+    "pinyin": "cheng2"
+  },
+  {
+    "hanzi": "我",
+    "pinyin": "wo3"
+  },
+  {
+    "hanzi": "战",
+    "pinyin": "zhan4"
+  },
+  {
+    "hanzi": "戚",
+    "pinyin": "qi1"
+  },
+  {
+    "hanzi": "户",
+    "pinyin": "hu4"
+  },
+  {
+    "hanzi": "房",
+    "pinyin": "fang2"
+  },
+  {
+    "hanzi": "所",
+    "pinyin": "suo3"
+  },
+  {
+    "hanzi": "手",
+    "pinyin": "shou3"
+  },
+  {
+    "hanzi": "技",
+    "pinyin": "ji4"
+  },
+  {
+    "hanzi": "把",
+    "pinyin": "ba3"
+  },
+  {
+    "hanzi": "投",
+    "pinyin": "tou2"
+  },
+  {
+    "hanzi": "护",
+    "pinyin": "hu4"
+  },
+  {
+    "hanzi": "报",
+    "pinyin": "bao4"
+  },
+  {
+    "hanzi": "挑",
+    "pinyin": "tiao1"
+  },
+  {
+    "hanzi": "据",
+    "pinyin": "ju4"
+  },
+  {
+    "hanzi": "授",
+    "pinyin": "shou4"
+  },
+  {
+    "hanzi": "改",
+    "pinyin": "gai3"
+  },
+  {
+    "hanzi": "放",
+    "pinyin": "fang4"
+  },
+  {
+    "hanzi": "政",
+    "pinyin": "zheng4"
+  },
+  {
+    "hanzi": "效",
+    "pinyin": "xiao4"
+  },
+  {
+    "hanzi": "教",
+    "pinyin": "jiao4"
+  },
+  {
+    "hanzi": "数",
+    "pinyin": "shu4"
+  },
+  {
+    "hanzi": "文",
+    "pinyin": "wen2"
+  },
+  {
+    "hanzi": "料",
+    "pinyin": "liao4"
+  },
+  {
+    "hanzi": "断",
+    "pinyin": "duan4"
+  },
+  {
+    "hanzi": "斯",
+    "pinyin": "si1"
+  },
+  {
+    "hanzi": "新",
+    "pinyin": "xin1"
+  },
+  {
+    "hanzi": "方",
+    "pinyin": "fang1"
+  },
+  {
+    "hanzi": "旅",
+    "pinyin": "lv3"
+  },
+  {
+    "hanzi": "日",
+    "pinyin": "ri4"
+  },
+  {
+    "hanzi": "旧",
+    "pinyin": "jiu4"
+  },
+  {
+    "hanzi": "时",
+    "pinyin": "shi2"
+  },
+  {
+    "hanzi": "明",
+    "pinyin": "ming2"
+  },
+  {
+    "hanzi": "易",
+    "pinyin": "yi4"
+  },
+  {
+    "hanzi": "星",
+    "pinyin": "xing1"
+  },
+  {
+    "hanzi": "春",
+    "pinyin": "chun1"
+  },
+  {
+    "hanzi": "是",
+    "pinyin": "shi4"
+  },
+  {
+    "hanzi": "晴",
+    "pinyin": "qing2"
+  },
+  {
+    "hanzi": "最",
+    "pinyin": "zui4"
+  },
+  {
+    "hanzi": "月",
+    "pinyin": "yue4"
+  },
+  {
+    "hanzi": "有",
+    "pinyin": "you3"
+  },
+  {
+    "hanzi": "朋",
+    "pinyin": "peng2"
+  },
+  {
+    "hanzi": "服",
+    "pinyin": "fu2"
+  },
+  {
+    "hanzi": "期",
+    "pinyin": "qi1"
+  },
+  {
+    "hanzi": "术",
+    "pinyin": "shu4"
+  },
+  {
+    "hanzi": "机",
+    "pinyin": "ji1"
+  },
+  {
+    "hanzi": "杂",
+    "pinyin": "za2"
+  },
+  {
+    "hanzi": "权",
+    "pinyin": "quan2"
+  },
+  {
+    "hanzi": "材",
+    "pinyin": "cai2"
+  },
+  {
+    "hanzi": "村",
+    "pinyin": "cun1"
+  },
+  {
+    "hanzi": "条",
+    "pinyin": "tiao2"
+  },
+  {
+    "hanzi": "来",
+    "pinyin": "lai2"
+  },
+  {
+    "hanzi": "构",
+    "pinyin": "gou4"
+  },
+  {
+    "hanzi": "析",
+    "pinyin": "xi1"
+  },
+  {
+    "hanzi": "果",
+    "pinyin": "guo3"
+  },
+  {
+    "hanzi": "染",
+    "pinyin": "ran3"
+  },
+  {
+    "hanzi": "查",
+    "pinyin": "cha2"
+  },
+  {
+    "hanzi": "标",
+    "pinyin": "biao1"
+  },
+  {
+    "hanzi": "校",
+    "pinyin": "xiao4"
+  },
+  {
+    "hanzi": "样",
+    "pinyin": "yang4"
+  },
+  {
+    "hanzi": "桌",
+    "pinyin": "zhuo1"
+  },
+  {
+    "hanzi": "椅",
+    "pinyin": "yi3"
+  },
+  {
+    "hanzi": "欢",
+    "pinyin": "huan1"
+  },
+  {
+    "hanzi": "歌",
+    "pinyin": "ge1"
+  },
+  {
+    "hanzi": "此",
+    "pinyin": "ci3"
+  },
+  {
+    "hanzi": "母",
+    "pinyin": "mu3"
+  },
+  {
+    "hanzi": "比",
+    "pinyin": "bi3"
+  },
+  {
+    "hanzi": "毕",
+    "pinyin": "bi4"
+  },
+  {
+    "hanzi": "民",
+    "pinyin": "min2"
+  },
+  {
+    "hanzi": "气",
+    "pinyin": "qi4"
+  },
+  {
+    "hanzi": "水",
+    "pinyin": "shui3"
+  },
+  {
+    "hanzi": "污",
+    "pinyin": "wu1"
+  },
+  {
+    "hanzi": "汽",
+    "pinyin": "qi4"
+  },
+  {
+    "hanzi": "没",
+    "pinyin": "mei2"
+  },
+  {
+    "hanzi": "治",
+    "pinyin": "zhi4"
+  },
+  {
+    "hanzi": "法",
+    "pinyin": "fa3"
+  },
+  {
+    "hanzi": "济",
+    "pinyin": "ji4"
+  },
+  {
+    "hanzi": "海",
+    "pinyin": "hai3"
+  },
+  {
+    "hanzi": "源",
+    "pinyin": "yuan2"
+  },
+  {
+    "hanzi": "火",
+    "pinyin": "huo3"
+  },
+  {
+    "hanzi": "灯",
+    "pinyin": "deng1"
+  },
+  {
+    "hanzi": "点",
+    "pinyin": "dian3"
+  },
+  {
+    "hanzi": "炼",
+    "pinyin": "lian4"
+  },
+  {
+    "hanzi": "热",
+    "pinyin": "re4"
+  },
+  {
+    "hanzi": "然",
+    "pinyin": "ran2"
+  },
+  {
+    "hanzi": "爱",
+    "pinyin": "ai4"
+  },
+  {
+    "hanzi": "父",
+    "pinyin": "fu4"
+  },
+  {
+    "hanzi": "牌",
+    "pinyin": "pai2"
+  },
+  {
+    "hanzi": "物",
+    "pinyin": "wu4"
+  },
+  {
+    "hanzi": "特",
+    "pinyin": "te4"
+  },
+  {
+    "hanzi": "狗",
+    "pinyin": "gou3"
+  },
+  {
+    "hanzi": "猫",
+    "pinyin": "mao1"
+  },
+  {
+    "hanzi": "率",
+    "pinyin": "lv4"
+  },
+  {
+    "hanzi": "环",
+    "pinyin": "huan2"
+  },
+  {
+    "hanzi": "现",
+    "pinyin": "xian4"
+  },
+  {
+    "hanzi": "球",
+    "pinyin": "qiu2"
+  },
+  {
+    "hanzi": "理",
+    "pinyin": "li3"
+  },
+  {
+    "hanzi": "生",
+    "pinyin": "sheng1"
+  },
+  {
+    "hanzi": "用",
+    "pinyin": "yong4"
+  },
+  {
+    "hanzi": "由",
+    "pinyin": "you2"
+  },
+  {
+    "hanzi": "电",
+    "pinyin": "dian4"
+  },
+  {
+    "hanzi": "画",
+    "pinyin": "hua4"
+  },
+  {
+    "hanzi": "略",
+    "pinyin": "lve4"
+  },
+  {
+    "hanzi": "的",
+    "pinyin": "de"
+  },
+  {
+    "hanzi": "目",
+    "pinyin": "mu4"
+  },
+  {
+    "hanzi": "看",
+    "pinyin": "kan4"
+  },
+  {
+    "hanzi": "真",
+    "pinyin": "zhen1"
+  },
+  {
+    "hanzi": "督",
+    "pinyin": "du1"
+  },
+  {
+    "hanzi": "知",
+    "pinyin": "zhi1"
+  },
+  {
+    "hanzi": "短",
+    "pinyin": "duan3"
+  },
+  {
+    "hanzi": "研",
+    "pinyin": "yan2"
+  },
+  {
+    "hanzi": "社",
+    "pinyin": "she4"
+  },
+  {
+    "hanzi": "票",
+    "pinyin": "piao4"
+  },
+  {
+    "hanzi": "福",
+    "pinyin": "fu2"
+  },
+  {
+    "hanzi": "离",
+    "pinyin": "li2"
+  },
+  {
+    "hanzi": "种",
+    "pinyin": "zhong3"
+  },
+  {
+    "hanzi": "科",
+    "pinyin": "ke1"
+  },
+  {
+    "hanzi": "程",
+    "pinyin": "cheng2"
+  },
+  {
+    "hanzi": "究",
+    "pinyin": "jiu1"
+  },
+  {
+    "hanzi": "穿",
+    "pinyin": "chuan1"
+  },
+  {
+    "hanzi": "窗",
+    "pinyin": "chuang1"
+  },
+  {
+    "hanzi": "站",
+    "pinyin": "zhan4"
+  },
+  {
+    "hanzi": "竞",
+    "pinyin": "jing4"
+  },
+  {
+    "hanzi": "等",
+    "pinyin": "deng3"
+  },
+  {
+    "hanzi": "简",
+    "pinyin": "jian3"
+  },
+  {
+    "hanzi": "管",
+    "pinyin": "guan3"
+  },
+  {
+    "hanzi": "米",
+    "pinyin": "mi3"
+  },
+  {
+    "hanzi": "系",
+    "pinyin": "xi4"
+  },
+  {
+    "hanzi": "素",
+    "pinyin": "su4"
+  },
+  {
+    "hanzi": "纸",
+    "pinyin": "zhi3"
+  },
+  {
+    "hanzi": "组",
+    "pinyin": "zu3"
+  },
+  {
+    "hanzi": "织",
+    "pinyin": "zhi1"
+  },
+  {
+    "hanzi": "绍",
+    "pinyin": "shao4"
+  },
+  {
+    "hanzi": "经",
+    "pinyin": "jing1"
+  },
+  {
+    "hanzi": "结",
+    "pinyin": "jie2"
+  },
+  {
+    "hanzi": "络",
+    "pinyin": "luo4"
+  },
+  {
+    "hanzi": "统",
+    "pinyin": "tong3"
+  },
+  {
+    "hanzi": "绩",
+    "pinyin": "ji4"
+  },
+  {
+    "hanzi": "维",
+    "pinyin": "wei2"
+  },
+  {
+    "hanzi": "缺",
+    "pinyin": "que1"
+  },
+  {
+    "hanzi": "网",
+    "pinyin": "wang3"
+  },
+  {
+    "hanzi": "老",
+    "pinyin": "lao3"
+  },
+  {
+    "hanzi": "考",
+    "pinyin": "kao3"
+  },
+  {
+    "hanzi": "而",
+    "pinyin": "er2"
+  },
+  {
+    "hanzi": "肉",
+    "pinyin": "rou4"
+  },
+  {
+    "hanzi": "股",
+    "pinyin": "gu3"
+  },
+  {
+    "hanzi": "能",
+    "pinyin": "neng2"
+  },
+  {
+    "hanzi": "脑",
+    "pinyin": "nao3"
+  },
+  {
+    "hanzi": "自",
+    "pinyin": "zi4"
+  },
+  {
+    "hanzi": "舞",
+    "pinyin": "wu3"
+  },
+  {
+    "hanzi": "节",
+    "pinyin": "jie2"
+  },
+  {
+    "hanzi": "苹",
+    "pinyin": "ping2"
+  },
+  {
+    "hanzi": "茶",
+    "pinyin": "cha2"
+  },
+  {
+    "hanzi": "药",
+    "pinyin": "yao4"
+  },
+  {
+    "hanzi": "菜",
+    "pinyin": "cai4"
+  },
+  {
+    "hanzi": "营",
+    "pinyin": "ying2"
+  },
+  {
+    "hanzi": "蕉",
+    "pinyin": "jiao1"
+  },
+  {
+    "hanzi": "虽",
+    "pinyin": "sui1"
+  },
+  {
+    "hanzi": "融",
+    "pinyin": "rong2"
+  },
+  {
+    "hanzi": "行",
+    "pinyin": "xing2"
+  },
+  {
+    "hanzi": "衣",
+    "pinyin": "yi1"
+  },
+  {
+    "hanzi": "西",
+    "pinyin": "xi1"
+  },
+  {
+    "hanzi": "要",
+    "pinyin": "yao4"
+  },
+  {
+    "hanzi": "见",
+    "pinyin": "jian4"
+  },
+  {
+    "hanzi": "观",
+    "pinyin": "guan1"
+  },
+  {
+    "hanzi": "视",
+    "pinyin": "shi4"
+  },
+  {
+    "hanzi": "角",
+    "pinyin": "jiao3"
+  },
+  {
+    "hanzi": "解",
+    "pinyin": "jie3"
+  },
+  {
+    "hanzi": "计",
+    "pinyin": "ji4"
+  },
+  {
+    "hanzi": "认",
+    "pinyin": "ren4"
+  },
+  {
+    "hanzi": "讨",
+    "pinyin": "tao3"
+  },
+  {
+    "hanzi": "议",
+    "pinyin": "yi4"
+  },
+  {
+    "hanzi": "论",
+    "pinyin": "lun4"
+  },
+  {
+    "hanzi": "证",
+    "pinyin": "zheng4"
+  },
+  {
+    "hanzi": "评",
+    "pinyin": "ping2"
+  },
+  {
+    "hanzi": "识",
+    "pinyin": "shi2"
+  },
+  {
+    "hanzi": "试",
+    "pinyin": "shi4"
+  },
+  {
+    "hanzi": "话",
+    "pinyin": "hua4"
+  },
+  {
+    "hanzi": "说",
+    "pinyin": "shuo1"
+  },
+  {
+    "hanzi": "读",
+    "pinyin": "du2"
+  },
+  {
+    "hanzi": "谁",
+    "pinyin": "shui2"
+  },
+  {
+    "hanzi": "调",
+    "pinyin": "diao4"
+  },
+  {
+    "hanzi": "责",
+    "pinyin": "ze2"
+  },
+  {
+    "hanzi": "败",
+    "pinyin": "bai4"
+  },
+  {
+    "hanzi": "质",
+    "pinyin": "zhi4"
+  },
+  {
+    "hanzi": "贸",
+    "pinyin": "mao4"
+  },
+  {
+    "hanzi": "资",
+    "pinyin": "zi1"
+  },
+  {
+    "hanzi": "赛",
+    "pinyin": "sai4"
+  },
+  {
+    "hanzi": "走",
+    "pinyin": "zou3"
+  },
+  {
+    "hanzi": "起",
+    "pinyin": "qi3"
+  },
+  {
+    "hanzi": "超",
+    "pinyin": "chao1"
+  },
+  {
+    "hanzi": "跨",
+    "pinyin": "kua4"
+  },
+  {
+    "hanzi": "路",
+    "pinyin": "lu4"
+  },
+  {
+    "hanzi": "跳",
+    "pinyin": "tiao4"
+  },
+  {
+    "hanzi": "车",
+    "pinyin": "che1"
+  },
+  {
+    "hanzi": "辑",
+    "pinyin": "ji2"
+  },
+  {
+    "hanzi": "过",
+    "pinyin": "guo4"
+  },
+  {
+    "hanzi": "运",
+    "pinyin": "yun4"
+  },
+  {
+    "hanzi": "近",
+    "pinyin": "jin4"
+  },
+  {
+    "hanzi": "还",
+    "pinyin": "hai2"
+  },
+  {
+    "hanzi": "这",
+    "pinyin": "zhe4"
+  },
+  {
+    "hanzi": "进",
+    "pinyin": "jin4"
+  },
+  {
+    "hanzi": "远",
+    "pinyin": "yuan3"
+  },
+  {
+    "hanzi": "通",
+    "pinyin": "tong1"
+  },
+  {
+    "hanzi": "逻",
+    "pinyin": "luo2"
+  },
+  {
+    "hanzi": "遇",
+    "pinyin": "yu4"
+  },
+  {
+    "hanzi": "道",
+    "pinyin": "dao4"
+  },
+  {
+    "hanzi": "那",
+    "pinyin": "na4"
+  },
+  {
+    "hanzi": "邻",
+    "pinyin": "lin2"
+  },
+  {
+    "hanzi": "都",
+    "pinyin": "dou1"
+  },
+  {
+    "hanzi": "里",
+    "pinyin": "li3"
+  },
+  {
+    "hanzi": "重",
+    "pinyin": "zhong4"
+  },
+  {
+    "hanzi": "量",
+    "pinyin": "liang4"
+  },
+  {
+    "hanzi": "金",
+    "pinyin": "jin1"
+  },
+  {
+    "hanzi": "钟",
+    "pinyin": "zhong1"
+  },
+  {
+    "hanzi": "钱",
+    "pinyin": "qian2"
+  },
+  {
+    "hanzi": "销",
+    "pinyin": "xiao1"
+  },
+  {
+    "hanzi": "锻",
+    "pinyin": "duan4"
+  },
+  {
+    "hanzi": "长",
+    "pinyin": "zhang3"
+  },
+  {
+    "hanzi": "门",
+    "pinyin": "men2"
+  },
+  {
+    "hanzi": "问",
+    "pinyin": "wen4"
+  },
+  {
+    "hanzi": "间",
+    "pinyin": "jian1"
+  },
+  {
+    "hanzi": "闻",
+    "pinyin": "wen2"
+  },
+  {
+    "hanzi": "阴",
+    "pinyin": "yin1"
+  },
+  {
+    "hanzi": "际",
+    "pinyin": "ji4"
+  },
+  {
+    "hanzi": "院",
+    "pinyin": "yuan4"
+  },
+  {
+    "hanzi": "险",
+    "pinyin": "xian3"
+  },
+  {
+    "hanzi": "难",
+    "pinyin": "nan2"
+  },
+  {
+    "hanzi": "雨",
+    "pinyin": "yu3"
+  },
+  {
+    "hanzi": "雪",
+    "pinyin": "xue3"
+  },
+  {
+    "hanzi": "面",
+    "pinyin": "mian4"
+  },
+  {
+    "hanzi": "革",
+    "pinyin": "ge2"
+  },
+  {
+    "hanzi": "音",
+    "pinyin": "yin1"
+  },
+  {
+    "hanzi": "项",
+    "pinyin": "xiang4"
+  },
+  {
+    "hanzi": "领",
+    "pinyin": "ling3"
+  },
+  {
+    "hanzi": "题",
+    "pinyin": "ti2"
+  },
+  {
+    "hanzi": "风",
+    "pinyin": "feng1"
+  },
+  {
+    "hanzi": "飞",
+    "pinyin": "fei1"
+  },
+  {
+    "hanzi": "饭",
+    "pinyin": "fan4"
+  },
+  {
+    "hanzi": "馆",
+    "pinyin": "guan3"
+  },
+  {
+    "hanzi": "香",
+    "pinyin": "xiang1"
+  },
+  {
+    "hanzi": "验",
+    "pinyin": "yan4"
+  },
+  {
+    "hanzi": "高",
+    "pinyin": "gao1"
+  },
+  {
+    "hanzi": "鱼",
+    "pinyin": "yu2"
+  },
+  {
+    "hanzi": "鸡",
+    "pinyin": "ji1"
+  }
+]
