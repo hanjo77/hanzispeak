@@ -851,6 +851,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216804832}
   m_CullTransparentMesh: 1
+--- !u!1001 &221620969
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1887854815}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f4cac7f2b312941478f12725d347310a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4cac7f2b312941478f12725d347310a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4cac7f2b312941478f12725d347310a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4cac7f2b312941478f12725d347310a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.82176477
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4cac7f2b312941478f12725d347310a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.061481316
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4cac7f2b312941478f12725d347310a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.2538339
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4cac7f2b312941478f12725d347310a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5064495
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4cac7f2b312941478f12725d347310a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4cac7f2b312941478f12725d347310a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f4cac7f2b312941478f12725d347310a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f4cac7f2b312941478f12725d347310a, type: 3}
+      propertyPath: m_Name
+      value: "\u4E09"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f4cac7f2b312941478f12725d347310a, type: 3}
+--- !u!4 &221620970 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4cac7f2b312941478f12725d347310a, type: 3}
+  m_PrefabInstance: {fileID: 221620969}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &260407686
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,6 +2314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationKey: startButton
   textField: {fileID: 0}
+  dropDown: {fileID: 0}
 --- !u!1 &631756597
 GameObject:
   m_ObjectHideFlags: 0
@@ -3616,6 +3679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationKey: score
   textField: {fileID: 0}
+  dropDown: {fileID: 0}
 --- !u!1 &876521583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3842,6 +3906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationKey: showPinyin
   textField: {fileID: 0}
+  dropDown: {fileID: 0}
 --- !u!1 &932523041
 GameObject:
   m_ObjectHideFlags: 0
@@ -4366,6 +4431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationKey: settingsTitle
   textField: {fileID: 0}
+  dropDown: {fileID: 0}
 --- !u!1 &1072360494
 GameObject:
   m_ObjectHideFlags: 0
@@ -4517,6 +4583,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationKey: languageLabel
   textField: {fileID: 0}
+  dropDown: {fileID: 0}
 --- !u!1 &1077706767
 GameObject:
   m_ObjectHideFlags: 0
@@ -4984,6 +5051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationKey: lives
   textField: {fileID: 0}
+  dropDown: {fileID: 0}
 --- !u!1 &1120249044
 GameObject:
   m_ObjectHideFlags: 0
@@ -5400,6 +5468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationKey: introText
   textField: {fileID: 0}
+  dropDown: {fileID: 0}
 --- !u!1 &1209528739
 GameObject:
   m_ObjectHideFlags: 0
@@ -6358,6 +6427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationKey: speakPinyin
   textField: {fileID: 0}
+  dropDown: {fileID: 0}
 --- !u!1 &1409542094
 GameObject:
   m_ObjectHideFlags: 0
@@ -7215,6 +7285,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationKey: hanziSpeakTitle
   textField: {fileID: 0}
+  dropDown: {fileID: 0}
 --- !u!1 &1758271831
 GameObject:
   m_ObjectHideFlags: 0
@@ -7702,6 +7773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationKey: startButton
   textField: {fileID: 0}
+  dropDown: {fileID: 0}
 --- !u!1 &1887854814
 GameObject:
   m_ObjectHideFlags: 0
@@ -7732,7 +7804,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 221620970}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1887854816
@@ -8070,6 +8143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationKey: showTranslation
   textField: {fileID: 0}
+  dropDown: {fileID: 0}
 --- !u!1 &2066463982
 GameObject:
   m_ObjectHideFlags: 0
@@ -8221,6 +8295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   translationKey: categoryLabel
   textField: {fileID: 0}
+  dropDown: {fileID: 0}
 --- !u!1 &2092139007
 GameObject:
   m_ObjectHideFlags: 0
@@ -8495,6 +8570,7 @@ GameObject:
   - component: {fileID: 2143637869}
   - component: {fileID: 2143637868}
   - component: {fileID: 2143637867}
+  - component: {fileID: 2143637870}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -8629,6 +8705,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143637865}
   m_CullTransparentMesh: 1
+--- !u!114 &2143637870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143637865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e520c3a8d5694c340a45100c023b68d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationKey: 
+  textField: {fileID: 0}
+  dropDown: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,18 +1,10 @@
 ﻿using Newtonsoft.Json;
-using NUnit.Framework;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Text.RegularExpressions;
-using TMPro;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
-using UnityEngine.Windows;
-using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.Rendering;
 
 public class HanziSpawner : MonoBehaviour
 {
@@ -41,11 +33,12 @@ public class HanziSpawner : MonoBehaviour
     private HanziCharacter activeHanzi;
     private Coroutine checkRoutine;
 
-    public GameObject[] filteredCharacters;
+    public List<GameObject> filteredCharacters;
 
     private int score;
     private int currentLives;
     private bool isPlaying;
+    private int activeFilterIndex;
 
     void Awake() => Instance = this;
 
@@ -57,20 +50,11 @@ public class HanziSpawner : MonoBehaviour
         HanziDB.Initialize();
         isPlaying = true;
         voskEngine.OnTranscriptionResult = OnVoiceInput;
-        List<GameObject> tmpChars = new List<GameObject>();
         score = 0;
         currentLives = lives;
         GameManager.Instance.SetLives(currentLives);
         GameManager.Instance.SetScore(score);
-        foreach (var character in characterPrefabs)
-        {
-            string hanziFilter = PlayerPrefs.GetString("hanzifilter");
-            if (hanziFilter.Length < 1 || hanziFilter.Contains(character.name))
-            {
-                tmpChars.Add(character);
-            }
-        }
-        filteredCharacters = tmpChars.ToArray();
+        GenerateFilteredCharacters();
         SpawnCharacter(false);
     }
 
@@ -93,6 +77,11 @@ public class HanziSpawner : MonoBehaviour
         if (ValidateHanzi(jsonResult))
         {
             GameManager.Instance.SetScore(score++);
+            filteredCharacters.RemoveAt(activeFilterIndex);
+            if (filteredCharacters.Count <= 0)
+            {
+                GenerateFilteredCharacters();
+            }
             activeHanzi.OnRecognized();
         }
     }
@@ -125,7 +114,8 @@ public class HanziSpawner : MonoBehaviour
         Vector3 spawnDir = Quaternion.Euler(0, randomAngle, 0) * playerHead.forward;
         Vector3 spawnPos = playerHead.position + spawnDir * spawnDistance;
         spawnPos.y = playerHead.position.y; // Keep at eye level
-        GameObject prefab = filteredCharacters[UnityEngine.Random.Range(0, filteredCharacters.Length)];
+        activeFilterIndex = UnityEngine.Random.Range(0, filteredCharacters.Count);
+        GameObject prefab = filteredCharacters[activeFilterIndex];
 
         // Instantiate random character
         GameObject newChar = Instantiate(
@@ -194,18 +184,18 @@ public class HanziSpawner : MonoBehaviour
 
         return false;
     }
-}
 
-
-[Serializable]
-public class PinyinDictionaryWrapper
-{
-    public List<PinyinEntry> entries;
-}
-
-[Serializable]
-public class PinyinEntry
-{
-    public string hanzi;
-    public List<string> pinyin;
+    private void GenerateFilteredCharacters()
+    {
+        List<GameObject> tmpChars = new List<GameObject>();
+        foreach (var character in characterPrefabs)
+        {
+            string hanziFilter = PlayerPrefs.GetString("hanzifilter");
+            if (hanziFilter.Length < 1 || hanziFilter.Contains(character.name))
+            {
+                tmpChars.Add(character);
+            }
+        }
+        filteredCharacters = tmpChars;
+    }
 }

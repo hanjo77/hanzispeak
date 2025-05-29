@@ -6,9 +6,47 @@ using UnityEditor; // Requires Newtonsoft.Json package
 using UnityEngine;
 
 [System.Serializable]
+public class HanziTranslations
+{
+    public string cn;
+    public string en;
+    public string de;
+    public string fr;
+    public string it;
+    public string es;
+    public string ja;
+    public string ko;
+    public string ru;
+
+    public string GetTranslationString()
+    {
+        switch (PlayerPrefs.GetString("language")) {
+            case "de":
+                return de;
+            case "en":
+                return en;
+            case "fr":
+                return fr;
+            case "it":
+                return it;
+            case "es":
+                return es;
+            case "ja":
+                return ja;
+            case "ko":
+                return ko;
+            case "ru":
+                return ru;
+            default:
+                return en;
+        }
+    }
+}
+
+[System.Serializable]
 public class HanziCategory
 {
-    public string title;
+    public HanziTranslations title;
     public string hanzi;
 }
 

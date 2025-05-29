@@ -507,7 +507,7 @@ MonoBehaviour:
   maxAngle: 0
   lives: 2
   voskEngine: {fileID: 2671627207551644193}
-  checkInterval: 1.5
+  checkInterval: 1
   filteredCharacters: []
 --- !u!114 &6135578393460541853
 MonoBehaviour:

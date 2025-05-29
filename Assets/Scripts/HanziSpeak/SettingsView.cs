@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityEngine.Windows;
 
 public class SettingsView : AppView
 {
@@ -42,15 +43,16 @@ public class SettingsView : AppView
         // Optionally load previously saved value from PlayerPrefs
         string languageKey = PlayerPrefs.GetString("language", "en");
         string savedLanguage = languages.FirstOrDefault(x => x.Key == languageKey).Value;
-        string savedCategory = PlayerPrefs.GetString("category", "");
+        int savedCategory = PlayerPrefs.GetInt("category", 0);
         int savedPinyin = PlayerPrefs.GetInt("pinyin", 1);
         int savedTranslation = PlayerPrefs.GetInt("translation", 1);
         int savedSpeak = PlayerPrefs.GetInt("speak", 1);
         PlayerPrefs.SetString("language", languageKey);
-        PlayerPrefs.SetString("category", savedCategory);
+        PlayerPrefs.SetInt("category", savedCategory);
         PlayerPrefs.SetInt("pinyin", savedPinyin);
         PlayerPrefs.SetInt("translation", savedTranslation);
         PlayerPrefs.SetInt("speak", savedSpeak);
+        PlayerPrefs.Save();
 
 
         // Set the dropdown value based on saved value
@@ -59,10 +61,9 @@ public class SettingsView : AppView
         {
             languageDropdown.value = savedIndex;
         }
-        savedIndex = categoryDropdown.options.FindIndex(option => option.text == savedCategory);
-        if (savedIndex != -1)
+        if (savedCategory != -1)
         {
-            categoryDropdown.value = savedIndex;
+            categoryDropdown.value = savedCategory;
         }
         pinyinToggle.isOn = savedPinyin == 1;
         translationToggle.isOn = savedTranslation == 1;
@@ -74,6 +75,10 @@ public class SettingsView : AppView
         pinyinToggle.onValueChanged.AddListener(OnPinyinChanged);
         translationToggle.onValueChanged.AddListener(OnTranslationChanged);
         speakToggle.onValueChanged.AddListener(OnSpeakChanged);
+        foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
+        {
+            translator.UpdateTranslation();
+        }
     }
 
     private void OnDestroy()
@@ -98,11 +103,11 @@ public class SettingsView : AppView
     public void OnCategoryChanged(int index)
     {
         // Get the selected value as a string
-        string selectedValue = HanziCategoryDB.Categories.FirstOrDefault(x => x.Key == categoryDropdown.options[index].text).Value.hanzi;
+        HanziCategory hanziCategory = HanziCategoryDB.Categories.FirstOrDefault(x => x.Key == index.ToString()).Value;
 
         // Save the selected value to PlayerPrefs
-        PlayerPrefs.SetString("hanzifilter", selectedValue);
-        PlayerPrefs.SetString("category", categoryDropdown.options[index].text);
+        PlayerPrefs.SetString("hanzifilter", hanziCategory.hanzi);
+        PlayerPrefs.SetInt("category", index);
         PlayerPrefs.Save(); // Ensure changes are saved to disk
     }
 
