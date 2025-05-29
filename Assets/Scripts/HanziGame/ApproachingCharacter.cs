@@ -44,8 +44,8 @@ public class ApproachingCharacter : MonoBehaviour
         {
             try
             {
-                Destroy(gameObject);
-                HanziSpawner.Instance.SpawnCharacter(true);
+                HanziCharacter character = GetComponent<HanziCharacter>();
+                character.OnFailed();
             }
             catch
             {

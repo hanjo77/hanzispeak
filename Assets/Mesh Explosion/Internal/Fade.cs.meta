@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4e454ea2b17a94571b53f80d5896520f
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+AssetOrigin:
+  serializedVersion: 1
+  productId: 5471
+  packageName: Mesh Explosion
+  packageVersion: 1.13
+  assetPath: Assets/Mesh Explosion/Internal/Fade.cs
+  uploadId: 350255

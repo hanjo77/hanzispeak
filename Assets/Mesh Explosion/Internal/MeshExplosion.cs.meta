@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5476b4f3924dd4abf92e557956cbbffd
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+AssetOrigin:
+  serializedVersion: 1
+  productId: 5471
+  packageName: Mesh Explosion
+  packageVersion: 1.13
+  assetPath: Assets/Mesh Explosion/Internal/MeshExplosion.cs
+  uploadId: 350255

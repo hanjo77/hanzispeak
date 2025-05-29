@@ -6,39 +6,32 @@ using UnityEngine.UIElements;
 
 public class HanziCharacter : MonoBehaviour
 {
-    public string hanziText; // Set in Inspector or spawner
+    public string hanziText;
+    public float fadeTime = 1.0f;
+    private bool isRecognized;
 
     public void OnRecognized()
     {
         // Visual/Audio feedback
-        HanziSpawner.Instance.SpawnCharacter(false);
+        isRecognized = true;
+        GetComponent<MeshExploder>().Explode();
         GameManager.Instance.PlayExplosion(transform);
-        StartCoroutine(FadeOutObject());
+        StartCoroutine(WaitForRespawn(false));
     }
 
-    public IEnumerator FadeOutObject()
+    public void OnFailed()
     {
-        // Get the mesh renderer of the object
-        MeshRenderer meshRenderer = gameObject.GetComponent<MeshRenderer>();
-
-        // Get the color value of the main material
-        Color color = meshRenderer.materials[0].color;
-
-        // While the color's alpha value is above 0
-        while (color.a > 0)
+        if (!isRecognized)
         {
-            // Reduce the color's alpha value
-            color.a -= 0.1f;
-
-            // Apply the modified color to the object's mesh renderer
-            meshRenderer.materials[0].color = color;
-
-            // Wait for the frame to update
-            yield return new WaitForEndOfFrame();
+            GameManager.Instance.PlayPinyinAudio("explosion");
+            StartCoroutine(WaitForRespawn(true));
         }
+    }
 
-        // If the material's color's alpha value is less than or equal to 0, end the coroutine
-        yield return new WaitUntil(() => meshRenderer.materials[0].color.a <= 0f);
-        Destroy(gameObject);
+    public IEnumerator WaitForRespawn(bool removeLive)
+    {
+        GetComponent<MeshRenderer>().enabled = false;
+        yield return new WaitForSecondsRealtime(2.5f);
+        HanziSpawner.Instance.SpawnCharacter(removeLive);
     }
 }

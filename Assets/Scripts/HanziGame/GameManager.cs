@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         hanziSpawnerInstance = Instantiate(hanziSpawner);
-
+        hanziSpawnerInstance.transform.parent = GetComponent<GameView>().transform;
         hanziSpawnerInstance.playerHead = playerHead;
         explosionClip.SetActive(false);
     }
@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
             );
         }
         explosionClip.SetActive(true);
+        PlayPinyinAudio("explosion-small");
         yield return new WaitForSecondsRealtime(explosionDuration);
         explosionClip.SetActive(false);
     }

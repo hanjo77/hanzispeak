@@ -150,8 +150,11 @@ public class HanziSpawner : MonoBehaviour
 
         // Add movement script
         newChar.AddComponent<ApproachingCharacter>().Init(playerHead, moveSpeed);
+        newChar.AddComponent<MeshFilter>();
+        newChar.AddComponent<MeshExploder>();
         activeHanzi = newChar.AddComponent<HanziCharacter>();
         activeHanzi.hanziText = prefab.name;
+        activeHanzi.transform.parent = transform;
     }
 
     private bool ValidateHanzi(string validationJson)
