@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections;
+using System.Threading;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,12 +12,14 @@ public class GameManager : MonoBehaviour
 
     [Header("Settings")]
     public HanziSpawner hanziSpawner;
-    public GameObject[] characterPrefabs; // Assign your 3D character models
+    public GameObject[] characterPrefabs;
     public TMP_Text translationTextField;
     public TMP_Text pinyinTextField;
     public TMP_Text scoreTextField;
     public TMP_Text livesTextField;
-    public Transform playerHead; // Assign XR Origin Camera
+    public GameObject explosionClip;
+    public float explosionDuration;
+    public Transform playerHead;
 
     // Singleton for easy access
     private HanziSpawner hanziSpawnerInstance;
@@ -24,7 +29,9 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         hanziSpawnerInstance = Instantiate(hanziSpawner);
+
         hanziSpawnerInstance.playerHead = playerHead;
+        explosionClip.SetActive(false);
     }
 
     public void StopGame()
@@ -64,5 +71,29 @@ public class GameManager : MonoBehaviour
         {
             UnityEngine.Debug.LogError(e);
         }
+    }
+
+    public void PlayExplosion(Transform transform)
+    {
+        StartCoroutine(explosionLoader(transform));
+    }
+
+    IEnumerator explosionLoader(Transform transform)
+    {
+        explosionClip.transform.parent = transform.parent;
+        explosionClip.transform.position = transform.position;
+        Renderer renderer = transform.GetComponent<Renderer>();
+        if (renderer != null)
+        {
+            Vector3 size = renderer.bounds.size;
+            explosionClip.transform.position = new Vector3(
+                transform.position.x + (size.x / 2),
+                transform.position.y + (size.y / 2),
+                transform.position.z + (size.z / 2)
+            );
+        }
+        explosionClip.SetActive(true);
+        yield return new WaitForSecondsRealtime(explosionDuration);
+        explosionClip.SetActive(false);
     }
 }
