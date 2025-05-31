@@ -18,6 +18,7 @@ public class SettingsView : AppView
 
     // Example dictionary
     private Dictionary<string, HanziCategory> categories;
+    private string needsPracticeIndex;
 
     private Dictionary<string, string> languages = new Dictionary<string, string>
     {
@@ -35,9 +36,9 @@ public class SettingsView : AppView
     void Start()
     {
         HanziCategoryDB.Initialize();
+        TranslationDB.Initialize();
 
-        categories = HanziCategoryDB.Categories;
-        categoryDropdown.AddOptions(categories.Keys.ToList());
+        UpdateCategories();
 
         int savedIndex;
         // Optionally load previously saved value from PlayerPrefs
@@ -81,6 +82,52 @@ public class SettingsView : AppView
         }
     }
 
+    public void ShowView()
+    {
+        base.ShowView();
+        UpdateCategories();
+    }
+
+    public void UpdateCategories()
+    {
+        categoryDropdown.options.Clear();
+        categories = HanziCategoryDB.Categories;
+        AddNeedsPracticeOption(PlayerPrefs.GetString("failedHanzi"));
+        categoryDropdown.AddOptions(categories.Keys.ToList());
+        foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
+        {
+            translator.UpdateTranslation();
+        }
+    }
+
+    private void AddNeedsPracticeOption(string failedChars)
+    {
+        UnityEngine.Debug.Log(failedChars);
+        if (string.IsNullOrEmpty(failedChars)) {
+            if (needsPracticeIndex != "" && HanziCategoryDB.Categories.ContainsKey(needsPracticeIndex))
+            {
+                HanziCategoryDB.Categories.Remove(needsPracticeIndex);
+            }
+            return;
+        }
+        HanziCategory needsPractice = new HanziCategory();
+        HanziTranslations translations = new HanziTranslations();
+        string translationKey = "needsPractice";
+        Translation needsPracticeTranslation = TranslationDB.GetTranslations(translationKey);
+        translations.de = needsPracticeTranslation.de;
+        translations.en = needsPracticeTranslation.en;
+        translations.fr = needsPracticeTranslation.fr;
+        translations.it = needsPracticeTranslation.it;
+        translations.es = needsPracticeTranslation.es;
+        translations.ja = needsPracticeTranslation.ja;
+        translations.ko = needsPracticeTranslation.ko;
+        translations.ru = needsPracticeTranslation.ru;
+        needsPractice.hanzi = PlayerPrefs.GetString("failedHanzi");
+        needsPractice.title = translations;
+        needsPracticeIndex = HanziCategoryDB.Categories.Count.ToString();
+        HanziCategoryDB.Categories.Add(needsPracticeIndex, needsPractice);
+    }
+
     private void OnDestroy()
     {
         PlayerPrefs.Save();
@@ -105,8 +152,17 @@ public class SettingsView : AppView
         // Get the selected value as a string
         HanziCategory hanziCategory = HanziCategoryDB.Categories.FirstOrDefault(x => x.Key == index.ToString()).Value;
 
+        PlayerPrefs.SetInt("needsPractice", 0);
+        if (hanziCategory.title.en == "Needs Practice")
+        {
+            PlayerPrefs.SetInt("needsPractice", 1);
+            PlayerPrefs.SetString("hanzifilter", PlayerPrefs.GetString("failedHanzi"));
+        }
+        else
+        {
+            PlayerPrefs.SetString("hanzifilter", hanziCategory.hanzi);
+        }
         // Save the selected value to PlayerPrefs
-        PlayerPrefs.SetString("hanzifilter", hanziCategory.hanzi);
         PlayerPrefs.SetInt("category", index);
         PlayerPrefs.Save(); // Ensure changes are saved to disk
     }

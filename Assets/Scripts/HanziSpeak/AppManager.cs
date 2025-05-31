@@ -12,6 +12,10 @@ public class AppManager : MonoBehaviour
     public SettingsView settingsView;
     public GameOverView gameOverView;
 
+    [Header("Elements")]
+    public GameObject uiBackground;
+
+
 
     private void Awake()
     {
@@ -29,6 +33,7 @@ public class AppManager : MonoBehaviour
     public void PlayView()
     {
         HideAllViews();
+        uiBackground.SetActive(false);
         gameView.ShowView();
     }
 
@@ -38,9 +43,10 @@ public class AppManager : MonoBehaviour
         settingsView.ShowView();
     }
 
-    public void GameOverView(int score)
+    public void GameOverView(bool isCompleted = false)
     {
         HideAllViews();
+        gameOverView.ChooseKeys(isCompleted);
         gameOverView.ShowView();
     }
 
@@ -50,5 +56,6 @@ public class AppManager : MonoBehaviour
         gameView.HideView();
         settingsView.HideView();
         gameOverView.HideView();
+        uiBackground.SetActive(true);
     }
 }

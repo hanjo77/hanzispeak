@@ -14,10 +14,7 @@ public class HanziCharacter : MonoBehaviour
     public void OnRecognized()
     {
         // Visual/Audio feedback
-        if (!GameManager.Instance.successfulHanzi.Contains(hanziText))
-        {
-            GameManager.Instance.successfulHanzi += hanziText;
-        }
+        GameManager.Instance.AddSuccessChar(hanziText);
         isRecognized = true;
         GetComponent<MeshExploder>().Explode();
         GameManager.Instance.VibrateControllers(.5f, .1f);
@@ -29,10 +26,7 @@ public class HanziCharacter : MonoBehaviour
     {
         if (!isRecognized && !hasFailed)
         {
-            if (!GameManager.Instance.failedHanzi.Contains(hanziText))
-            {
-                GameManager.Instance.failedHanzi += hanziText;
-            }
+            GameManager.Instance.AddFailedChar(hanziText);
             GameManager.Instance.VibrateControllers(1f, .5f);
             GameManager.Instance.PlayPinyinAudio("explosion");
             StartCoroutine(WaitForRespawn(true));

@@ -20,7 +20,7 @@
     "ru": "Произноси китайские иероглифы до того, как они тебя достигнут!"
   },
   "startButton": {
-    "en": "Start",
+    "en": "Let's go!'",
     "de": "Los geht’s",
     "fr": "Allons-y!",
     "it": "Inizia",
@@ -109,7 +109,7 @@
     "ko": "목숨",
     "ru": "Жизни"
   },
-  "thankYou": {
+  "gameOverTitle": {
     "cn": "感谢游玩！",
     "en": "Thank you for playing!",
     "de": "Danke fürs Spielen!",
@@ -120,7 +120,7 @@
     "ko": "플레이해 주셔서 감사합니다!",
     "ru": "Спасибо за игру!"
   },
-  "pointsAchieved": {
+  "gameOverText": {
     "cn": "你获得了总计 {points} 分",
     "en": "You achieved a total of {points} points",
     "de": "Du hast insgesamt {points} Punkte erreicht",
@@ -130,6 +130,28 @@
     "ja": "合計 {points} ポイント獲得しました",
     "ko": "총 {points}점을 달성하셨습니다",
     "ru": "Вы набрали всего {points} очков"
+  },
+  "completeTitle": {
+    "en": "Well Done!",
+    "de": "Gut gemacht!",
+    "fr": "Bravo !",
+    "it": "Ben fatto!",
+    "es": "¡Bien hecho!",
+    "ja": "おめでとう！",
+    "ko": "잘 하셨습니다!",
+    "ru": "Отлично!",
+    "cn": "干得好！"
+  },
+  "completeText": {
+    "en": "You’ve mastered this category!",
+    "de": "Du hast diese Kategorie gemeistert!",
+    "fr": "Vous avez maîtrisé cette catégorie !",
+    "it": "Hai padroneggiato questa categoria!",
+    "es": "¡Has dominado esta categoría!",
+    "ja": "このカテゴリをマスターしました！",
+    "ko": "이 카테고리를 완벽히 마스터했어요!",
+    "ru": "Вы освоили эту категорию!",
+    "cn": "你已掌握这个类别！"
   },
   "retryButton": {
     "cn": "再试一次",

@@ -6,7 +6,7 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class Translator : MonoBehaviour
 {
-    [SerializeField] private string translationKey;
+    [SerializeField] public string TranslationKey;
     [SerializeField] private TMP_Text textField;
     [SerializeField] private TMP_Dropdown dropDown;
 
@@ -22,12 +22,18 @@ public class Translator : MonoBehaviour
     {
         if (textField != null)
         {
-            textField.text = TranslationDB.GetTranslations(translationKey).GetTranslationString();
-            if (textField.text.Contains("{points}"))
+            try
             {
-                StringBuilder builder = new StringBuilder(textField.text);
-                builder.Replace("{points}", GameManager.Instance.scoreTextField.text);
-                textField.text = builder.ToString();
+                textField.text = TranslationDB.GetTranslations(TranslationKey).GetTranslationString();
+                if (textField.text.Contains("{points}"))
+                {
+                    StringBuilder builder = new StringBuilder(textField.text);
+                    builder.Replace("{points}", GameManager.Instance.scoreTextField.text);
+                    textField.text = builder.ToString();
+                }
+            }
+            catch {
+                UnityEngine.Debug.Log($"Failed to get translations for {TranslationKey}");
             }
         }
         if (dropDown != null)

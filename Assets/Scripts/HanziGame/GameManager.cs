@@ -4,6 +4,7 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.TextCore.Text;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 
 public class GameManager : MonoBehaviour
@@ -83,13 +84,46 @@ public class GameManager : MonoBehaviour
 
     public void ShakeCamera()
     {
-        UnityEngine.Debug.Log("Start in gamemanager");
         GetComponent<CameraShake>().StartShake();
     }
 
     public void PlayExplosion(Transform transform)
     {
         StartCoroutine(explosionLoader(transform));
+    }
+
+    public void AddSuccessChar(string text)
+    {
+        if (!GameManager.Instance.successfulHanzi.Contains(text))
+        {
+            GameManager.Instance.successfulHanzi += text;
+        }
+        if (GameManager.Instance.failedHanzi.Contains(text))
+        {
+            GameManager.Instance.failedHanzi = GameManager.Instance.failedHanzi.Replace(text, string.Empty);
+        }
+        UpdateLearnedChars();
+    }
+
+    public void AddFailedChar(string text)
+    {
+
+        if (!GameManager.Instance.failedHanzi.Contains(text))
+        {
+            GameManager.Instance.failedHanzi += text;
+        }
+        if (GameManager.Instance.successfulHanzi.Contains(text))
+        {
+            GameManager.Instance.successfulHanzi = GameManager.Instance.successfulHanzi.Replace(text, string.Empty);
+        }
+        UpdateLearnedChars();
+    }
+
+    private void UpdateLearnedChars()
+    {
+        PlayerPrefs.SetString("failedHanzi", GameManager.Instance.failedHanzi);
+        PlayerPrefs.SetString("successfulHanzi", GameManager.Instance.successfulHanzi);
+        PlayerPrefs.Save();
     }
 
     public void VibrateControllers(float amplitude, float duration)

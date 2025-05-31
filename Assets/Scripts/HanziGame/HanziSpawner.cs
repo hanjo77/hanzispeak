@@ -35,7 +35,7 @@ public class HanziSpawner : MonoBehaviour
 
     public List<GameObject> filteredCharacters;
 
-    private int score;
+    private int score = 0;
     private int currentLives;
     private bool isPlaying;
     private int activeFilterIndex;
@@ -76,13 +76,13 @@ public class HanziSpawner : MonoBehaviour
     {
         if (ValidateHanzi(jsonResult))
         {
-            GameManager.Instance.SetScore(score++);
+            GameManager.Instance.SetScore(++score);
             filteredCharacters.RemoveAt(activeFilterIndex);
+            activeHanzi.OnRecognized();
             if (filteredCharacters.Count <= 0)
             {
-                GenerateFilteredCharacters();
+                AppManager.Instance.GameOverView(true);
             }
-            activeHanzi.OnRecognized();
         }
     }
 
@@ -97,7 +97,7 @@ public class HanziSpawner : MonoBehaviour
             currentLives--;
             if (currentLives < 0)
             {
-                AppManager.Instance.GameOverView(score);
+                AppManager.Instance.GameOverView(false);
                 return;
             }
             else
