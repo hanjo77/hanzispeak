@@ -4,6 +4,7 @@ using System.Threading;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,11 +21,17 @@ public class GameManager : MonoBehaviour
     public GameObject explosionClip;
     public float explosionDuration;
     public Transform playerHead;
+    public HapticImpulsePlayer leftController;
+    public HapticImpulsePlayer rightController;
+    public string failedHanzi;
+    public string successfulHanzi;
 
     // Singleton for easy access
     private HanziSpawner hanziSpawnerInstance;
 
-    void Awake() => Instance = this;
+    void Awake () {
+        Instance = this;
+    }
 
     public void StartGame()
     {
@@ -65,7 +72,8 @@ public class GameManager : MonoBehaviour
         try
         {
             AudioClip clip = Resources.Load<AudioClip>($"Audio/{pinyin}");
-            AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position);
+            float volume = pinyin.Length > 1 ? .6f : 1.0f;
+            AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, volume);
         }
         catch (Exception e)
         {
@@ -73,9 +81,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ShakeCamera()
+    {
+        UnityEngine.Debug.Log("Start in gamemanager");
+        GetComponent<CameraShake>().StartShake();
+    }
+
     public void PlayExplosion(Transform transform)
     {
         StartCoroutine(explosionLoader(transform));
+    }
+
+    public void VibrateControllers(float amplitude, float duration)
+    {
+        leftController.SendHapticImpulse(amplitude, duration);
+        rightController.SendHapticImpulse(amplitude, duration);
     }
 
     IEnumerator explosionLoader(Transform transform)

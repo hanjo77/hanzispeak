@@ -97,7 +97,7 @@ public class HanziSpawner : MonoBehaviour
             currentLives--;
             if (currentLives < 0)
             {
-                AppManager.Instance.StartView();
+                AppManager.Instance.GameOverView(score);
                 return;
             }
             else
@@ -150,7 +150,6 @@ public class HanziSpawner : MonoBehaviour
 
         // Add movement script
         newChar.AddComponent<ApproachingCharacter>().Init(playerHead, moveSpeed);
-        newChar.AddComponent<MeshFilter>();
         newChar.AddComponent<MeshExploder>();
         activeHanzi = newChar.AddComponent<HanziCharacter>();
         activeHanzi.hanziText = prefab.name;

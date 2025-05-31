@@ -108,5 +108,60 @@
     "ja": "ライフ",
     "ko": "목숨",
     "ru": "Жизни"
+  },
+  "thankYou": {
+    "cn": "感谢游玩！",
+    "en": "Thank you for playing!",
+    "de": "Danke fürs Spielen!",
+    "fr": "Merci d'avoir joué !",
+    "it": "Grazie per aver giocato!",
+    "es": "¡Gracias por jugar!",
+    "ja": "プレイありがとうございます！",
+    "ko": "플레이해 주셔서 감사합니다!",
+    "ru": "Спасибо за игру!"
+  },
+  "pointsAchieved": {
+    "cn": "你获得了总计 {points} 分",
+    "en": "You achieved a total of {points} points",
+    "de": "Du hast insgesamt {points} Punkte erreicht",
+    "fr": "Vous avez obtenu un total de {points} points",
+    "it": "Hai ottenuto un totale di {points} punti",
+    "es": "Has conseguido un total de {points} puntos",
+    "ja": "合計 {points} ポイント獲得しました",
+    "ko": "총 {points}점을 달성하셨습니다",
+    "ru": "Вы набрали всего {points} очков"
+  },
+  "retryButton": {
+    "cn": "再试一次",
+    "en": "Retry",
+    "de": "Erneut versuchen",
+    "fr": "Réessayer",
+    "it": "Riprova",
+    "es": "Reintentar",
+    "ja": "再挑戦",
+    "ko": "다시 시도",
+    "ru": "Повторить"
+  },
+  "homeButton": {
+    "cn": "主界面",
+    "en": "Home",
+    "de": "Hauptmenü",
+    "fr": "Menu principal",
+    "it": "Menu principale",
+    "es": "Menú principal",
+    "ja": "ホーム",
+    "ko": "홈",
+    "ru": "Главное меню"
+  },
+  "needsPractice": {
+    "cn": "需练习的字",
+    "en": "Needs Practice",
+    "de": "Übungsbedarf",
+    "fr": "À perfectionner",
+    "it": "Da praticare",
+    "es": "Necesita práctica",
+    "ja": "練習が必要",
+    "ko": "연습 필요",
+    "ru": "Требует практики"
   }
 }

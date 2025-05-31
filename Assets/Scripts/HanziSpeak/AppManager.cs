@@ -10,6 +10,7 @@ public class AppManager : MonoBehaviour
     public StartView startView;
     public GameView gameView;
     public SettingsView settingsView;
+    public GameOverView gameOverView;
 
 
     private void Awake()
@@ -37,10 +38,17 @@ public class AppManager : MonoBehaviour
         settingsView.ShowView();
     }
 
+    public void GameOverView(int score)
+    {
+        HideAllViews();
+        gameOverView.ShowView();
+    }
+
     private void HideAllViews()
     {
         startView.HideView();
         gameView.HideView();
         settingsView.HideView();
+        gameOverView.HideView();
     }
 }

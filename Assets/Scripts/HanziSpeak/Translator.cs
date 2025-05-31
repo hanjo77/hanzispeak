@@ -1,6 +1,8 @@
 using System;
+using System.Text;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Translator : MonoBehaviour
 {
@@ -18,7 +20,16 @@ public class Translator : MonoBehaviour
     }
     public void UpdateTranslation()
     {
-        if (textField != null) textField.text = TranslationDB.GetTranslations(translationKey).GetTranslationString();
+        if (textField != null)
+        {
+            textField.text = TranslationDB.GetTranslations(translationKey).GetTranslationString();
+            if (textField.text.Contains("{points}"))
+            {
+                StringBuilder builder = new StringBuilder(textField.text);
+                builder.Replace("{points}", GameManager.Instance.scoreTextField.text);
+                textField.text = builder.ToString();
+            }
+        }
         if (dropDown != null)
         {
             for (int index = 0; index < dropDown.options.Count; index++) 
