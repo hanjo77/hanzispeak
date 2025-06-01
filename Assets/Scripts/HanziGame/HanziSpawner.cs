@@ -26,7 +26,7 @@ public class HanziSpawner : MonoBehaviour
     public static HanziSpawner Instance;
 
     // Track active characters
-    private HanziCharacter activeHanzi;
+    public HanziCharacter ActiveHanzi;
     private Coroutine checkRoutine;
 
     public List<GameObject> filteredCharacters;
@@ -55,24 +55,23 @@ public class HanziSpawner : MonoBehaviour
 
     void OnDestroy()
     {
-        if (activeHanzi)
+        if (ActiveHanzi)
         {
-            Destroy(activeHanzi.gameObject);
+            Destroy(ActiveHanzi.gameObject);
         }
         if (isPlaying)
         {
             isPlaying = false;
         }
-        UnityEngine.Debug.Log("Spawner StopGame");
     }
 
-    public void OnWhisperResult(string jsonResult)
+    public void OnWhisperResult(bool success)
     {
-        if (ValidateHanzi(jsonResult))
+        if (success)
         {
             GameManager.Instance.SetScore(++score);
             filteredCharacters.RemoveAt(activeFilterIndex);
-            activeHanzi.OnRecognized();
+            ActiveHanzi.OnRecognized();
             if (filteredCharacters.Count <= 0)
             {
                 AppManager.Instance.GameOverView(true);
@@ -100,9 +99,9 @@ public class HanziSpawner : MonoBehaviour
             }
         }
         // Random position in front arc
-        if (activeHanzi)
+        if (ActiveHanzi)
         {
-            Destroy(activeHanzi.gameObject);
+            Destroy(ActiveHanzi.gameObject);
         }
         float randomAngle = UnityEngine.Random.Range(minAngle, maxAngle);
         Vector3 spawnDir = Quaternion.Euler(0, randomAngle, 0) * playerHead.forward;
@@ -136,6 +135,8 @@ public class HanziSpawner : MonoBehaviour
             UnityEngine.Debug.Log($"Hanzi for {prefab.name} not found");
         }
 
+        HanziWhisperer.Instance.hanziSpawner = this;
+        HanziWhisperer.Instance.currentChar = prefab.name;
         newChar.transform.localScale = new Vector3(100, 100, 100);
         if (PlayerPrefs.GetInt("speak") > 0)
         {
@@ -145,40 +146,9 @@ public class HanziSpawner : MonoBehaviour
         // Add movement script
         newChar.AddComponent<ApproachingCharacter>().Init(playerHead, moveSpeed);
         newChar.AddComponent<MeshExploder>();
-        activeHanzi = newChar.AddComponent<HanziCharacter>();
-        activeHanzi.hanziText = prefab.name;
-        activeHanzi.transform.parent = transform;
-    }
-
-    private bool ValidateHanzi(string validationJson)
-    {
-        Regex HanziRegex = new Regex(@"[\u4e00-\u9fff]+");
-
-        TextAsset jsonFile = Resources.Load<TextAsset>("Text/hanziPinyin");
-        if (jsonFile == null)
-        {
-            UnityEngine.Debug.LogError("Pinyin database not found!");
-            return false;
-        }
-        Dictionary<string, List<string>> pinyinData = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(jsonFile.text);
-        string currentHanzi = HanziRegex.Matches(activeHanzi.name).First().Value;
-        string currentPinyin = pinyinData.FirstOrDefault(x => x.Value.Contains(currentHanzi)).Key;
-
-        MatchCollection matches = HanziRegex.Matches(validationJson);
-
-        foreach (Match match in matches)
-        {
-            string matchPinyin = pinyinData.FirstOrDefault(x => x.Value.Contains(match.Value)).Key;
-
-            UnityEngine.Debug.Log($"... trying {matchPinyin} for {currentPinyin}");
-            if (matchPinyin == currentPinyin)
-            {
-                UnityEngine.Debug.Log($"... with SUCCESS!!!");
-                return true;
-            }
-        }
-
-        return false;
+        ActiveHanzi = newChar.AddComponent<HanziCharacter>();
+        ActiveHanzi.hanziText = prefab.name;
+        ActiveHanzi.transform.parent = transform;
     }
 
     private void GenerateFilteredCharacters()

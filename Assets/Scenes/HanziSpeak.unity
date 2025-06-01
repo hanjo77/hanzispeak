@@ -1150,7 +1150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8697337694165207079, guid: 4d28f6590e91f644e9731292f51c4f2c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 35.73
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697337694165207079, guid: 4d28f6590e91f644e9731292f51c4f2c, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1897,6 +1897,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 344933013}
+  - component: {fileID: 344933016}
+  - component: {fileID: 344933015}
+  - component: {fileID: 344933014}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -1923,6 +1926,84 @@ Transform:
   - {fileID: 310988241}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &344933014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344933012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bc03a4c19604ea394e364f8fc632928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLengthSec: 1
+  loop: 1
+  frequency: 16000
+  chunksLengthSec: 0.5
+  echo: 1
+  useVad: 1
+  vadUpdateRateSec: 0.5
+  vadContextSec: 1
+  vadLastSec: 0.5
+  vadThd: 0.05
+  vadFreqThd: 20
+  vadIndicatorImage: {fileID: 0}
+  vadStop: 1
+  dropVadPart: 1
+  vadStopTime: 1
+  microphoneDropdown: {fileID: 0}
+  microphoneDefaultLabel: Default microphone
+--- !u!114 &344933015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344933012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9370225a2ca94276b870d5f87b0db55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logLevel: 1
+  modelPath: Whisper/ggml-tiny.bin
+  isModelPathInStreamingAssets: 1
+  initOnAwake: 1
+  useGpu: 1
+  flashAttention: 0
+  language: zh
+  translateToEnglish: 0
+  strategy: 1
+  noContext: 0
+  singleSegment: 1
+  enableTokens: 1
+  initialPrompt: 
+  stepSec: 1
+  keepSec: 0.5
+  lengthSec: 2
+  updatePrompt: 0
+  dropOldBuffer: 1
+  useVad: 1
+  tokensTimestamps: 0
+  audioCtx: 0
+--- !u!114 &344933016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344933012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e2f56236ca2954d85d09755d5cbab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentChar: 
+  hanziSpawner: {fileID: 0}
+  whisper: {fileID: 344933015}
+  microphoneRecord: {fileID: 344933014}
 --- !u!1 &374505498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,11 +3005,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c02a229c3edb1d44ab26e779900d6e53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.6729999
+      value: 4.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c02a229c3edb1d44ab26e779900d6e53, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.01
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c02a229c3edb1d44ab26e779900d6e53, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10128,8 +10209,6 @@ GameObject:
   - component: {fileID: 1887854817}
   - component: {fileID: 1887854819}
   - component: {fileID: 1887854820}
-  - component: {fileID: 1887854821}
-  - component: {fileID: 1887854822}
   m_Layer: 0
   m_Name: GameView
   m_TagString: Untagged
@@ -10192,8 +10271,6 @@ MonoBehaviour:
   rightController: {fileID: 1731105066}
   failedHanzi: 
   successfulHanzi: 
-  whisper: {fileID: 1887854821}
-  microphoneRecord: {fileID: 1887854822}
 --- !u!82 &1887854819
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10307,68 +10384,6 @@ MonoBehaviour:
   shakeDuration: 0.5
   shakeIntensity: 0.1
   rotationShakeScale: 0.1
---- !u!114 &1887854821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887854814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9370225a2ca94276b870d5f87b0db55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  logLevel: 1
-  modelPath: Whisper/ggml-tiny.bin
-  isModelPathInStreamingAssets: 1
-  initOnAwake: 1
-  useGpu: 0
-  flashAttention: 0
-  language: cn
-  translateToEnglish: 0
-  strategy: 0
-  noContext: 1
-  singleSegment: 1
-  enableTokens: 0
-  initialPrompt: 
-  stepSec: 3
-  keepSec: 0.2
-  lengthSec: 10
-  updatePrompt: 1
-  dropOldBuffer: 0
-  useVad: 1
-  tokensTimestamps: 0
-  audioCtx: 0
---- !u!114 &1887854822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887854814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bc03a4c19604ea394e364f8fc632928, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxLengthSec: 1
-  loop: 1
-  frequency: 16000
-  chunksLengthSec: 0.5
-  echo: 1
-  useVad: 1
-  vadUpdateRateSec: 0.1
-  vadContextSec: 30
-  vadLastSec: 1.25
-  vadThd: 1
-  vadFreqThd: 100
-  vadIndicatorImage: {fileID: 0}
-  vadStop: 0
-  dropVadPart: 1
-  vadStopTime: 3
-  microphoneDropdown: {fileID: 0}
-  microphoneDefaultLabel: Default microphone
 --- !u!1 &1904110404
 GameObject:
   m_ObjectHideFlags: 0
@@ -10686,7 +10701,7 @@ Transform:
   m_GameObject: {fileID: 1980880506}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.9539999, z: -1.4599996}
+  m_LocalPosition: {x: 0, y: 2.361, z: 4.650001}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:

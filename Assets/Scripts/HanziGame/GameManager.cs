@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections;
-using System.Threading;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.TextCore.Text;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
-using Whisper;
-using Whisper.Utils;
-using static UnityEngine.Rendering.HableCurve;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,9 +23,6 @@ public class GameManager : MonoBehaviour
     public HapticImpulsePlayer rightController;
     public string failedHanzi;
     public string successfulHanzi;
-    public WhisperManager whisper;
-    public MicrophoneRecord microphoneRecord;
-    private WhisperStream _stream;
 
     // Singleton for easy access
     private HanziSpawner hanziSpawnerInstance;
@@ -44,43 +35,10 @@ public class GameManager : MonoBehaviour
     public void Init()
     {
         this.Awake();
-        Start();
-    }
-
-    private async void Start()
-    {
-        _stream = await whisper.CreateStream(microphoneRecord);
-        _stream.OnResultUpdated += OnResult;
-        _stream.OnSegmentUpdated += OnSegmentUpdated;
-        _stream.OnSegmentFinished += OnSegmentFinished; ;
-        _stream.OnStreamFinished += OnStreamFinished;
-    }
-
-    private void OnResult(string result)
-    {
-        hanziSpawnerInstance.OnWhisperResult(result);
-        UnityEngine.Debug.Log($"whisper result: {result}");
-    }
-    private void OnSegmentUpdated(WhisperResult segment)
-    {
-        hanziSpawnerInstance.OnWhisperResult(segment.Result);
-        UnityEngine.Debug.Log($"whisper segment updated: {segment.Result}");
-    }
-    private void OnSegmentFinished(WhisperResult segment)
-    {
-        hanziSpawnerInstance.OnWhisperResult(segment.Result);
-        UnityEngine.Debug.Log($"Segment finished: {segment.Result}");
-    }
-    private void OnStreamFinished(string finalResult)
-    {
-        hanziSpawnerInstance.OnWhisperResult(finalResult);
-        UnityEngine.Debug.Log($"whisper final result: {finalResult}");
     }
 
     public void StartGame()
     {
-        _stream.StartStream();
-        microphoneRecord.StartRecord();
         hanziSpawnerInstance = Instantiate(hanziSpawner);
         hanziSpawnerInstance.transform.parent = GetComponent<GameView>().transform;
         hanziSpawnerInstance.playerHead = playerHead;

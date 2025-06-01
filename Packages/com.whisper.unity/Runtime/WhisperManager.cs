@@ -40,7 +40,7 @@ namespace Whisper
 
         [Header("Language")] 
         [Tooltip("Output text language. Use empty or \"auto\" for auto-detection.")]
-        public string language = "cn";
+        public string language = "zh";
 
         [Tooltip("Force output text to English translation. Improves translation quality.")]
         public bool translateToEnglish;
