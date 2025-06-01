@@ -25,10 +25,6 @@ public class HanziSpawner : MonoBehaviour
     // Singleton for easy access
     public static HanziSpawner Instance;
 
-    // Assign in Inspector
-    public VoskSpeechToText voskEngine;
-    public float checkInterval = 1.5f;
-
     // Track active characters
     private HanziCharacter activeHanzi;
     private Coroutine checkRoutine;
@@ -49,7 +45,6 @@ public class HanziSpawner : MonoBehaviour
         UnityEngine.Debug.Log("StartGame");
         HanziDB.Initialize();
         isPlaying = true;
-        voskEngine.OnTranscriptionResult = OnVoiceInput;
         score = 0;
         currentLives = lives;
         GameManager.Instance.SetLives(currentLives);
@@ -66,13 +61,12 @@ public class HanziSpawner : MonoBehaviour
         }
         if (isPlaying)
         {
-            voskEngine.OnTranscriptionResult = null;
             isPlaying = false;
         }
         UnityEngine.Debug.Log("Spawner StopGame");
     }
 
-    void OnVoiceInput(string jsonResult)
+    public void OnWhisperResult(string jsonResult)
     {
         if (ValidateHanzi(jsonResult))
         {

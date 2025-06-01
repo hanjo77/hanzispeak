@@ -5,6 +5,11 @@ public class GameView : AppView
 {
     public GameObject hanziInfo;
 
+    private void Awake()
+    {
+        GameManager.Instance.Init();
+    }
+
     public override void ShowView()
     {
         base.ShowView();

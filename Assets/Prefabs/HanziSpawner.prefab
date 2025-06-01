@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 4826630445614569978}
   - component: {fileID: 5263773971317729979}
   - component: {fileID: 6135578393460541853}
-  - component: {fileID: 2671627207551644193}
-  - component: {fileID: 3214823855955064492}
   m_Layer: 0
   m_Name: HanziSpawner
   m_TagString: Untagged
@@ -499,7 +497,6 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: d1b99af9901e62c43a0048fd4b6cc7d0, type: 3}
   - {fileID: 919132149155446097, guid: 8e4611ed619398e4691e1740c3f492e8, type: 3}
   - {fileID: 919132149155446097, guid: 33cd09c0f6138514c8c972d27d11f989, type: 3}
-  explosionClip: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
   playerHead: {fileID: 0}
   spawnDistance: 1000
   moveSpeed: 120
@@ -507,7 +504,7 @@ MonoBehaviour:
   minAngle: 0
   maxAngle: 0
   lives: 2
-  voskEngine: {fileID: 2671627207551644193}
+  voskEngine: {fileID: 0}
   checkInterval: 1
   filteredCharacters: []
 --- !u!114 &6135578393460541853
@@ -523,37 +520,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buttonAction: {fileID: 7755813758095364831, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!114 &2671627207551644193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6307675216817845718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f217616079a9a74489a1ae3cd9178787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ModelPath: vosk-model-small-cn-0.22.zip
-  VoiceProcessor: {fileID: 3214823855955064492}
-  MaxAlternatives: 200
-  MaxRecordLength: 1
-  AutoStart: 1
-  KeyPhrases: []
---- !u!114 &3214823855955064492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6307675216817845718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf39116cc6db44d47b2eaf534e0f6682, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MicrophoneIndex: 0
-  _minimumSpeakingSampleValue: 0.05
-  _silenceTimer: 1
-  _autoDetect: 0
