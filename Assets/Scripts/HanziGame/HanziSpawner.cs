@@ -162,6 +162,8 @@ public class HanziSpawner : MonoBehaviour
     {
         Regex HanziRegex = new Regex(@"[\u4e00-\u9fff]+");
 
+        wrongGuesses = new List<string>();
+
         TextAsset jsonFile = Resources.Load<TextAsset>("Text/hanziPinyin");
         if (jsonFile == null)
         {
@@ -227,7 +229,7 @@ public class HanziSpawner : MonoBehaviour
         if (pinyin == null || targetPinyin == null) return false;
         if (pinyin.Length < targetPinyin.Length) return false;
 
-        for (int i = 0; i < targetPinyin.Length; ++i)
+        for (int i = 0; i < pinyin.Length; ++i)
         {
             if (targetPinyin.IndexOf(pinyin[i]) > -1)
             {
@@ -240,7 +242,7 @@ public class HanziSpawner : MonoBehaviour
 
     private static bool IsPinyinFairlyRepresented(string targetPinyin, IEnumerable<string> guesses)
     {
-        if (string.IsNullOrWhiteSpace(targetPinyin) || targetPinyin.Length < 2 || targetPinyin.Length > 3)
+        if (string.IsNullOrWhiteSpace(targetPinyin) || targetPinyin.Length < 2)
             return false;
 
         bool[] matches = new bool[targetPinyin.Length];
@@ -253,7 +255,7 @@ public class HanziSpawner : MonoBehaviour
                 continue;
             for (int charCounter = 0; charCounter < targetPinyin.Length; ++charCounter)
             {
-                if (guess.Contains(targetPinyin[charCounter]))
+                if (guess.Length > charCounter && guess[charCounter] == (targetPinyin[charCounter]))
                 {
                     matches[charCounter] = true;
                     continue;
