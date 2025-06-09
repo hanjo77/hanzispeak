@@ -195,12 +195,11 @@ public class HanziSpawner : MonoBehaviour
         }
         if (IsPinyinFairlyRepresented(currentPinyin, wrongGuesses))
         {
-            GetComponent<FlyInPinyin>().Fly(currentPinyin, true, playerHead.transform, activeHanzi);
             return true;
         }
         foreach (string wrongGuess in wrongGuesses)
         {
-            if (IsSomehowValid(wrongGuess, currentPinyin))
+            if (true || IsSomehowValid(wrongGuess, currentPinyin))
             {
                 GetComponent<FlyInPinyin>().Fly(wrongGuess, false, playerHead.transform, activeHanzi);
             }
@@ -226,9 +225,9 @@ public class HanziSpawner : MonoBehaviour
     private bool IsSomehowValid(string pinyin, string targetPinyin)
     {
         if (pinyin == null || targetPinyin == null) return false;
-        if (pinyin.Length != targetPinyin.Length) return false;
+        if (pinyin.Length < targetPinyin.Length) return false;
 
-        for (int i = 0; i < pinyin.Length; ++i)
+        for (int i = 0; i < targetPinyin.Length; ++i)
         {
             if (targetPinyin.IndexOf(pinyin[i]) > -1)
             {
@@ -241,31 +240,36 @@ public class HanziSpawner : MonoBehaviour
 
     private static bool IsPinyinFairlyRepresented(string targetPinyin, IEnumerable<string> guesses)
     {
-        if (string.IsNullOrWhiteSpace(targetPinyin) || targetPinyin.Length < 2)
+        if (string.IsNullOrWhiteSpace(targetPinyin) || targetPinyin.Length < 2 || targetPinyin.Length > 3)
             return false;
 
-        char firstChar = targetPinyin[0];
-        char lastChar = targetPinyin[targetPinyin.Length - 1];
-        int length = targetPinyin.Length;
-
-        bool foundFirstChar = false;
-        bool foundLastChar = false;
-
-        foreach (var guess in guesses)
+        bool[] matches = new bool[targetPinyin.Length];
+        for (int guessCounter = 0; guessCounter < guesses.Count(); ++guessCounter)
         {
-            if (guess == null || guess.Length != length || guess == targetPinyin)
-                continue;
-
-            if (guess[0] == firstChar)
-                foundFirstChar = true;
-
-            if (guess[guess.Length - 1] == lastChar)
-                foundLastChar = true;
-
-            if (foundFirstChar && foundLastChar)
+            string guess = guesses.ElementAt(guessCounter);
+            if (guess == targetPinyin)
                 return true;
+            if (guess == null || guess.Length != targetPinyin.Length)
+                continue;
+            for (int charCounter = 0; charCounter < targetPinyin.Length; ++charCounter)
+            {
+                if (targetPinyin.Contains(targetPinyin[charCounter]))
+                {
+                    matches[charCounter] = true;
+                    continue;
+                }
+                else
+                    return false;
+            }
+            return true;
         }
-
-        return false;
+        for (int matchCount = 0; matchCount < matches.Length; ++matchCount)
+        {
+            if (!matches[matchCount])
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

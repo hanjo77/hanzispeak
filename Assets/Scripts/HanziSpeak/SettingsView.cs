@@ -104,10 +104,15 @@ public class SettingsView : AppView
     {
         UnityEngine.Debug.Log(failedChars);
         if (string.IsNullOrEmpty(failedChars)) {
+            UnityEngine.Debug.Log($"needs practice index: {needsPracticeIndex}");
             if (needsPracticeIndex != null && HanziCategoryDB.Categories.ContainsKey(needsPracticeIndex))
             {
                 HanziCategoryDB.Categories.Remove(needsPracticeIndex);
             }
+            return;
+        }
+        if (needsPracticeIndex != null && HanziCategoryDB.Categories.ContainsKey(needsPracticeIndex))
+        {
             return;
         }
         HanziCategory needsPractice = new HanziCategory();

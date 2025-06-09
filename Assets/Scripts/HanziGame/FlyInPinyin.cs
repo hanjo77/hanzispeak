@@ -31,7 +31,7 @@ public class FlyInPinyin : MonoBehaviour
             Vector3 missAxis = Vector3.Cross(Vector3.up, direction).normalized;
             float missAngle = Random.Range(-30f, 30f);
             Quaternion missRotation = Quaternion.AngleAxis(missAngle, missAxis);
-            direction = missRotation * direction;
+            direction = (missRotation * direction).normalized;
         }
         else
         {
