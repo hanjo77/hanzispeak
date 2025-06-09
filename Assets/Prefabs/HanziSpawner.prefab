@@ -570,6 +570,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textPrefab: {fileID: 1129704308828147659, guid: 244766c395a42004ea7bc286c892fb0e, type: 3}
-  flightSpeed: 0.2
+  flightSpeed: 15
   fadeOutDistance: 50
   fadeOutThreshold: 0.01

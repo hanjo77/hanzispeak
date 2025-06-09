@@ -13,12 +13,13 @@ public class FlyInPinyin : MonoBehaviour
     {
         targetHanzi = hanzi;
         TextMeshPro clone = Instantiate(textPrefab);
+        clone.gameObject.tag = "PinyinHintClone";
         clone.text = pinyin;
 
         // Assign a new material so we can modify it
         Material mat = new Material(clone.fontMaterial);
         clone.fontMaterial = mat;
-        // SetAlpha(mat, 0f);
+        SetAlpha(mat, 0f);
 
         // Get static flight direction
         Vector3 startPos = sourceTransform.position;
@@ -31,6 +32,10 @@ public class FlyInPinyin : MonoBehaviour
             Vector3 missAxis = Vector3.Cross(Vector3.up, direction).normalized;
             float missAngle = Random.Range(-30f, 30f);
             Quaternion missRotation = Quaternion.AngleAxis(missAngle, missAxis);
+            direction = missRotation * direction;
+            missAxis = Vector3.Cross(Vector3.left, direction).normalized;
+            missAngle = Random.Range(-30f, 30f);
+            missRotation = Quaternion.AngleAxis(missAngle, missAxis);
             direction = (missRotation * direction).normalized;
         }
         else
@@ -47,7 +52,7 @@ public class FlyInPinyin : MonoBehaviour
     private System.Collections.IEnumerator FlyRoutine(TextMeshPro tmp, Material mat, Vector3 direction, bool isCorrect)
     {
         float traveled = 0f;
-        float alpha = 1f;
+        float alpha = 0f;
 
         Color baseColor = isCorrect ? Color.green : Color.red;
 
@@ -73,7 +78,7 @@ public class FlyInPinyin : MonoBehaviour
                 }
             }
 
-            // SetAlpha(mat, alpha);
+            SetAlpha(mat, alpha);
 
             // End conditions
             if (!isCorrect && alpha <= fadeOutThreshold)

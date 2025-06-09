@@ -199,7 +199,7 @@ public class HanziSpawner : MonoBehaviour
         }
         foreach (string wrongGuess in wrongGuesses)
         {
-            if (true || IsSomehowValid(wrongGuess, currentPinyin))
+            if (IsSomehowValid(wrongGuess, currentPinyin))
             {
                 GetComponent<FlyInPinyin>().Fly(wrongGuess, false, playerHead.transform, activeHanzi);
             }
@@ -253,7 +253,7 @@ public class HanziSpawner : MonoBehaviour
                 continue;
             for (int charCounter = 0; charCounter < targetPinyin.Length; ++charCounter)
             {
-                if (targetPinyin.Contains(targetPinyin[charCounter]))
+                if (guess.Contains(targetPinyin[charCounter]))
                 {
                     matches[charCounter] = true;
                     continue;

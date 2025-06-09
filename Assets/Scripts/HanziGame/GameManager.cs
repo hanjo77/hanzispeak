@@ -45,6 +45,10 @@ public class GameManager : MonoBehaviour
     public void StopGame()
     {
         Destroy(hanziSpawnerInstance);
+        foreach (var obj in GameObject.FindGameObjectsWithTag("PinyinHintClone"))
+        {
+            Destroy(obj);
+        }
     }
 
     public void SetLives(int currentLives)
