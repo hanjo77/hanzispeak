@@ -39,6 +39,8 @@ public class HanziSpawner : MonoBehaviour
     private int currentLives;
     private bool isPlaying;
     private int activeFilterIndex;
+    private List<string> wrongGuesses = new List<string>();
+
 
     void Awake() => Instance = this;
 
@@ -175,12 +177,32 @@ public class HanziSpawner : MonoBehaviour
         foreach (Match match in matches)
         {
             string matchPinyin = pinyinData.FirstOrDefault(x => x.Value.Contains(match.Value)).Key;
-
+            bool isCorrect = (matchPinyin == currentPinyin);
+            if (!isCorrect)
+            {
+                if (wrongGuesses.Contains(matchPinyin))
+                {
+                    continue;
+                }
+                wrongGuesses.Add(matchPinyin);
+            }
             UnityEngine.Debug.Log($"... trying {matchPinyin} for {currentPinyin}");
-            if (matchPinyin == currentPinyin)
+            if (isCorrect)
             {
                 UnityEngine.Debug.Log($"... with SUCCESS!!!");
                 return true;
+            }
+        }
+        if (IsPinyinFairlyRepresented(currentPinyin, wrongGuesses))
+        {
+            GetComponent<FlyInPinyin>().Fly(currentPinyin, true, playerHead.transform, activeHanzi);
+            return true;
+        }
+        foreach (string wrongGuess in wrongGuesses)
+        {
+            if (IsSomehowValid(wrongGuess, currentPinyin))
+            {
+                GetComponent<FlyInPinyin>().Fly(wrongGuess, false, playerHead.transform, activeHanzi);
             }
         }
 
@@ -199,5 +221,51 @@ public class HanziSpawner : MonoBehaviour
             }
         }
         filteredCharacters = tmpChars;
+    }
+
+    private bool IsSomehowValid(string pinyin, string targetPinyin)
+    {
+        if (pinyin == null || targetPinyin == null) return false;
+        if (pinyin.Length != targetPinyin.Length) return false;
+
+        for (int i = 0; i < pinyin.Length; ++i)
+        {
+            if (targetPinyin.IndexOf(pinyin[i]) > -1)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private static bool IsPinyinFairlyRepresented(string targetPinyin, IEnumerable<string> guesses)
+    {
+        if (string.IsNullOrWhiteSpace(targetPinyin) || targetPinyin.Length < 2)
+            return false;
+
+        char firstChar = targetPinyin[0];
+        char lastChar = targetPinyin[targetPinyin.Length - 1];
+        int length = targetPinyin.Length;
+
+        bool foundFirstChar = false;
+        bool foundLastChar = false;
+
+        foreach (var guess in guesses)
+        {
+            if (guess == null || guess.Length != length || guess == targetPinyin)
+                continue;
+
+            if (guess[0] == firstChar)
+                foundFirstChar = true;
+
+            if (guess[guess.Length - 1] == lastChar)
+                foundLastChar = true;
+
+            if (foundFirstChar && foundLastChar)
+                return true;
+        }
+
+        return false;
     }
 }

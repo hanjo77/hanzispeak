@@ -11,6 +11,11 @@ public class HanziCharacter : MonoBehaviour
     private bool isRecognized;
     private bool hasFailed;
 
+    public void MarkRecognized()
+    {
+        isRecognized = true;
+    }
+
     public void OnRecognized()
     {
         // Visual/Audio feedback

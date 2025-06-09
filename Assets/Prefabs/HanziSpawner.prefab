@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6135578393460541853}
   - component: {fileID: 2671627207551644193}
   - component: {fileID: 3214823855955064492}
+  - component: {fileID: 8342025725175191420}
   m_Layer: 0
   m_Name: HanziSpawner
   m_TagString: Untagged
@@ -499,7 +500,6 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: d1b99af9901e62c43a0048fd4b6cc7d0, type: 3}
   - {fileID: 919132149155446097, guid: 8e4611ed619398e4691e1740c3f492e8, type: 3}
   - {fileID: 919132149155446097, guid: 33cd09c0f6138514c8c972d27d11f989, type: 3}
-  explosionClip: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
   playerHead: {fileID: 0}
   spawnDistance: 1000
   moveSpeed: 120
@@ -557,3 +557,19 @@ MonoBehaviour:
   _minimumSpeakingSampleValue: 0.05
   _silenceTimer: 1
   _autoDetect: 0
+--- !u!114 &8342025725175191420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307675216817845718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3418ac2128d4a434f9968cdb745bdc96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPrefab: {fileID: 1129704308828147659, guid: 244766c395a42004ea7bc286c892fb0e, type: 3}
+  flightSpeed: 0.2
+  fadeOutDistance: 50
+  fadeOutThreshold: 0.01

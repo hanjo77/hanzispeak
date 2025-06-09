@@ -35,8 +35,6 @@ public class CameraShake : MonoBehaviour
 
         while (elapsed < shakeDuration)
         {
-            UnityEngine.Debug.Log($"Elapsed time: {elapsed} of {shakeDuration}");
-
             // Fade out the intensity over time
             float fade = 1 - (elapsed / shakeDuration); // 1 -> 0
             float currentIntensity = shakeIntensity * fade;
