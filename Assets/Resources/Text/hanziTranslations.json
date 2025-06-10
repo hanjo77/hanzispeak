@@ -185,5 +185,27 @@
     "ja": "練習が必要",
     "ko": "연습 필요",
     "ru": "Требует практики"
+  },
+  "micHintText": {
+    "cn": "为了帮助你正确发音，此应用需要监听你的语音。不会上传任何内容，一切都在你的头显本地处理。",
+    "en": "To help you pronounce characters, this app needs to listen to your speech. Nothing is sent online - it's all processed on your headset.",
+    "de": "Um dir beim Aussprechen der Zeichen zu helfen, muss diese App auf deine Spracheingabe zugreifen. Nichts geht online – alles wird direkt auf deinem Headset verarbeitet.",
+    "fr": "Pour vous aider à prononcer les caractères, cette application a besoin d’accéder à votre voix. Rien n’est envoyé en ligne – tout est traité localement sur votre casque.",
+    "it": "Per aiutarti a pronunciare i caratteri, l'app deve ascoltare la tua voce. Nulla viene inviato online: tutto viene elaborato sul visore.",
+    "es": "Para ayudarte a pronunciar los caracteres, esta aplicación necesita escuchar tu voz. Nada se envía en línea: todo se procesa en tu visor.",
+    "ja": "文字の発音を助けるために、このアプリはあなたの声を聞く必要があります。データはオンラインには送信されず、すべてヘッドセット上で処理されます。",
+    "ko": "문자 발음을 도와드리기 위해 이 앱은 사용자의 음성을 듣습니다. 모든 데이터는 온라인으로 전송되지 않고 헤드셋 내에서 처리됩니다.",
+    "ru": "Чтобы помочь вам произносить символы, приложению нужен доступ к вашему голосу. Ничего не отправляется в интернет — всё обрабатывается на гарнитуре."
+  },
+  "micHintButton": {
+    "cn": "允许访问麦克风",
+    "en": "Allow microphone access",
+    "de": "Mikrofonzugriff erlauben",
+    "fr": "Autoriser l'accès au micro",
+    "it": "Consenti l'accesso al microfono",
+    "es": "Permitir acceso al micrófono",
+    "ja": "マイクへのアクセスを許可する",
+    "ko": "마이크 접근 허용",
+    "ru": "Разрешить доступ к микрофону"
   }
 }

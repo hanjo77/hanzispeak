@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Android;
 using UnityEngine.SocialPlatforms.Impl;
 
 public class AppManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class AppManager : MonoBehaviour
     public static AppManager Instance;
 
     [Header("Views")]
+    public MicWarningView micWarningView;
     public StartView startView;
     public GameView gameView;
     public SettingsView settingsView;
@@ -21,7 +23,13 @@ public class AppManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-        StartView();
+        MicWarningView();
+    }
+
+    public void MicWarningView()
+    {
+        HideAllViews();
+        micWarningView.ShowView();
     }
 
     public void StartView()
@@ -50,12 +58,23 @@ public class AppManager : MonoBehaviour
         gameOverView.ShowView();
     }
 
+    public void AcceptMicWarningAndStartView()
+    {
+        if (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
+        {
+            Permission.RequestUserPermission(Permission.Microphone);
+        }
+        StartView();
+    }
+
+
     private void HideAllViews()
     {
         startView.HideView();
         gameView.HideView();
         settingsView.HideView();
         gameOverView.HideView();
+        micWarningView.HideView();
         uiBackground.SetActive(true);
     }
 }

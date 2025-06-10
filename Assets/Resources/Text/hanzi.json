@@ -233,7 +233,7 @@
   "买": {
     "pinyin": "mǎi",
     "en": "Buy it",
-    "de": "Kaufen sie es",
+    "de": "Kauf es",
     "fr": "Achetez-le",
     "it": "Compralo",
     "es": "Cómpralo",
@@ -541,17 +541,17 @@
   "你": {
     "pinyin": "nǐ",
     "en": "You",
-    "de": "Sie",
-    "fr": "Vous",
-    "it": "Voi",
-    "es": "Usted",
+    "de": "Du",
+    "fr": "Toi",
+    "it": "Tu",
+    "es": "Tú",
     "ja": "あなた",
     "ko": "너",
-    "ru": "вы"
+    "ru": "Ты"
   },
   "保": {
     "pinyin": "bǎo",
-    "en": "Protecting the",
+    "en": "Protecting",
     "de": "Bürgschaft",
     "fr": "Garantie",
     "it": "Garanzia",
@@ -573,7 +573,7 @@
   },
   "修": {
     "pinyin": "xiū",
-    "en": "Practice practice practice",
+    "en": "Practice",
     "de": "Praxis",
     "fr": "Pratique",
     "it": "La pratica",
@@ -871,7 +871,7 @@
   "办": {
     "pinyin": "bàn",
     "en": "Do it!",
-    "de": "Tun sie es!",
+    "de": "Tu es!",
     "fr": "Le faire !",
     "it": "Farlo!",
     "es": "Hacerlo",
@@ -1168,7 +1168,7 @@
   "吃": {
     "pinyin": "chī",
     "en": "Eat",
-    "de": "Essen sie",
+    "de": "Essen",
     "fr": "Manger",
     "it": "Mangiare",
     "es": "Coma",
@@ -2389,7 +2389,7 @@
   "护": {
     "pinyin": "hù",
     "en": "Protect",
-    "de": "Schützen sie",
+    "de": "Schützen",
     "fr": "Protéger",
     "it": "Proteggere",
     "es": "Proteger",
@@ -2411,7 +2411,7 @@
   "挑": {
     "pinyin": "tiāo",
     "en": "Pick",
-    "de": "Wählen sie",
+    "de": "Wählen",
     "fr": "Choisir",
     "it": "Scegliere",
     "es": "Recoger",
@@ -4138,7 +4138,7 @@
   "讨": {
     "pinyin": "tǎo",
     "en": "Discuss",
-    "de": "Diskutieren sie",
+    "de": "Diskutieren",
     "fr": "Discussion",
     "it": "Discussione",
     "es": "Discutir",

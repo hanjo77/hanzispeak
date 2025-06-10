@@ -66,11 +66,8 @@ public class HanziSpawner : MonoBehaviour
         {
             Destroy(activeHanzi.gameObject);
         }
-        if (isPlaying)
-        {
-            voskEngine.OnTranscriptionResult = null;
-            isPlaying = false;
-        }
+        isPlaying = false;
+        voskEngine.OnTranscriptionResult = null;
         UnityEngine.Debug.Log("Spawner StopGame");
     }
 
