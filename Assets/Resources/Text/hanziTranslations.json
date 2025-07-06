@@ -207,5 +207,27 @@
     "ja": "マイクへのアクセスを許可する",
     "ko": "마이크 접근 허용",
     "ru": "Разрешить доступ к микрофону"
+  },
+  "trainingTitle": {
+    "en": "Pinyin Training",
+    "de": "Pinyin-Training",
+    "fr": "Entraînement Pinyin",
+    "it": "Allenamento Pinyin",
+    "es": "Entrenamiento de Pinyin",
+    "ja": "ピンイン練習",
+    "ko": "병음 훈련",
+    "ru": "Тренировка пиньиня",
+    "zh": "拼音训练"
+  },
+  "trainingLead": {
+    "en": "Welcome, brave learner! Here you can choose a pronunciation group to sharpen your Mandarin skills. Tap a category below to begin training your ear — and your tongue.",
+    "de": "Willkommen, mutiger Lernender! Wähle eine Lautgruppe, um deine Mandarin-Aussprache zu verfeinern. Tippe unten auf eine Kategorie, um das Training zu starten.",
+    "fr": "Bienvenue, apprenti audacieux ! Choisissez un groupe de prononciation pour affûter votre oreille et améliorer votre mandarin. Touchez une catégorie ci-dessous pour commencer.",
+    "it": "Benvenuto, intrepido studente! Scegli un gruppo di pronuncia per affinare le tue abilità in mandarino. Tocca una categoria qui sotto per iniziare l’allenamento.",
+    "es": "¡Bienvenido, valiente aprendiz! Aquí puedes elegir un grupo de pronunciación para mejorar tu mandarín. Toca una categoría para comenzar tu entrenamiento.",
+    "ja": "ようこそ、勇敢な学習者よ！ここでは発音グループを選んで、あなたの中国語スキルを鍛えられます。下のカテゴリーをタップして始めましょう。",
+    "ko": "환영합니다, 용감한 학습자님! 아래에서 발음 그룹을 선택하여 표준 중국어 발음을 훈련해보세요. 이제 연습을 시작해볼까요?",
+    "ru": "Добро пожаловать, отважный ученик! Выберите группу произношений, чтобы улучшить свои навыки мандаринского. Нажмите на категорию ниже, чтобы начать.",
+    "zh": "欢迎你，勇敢的学习者！请选择一个发音组来提升你的普通话发音技巧。点击下方任意一项开始训练吧！"
   }
 }

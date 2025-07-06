@@ -408,11 +408,11 @@
   },
   "价": {
     "pinyin": "jià",
-    "en": "Valence (ie the price)",
-    "de": "Wertigkeit (dh der preis)",
-    "fr": "Valence (c'est-à-dire le prix)",
-    "it": "Valenza (cioè il prezzo)",
-    "es": "Valencia (es decir, el precio)",
+    "en": "Valence (the price)",
+    "de": "Wertigkeit (der Preis)",
+    "fr": "Valence (le prix)",
+    "it": "Valenza (il prezzo)",
+    "es": "Valencia (el precio)",
     "ja": "価",
     "ko": "가격",
     "ru": "валентность (те цена)"
@@ -453,7 +453,7 @@
   "优": {
     "pinyin": "yōu",
     "en": "You're welcome",
-    "de": "Bitte sehr",
+    "de": "Gerne geschehen",
     "fr": "Il n'y a pas de quoi",
     "it": "Non c'è di che",
     "es": "De nada",
@@ -3388,7 +3388,7 @@
     "ru": "Рисование"
   },
   "略": {
-    "pinyin": "l锟斤拷è",
+    "pinyin": "lüè",
     "en": "Suggested",
     "de": "Vorgeschlagene",
     "fr": "Suggéré",

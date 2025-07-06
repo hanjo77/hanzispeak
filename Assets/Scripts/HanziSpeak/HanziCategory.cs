@@ -1,8 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using UnityEditor; // Requires Newtonsoft.Json package
 using UnityEngine;
 
 [System.Serializable]

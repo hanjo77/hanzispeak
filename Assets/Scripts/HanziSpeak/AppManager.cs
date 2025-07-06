@@ -1,7 +1,6 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Android;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class AppManager : MonoBehaviour
 {
@@ -13,6 +12,7 @@ public class AppManager : MonoBehaviour
     public GameView gameView;
     public SettingsView settingsView;
     public GameOverView gameOverView;
+    public TrainingView trainingView;
 
     [Header("Elements")]
     public GameObject uiBackground;
@@ -23,7 +23,16 @@ public class AppManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        if (Permission.HasUserAuthorizedPermission(Permission.Microphone))
+        {
+            StartView();
+        }
+        else
+        {
+            MicWarningView();
+        }
         MicWarningView();
+        HanziGroupDB.Initialize();
     }
 
     public void MicWarningView()
@@ -36,6 +45,18 @@ public class AppManager : MonoBehaviour
     {
         HideAllViews();
         startView.ShowView();
+    }
+
+    public void TrainingView()
+    {
+        HideAllViews();
+        trainingView.ShowView();
+    }
+
+    public void StartTraining(string hanziGroup)
+    {
+        PlayerPrefs.SetString("hanzifilter", HanziGroupDB.GetGroup(hanziGroup));
+        PlayView();
     }
 
     public void PlayView()
@@ -63,10 +84,33 @@ public class AppManager : MonoBehaviour
         if (!Permission.HasUserAuthorizedPermission(Permission.Microphone))
         {
             Permission.RequestUserPermission(Permission.Microphone);
+            StartCoroutine(WaitForMicPermissionThenStart());
         }
-        StartView();
+        else
+        {
+            StartView();
+        }
     }
 
+    private IEnumerator WaitForMicPermissionThenStart(float timeout = 10f)
+    {
+        float timer = 0f;
+
+        while (!Permission.HasUserAuthorizedPermission(Permission.Microphone) && timer < timeout)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        if (Permission.HasUserAuthorizedPermission(Permission.Microphone))
+        {
+            StartView();
+        }
+        else
+        {
+            MicWarningView(); // Show an error or go back
+        }
+    }
 
     private void HideAllViews()
     {
@@ -75,6 +119,7 @@ public class AppManager : MonoBehaviour
         settingsView.HideView();
         gameOverView.HideView();
         micWarningView.HideView();
+        trainingView.HideView();
         uiBackground.SetActive(true);
     }
 }

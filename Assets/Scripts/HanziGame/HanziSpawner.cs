@@ -168,41 +168,45 @@ public class HanziSpawner : MonoBehaviour
             return false;
         }
         Dictionary<string, List<string>> pinyinData = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(jsonFile.text);
-        string currentHanzi = HanziRegex.Matches(activeHanzi.name).First().Value;
-        string currentPinyin = pinyinData.FirstOrDefault(x => x.Value.Contains(currentHanzi)).Key;
-
-        MatchCollection matches = HanziRegex.Matches(validationJson);
-
-        foreach (Match match in matches)
+        if (activeHanzi)
         {
-            string matchPinyin = pinyinData.FirstOrDefault(x => x.Value.Contains(match.Value)).Key;
-            bool isCorrect = (matchPinyin == currentPinyin);
-            if (!isCorrect)
+            string currentHanzi = HanziRegex.Matches(activeHanzi.name).First().Value;
+            string currentPinyin = pinyinData.FirstOrDefault(x => x.Value.Contains(currentHanzi)).Key;
+
+            MatchCollection matches = HanziRegex.Matches(validationJson);
+
+            foreach (Match match in matches)
             {
-                if (wrongGuesses.Contains(matchPinyin))
+                string matchPinyin = pinyinData.FirstOrDefault(x => x.Value.Contains(match.Value)).Key;
+                bool isCorrect = (matchPinyin == currentPinyin);
+                if (!isCorrect)
                 {
-                    continue;
+                    if (wrongGuesses.Contains(matchPinyin))
+                    {
+                        continue;
+                    }
+                    wrongGuesses.Add(matchPinyin);
                 }
-                wrongGuesses.Add(matchPinyin);
+                UnityEngine.Debug.Log($"... trying {matchPinyin} for {currentPinyin}");
+                if (isCorrect)
+                {
+                    UnityEngine.Debug.Log($"... with SUCCESS!!!");
+                    return true;
+                }
             }
-            UnityEngine.Debug.Log($"... trying {matchPinyin} for {currentPinyin}");
-            if (isCorrect)
+            if (IsPinyinFairlyRepresented(currentPinyin, wrongGuesses))
             {
-                UnityEngine.Debug.Log($"... with SUCCESS!!!");
                 return true;
             }
-        }
-        if (IsPinyinFairlyRepresented(currentPinyin, wrongGuesses))
-        {
-            return true;
-        }
-        foreach (string wrongGuess in wrongGuesses)
-        {
-            if (IsSomehowValid(wrongGuess, currentPinyin))
+            foreach (string wrongGuess in wrongGuesses)
             {
-                GetComponent<FlyInPinyin>().Fly(wrongGuess, false, playerHead.transform, activeHanzi);
+                if (IsSomehowValid(wrongGuess, currentPinyin))
+                {
+                    GetComponent<FlyInPinyin>().Fly(wrongGuess, false, playerHead.transform, activeHanzi);
+                }
             }
         }
+
 
         return false;
     }
@@ -248,19 +252,18 @@ public class HanziSpawner : MonoBehaviour
             string guess = guesses.ElementAt(guessCounter);
             if (guess == targetPinyin)
                 return true;
-            if (guess == null || guess.Length != targetPinyin.Length)
+            if (guess == null)
                 continue;
-            for (int charCounter = 0; charCounter < targetPinyin.Length; ++charCounter)
+            for (int charCounter = 0; charCounter < guess.Count(); ++charCounter)
             {
-                if (guess.Length > charCounter && guess[charCounter] == (targetPinyin[charCounter]))
+                // Harder:: if (guess[charCounter] == targetPinyin[charCounter])
+                int targetIndex = targetPinyin.IndexOf(guess[charCounter]);
+                if (targetIndex > -1)
                 {
-                    matches[charCounter] = true;
-                    continue;
+                    UnityEngine.Debug.Log($"Found {guess[charCounter]} in {targetPinyin} at position {targetIndex}");
+                    matches[targetIndex] = true;
                 }
-                else
-                    return false;
             }
-            return true;
         }
         for (int matchCount = 0; matchCount < matches.Length; ++matchCount)
         {

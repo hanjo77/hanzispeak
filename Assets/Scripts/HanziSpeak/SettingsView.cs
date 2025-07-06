@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using UnityEngine.Windows;
 
 public class SettingsView : AppView
 {
@@ -48,8 +43,9 @@ public class SettingsView : AppView
         int savedPinyin = PlayerPrefs.GetInt("pinyin", 1);
         int savedTranslation = PlayerPrefs.GetInt("translation", 1);
         int savedSpeak = PlayerPrefs.GetInt("speak", 1);
+        PlayerPrefs.SetString("hanzifilter", string.Empty);
         PlayerPrefs.SetString("language", languageKey);
-        PlayerPrefs.SetInt("category", savedCategory);
+        PlayerPrefs.SetInt("category", savedCategory < categoryDropdown.options.Count() ? savedCategory : 0);
         PlayerPrefs.SetInt("pinyin", savedPinyin);
         PlayerPrefs.SetInt("translation", savedTranslation);
         PlayerPrefs.SetInt("speak", savedSpeak);

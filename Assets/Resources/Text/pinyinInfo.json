@@ -1,0 +1,274 @@
+﻿{
+  "j": {
+    "siblings": [
+      "q",
+      "x"
+    ],
+    "hint": {
+      "en": "Like “jee” but with tongue closer to the roof of the mouth.",
+      "de": "Wie „dschi“, aber mit der Zunge näher am Gaumen.",
+      "fr": "Comme « ji », mais avec la langue proche du palais.",
+      "it": "Come “gi” ma con la lingua più vicina al palato.",
+      "es": "Como “yi”, pero con la lengua más cerca del paladar.",
+      "ja": "「ジ」に近い音で、舌を上あごに近づけて発音します。",
+      "ko": "‘지’와 비슷하지만 혀를 입천장 가까이 두고 발음합니다.",
+      "ru": "Похоже на «джи», но язык ближе к нёбу.",
+      "zh": "类似“鸡”，但舌头靠近上腭发音。"
+    }
+  },
+  "q": {
+    "siblings": [
+      "j",
+      "x"
+    ],
+    "hint": {
+      "en": "Like “chee” but with a stronger puff of air (aspirated).",
+      "de": "Wie „tschi“, aber mit einem stärkeren Hauch (aspiriert).",
+      "fr": "Comme « tchi », mais avec plus d'air (aspiré).",
+      "it": "Come “ci” ma con un soffio d’aria più forte (aspirata).",
+      "es": "Como “chi”, pero con una mayor expulsión de aire (aspirada).",
+      "ja": "「チ」に近い音で、強く息を吐いて発音します。",
+      "ko": "‘치’와 비슷하지만 더 강한 숨으로 발음합니다.",
+      "ru": "Похоже на «чи», но с более сильным выдохом (аспирировано).",
+      "zh": "类似“七”，但发音时伴有强烈送气。"
+    }
+  },
+  "x": {
+    "siblings": [
+      "j",
+      "q"
+    ],
+    "hint": {
+      "en": "Like “shee” but more fronted (almost like hissing through a smile).",
+      "de": "Wie „schi“, aber weiter vorne im Mund (wie ein Lächeln zischend).",
+      "fr": "Comme « chi », mais prononcé plus en avant (comme un sifflement en souriant).",
+      "it": "Come “sci”, ma più anteriore (quasi un sibilo sorridendo).",
+      "es": "Como “shi”, pero más frontal (como un silbido con una sonrisa).",
+      "ja": "「シ」に似た音で、口を前方にして笑顔のように発音します。",
+      "ko": "‘시’와 비슷하지만 입을 앞으로 하고 미소 지으며 발음합니다.",
+      "ru": "Похоже на «щи», но с передней частью рта и с улыбкой.",
+      "zh": "类似“西”，但舌头更靠前，像微笑着发出嘶嘶声。"
+    }
+  },
+  "zh": {
+    "siblings": [
+      "ch",
+      "sh"
+    ],
+    "hint": {
+      "en": "Like 'j' in 'judge', but retroflex — curl your tongue back slightly.",
+      "de": "Wie „dsch“ in „Dschungel“, aber mit leicht zurückgerollter Zunge.",
+      "fr": "Comme le « dj » dans « jungle », mais avec la langue repliée en arrière.",
+      "it": "Come “gi” in “giungla”, ma con la lingua leggermente ripiegata all’indietro.",
+      "es": "Como 'j' en “juez”, pero con la lengua curvada hacia atrás.",
+      "ja": "「ジ」のような音で、舌を少し後ろにカールさせます。",
+      "ko": "‘지’ 소리와 비슷하지만 혀를 약간 말아 올려 발음합니다.",
+      "ru": "Похоже на «дж», но с загнутым назад языком.",
+      "zh": "类似“知”，但舌尖稍向后卷。"
+    }
+  },
+  "ch": {
+    "siblings": [
+      "zh",
+      "sh"
+    ],
+    "hint": {
+      "en": "Like 'ch' in 'church', but retroflex — curl your tongue back slightly.",
+      "de": "Wie „tsch“ in „Tscheche“, aber mit leicht zurückgerollter Zunge.",
+      "fr": "Comme le « tch » dans « tchèque », avec la langue repliée.",
+      "it": "Come “ci” in “cielo”, ma con la lingua rivolta all’indietro.",
+      "es": "Como 'ch' en “chico”, pero con la lengua hacia atrás.",
+      "ja": "「チ」に似て、舌を少し後ろに巻きます。",
+      "ko": "‘치’와 비슷하지만 혀를 뒤로 말아 발음합니다.",
+      "ru": "Похоже на «ч», но с загнутым назад языком.",
+      "zh": "类似“吃”，但舌尖稍向后卷。"
+    }
+  },
+  "sh": {
+    "siblings": [
+      "zh",
+      "ch"
+    ],
+    "hint": {
+      "en": "Like 'sh' in 'shoe', but retroflex — curl your tongue back slightly.",
+      "de": "Wie „sch“ in „Schuh“, aber mit leicht zurückgerollter Zunge.",
+      "fr": "Comme le « ch » dans « chaussure », mais langue repliée.",
+      "it": "Come “sc” in “scena”, ma con la lingua verso il palato.",
+      "es": "Como 'sh' en inglés, con la lengua hacia atrás.",
+      "ja": "「シュ」に似た音で、舌を後ろに巻いて発音します。",
+      "ko": "‘슈’와 비슷하지만 혀를 말아 발음합니다.",
+      "ru": "Похоже на «ш», но с загнутым назад языком.",
+      "zh": "类似“是”，但舌尖稍向后卷。"
+    }
+  },
+  "z": {
+    "siblings": [
+      "c",
+      "s"
+    ],
+    "hint": {
+      "en": "Like 'ds' in 'kids'.",
+      "de": "Wie „ds“ in „Kids“. Zungenspitze nah an den Zähnen.",
+      "fr": "Comme « ds » dans « kids ». Langue proche des dents.",
+      "it": "Come “dz” in “mezzo”.",
+      "es": "Como 'ds' en “kids”.",
+      "ja": "「ズ」に似た音で、歯の近くで発音します。",
+      "ko": "‘즈’와 비슷한 소리입니다.",
+      "ru": "Похоже на «дз» как в слове «дза».",
+      "zh": "类似“字”，舌尖靠近上齿。"
+    }
+  },
+  "c": {
+    "siblings": [
+      "z",
+      "s"
+    ],
+    "hint": {
+      "en": "Like 'ts' in 'cats', with a puff of air.",
+      "de": "Wie „ts“ in „Katze“, mit einem Hauch (aspiriert).",
+      "fr": "Comme « ts » dans « cats », avec une aspiration.",
+      "it": "Come “z” in “pizza”, ma aspirata.",
+      "es": "Como 'ts' en “cats”, con aire.",
+      "ja": "「ツ」に近い音で、息を強く出して発音します。",
+      "ko": "‘츠’와 비슷하고 숨을 내쉬며 발음합니다.",
+      "ru": "Похоже на «ц», с выдохом.",
+      "zh": "类似“次”，有明显送气。"
+    }
+  },
+  "s": {
+    "siblings": [
+      "z",
+      "c"
+    ],
+    "hint": {
+      "en": "Like 's' in 'see'.",
+      "de": "Wie „s“ in „sehen“. Klar und scharf.",
+      "fr": "Comme le « s » dans « si ».",
+      "it": "Come “s” in “sì”.",
+      "es": "Como 's' en “sí”.",
+      "ja": "「ス」に似た音です。",
+      "ko": "‘스’와 비슷한 소리입니다.",
+      "ru": "Похоже на «с» в слове «сон».",
+      "zh": "类似“思”，舌尖贴近上齿龈。"
+    }
+  },
+  "a": {
+    "siblings": [
+      "o",
+      "e"
+    ],
+    "hint": {
+      "en": "A pure open 'ah' sound, as in 'father'.",
+      "de": "Ein offenes 'a', wie in „Vater“. ",
+      "fr": "Un 'a' ouvert, comme dans « papa ».",
+      "it": "Un suono aperto come 'a' in 'papa'.",
+      "es": "Un sonido 'a' abierto, como en “papá”.",
+      "ja": "「ア」のような音。",
+      "ko": "‘아’와 같은 소리입니다.",
+      "ru": "Открытый звук 'а', как в слове «мама».",
+      "zh": "类似“啊”的发音，嘴巴张大。"
+    }
+  },
+  "o": {
+    "siblings": [
+      "a",
+      "e"
+    ],
+    "hint": {
+      "en": "A round 'o' as in 'or', but shorter and more closed.",
+      "de": "Ein rundes 'o', wie in „oben“, aber kürzer.",
+      "fr": "Un 'o' arrondi, court comme dans « mot ». ",
+      "it": "Una 'o' chiusa e breve, come in 'porto'.",
+      "es": "Una 'o' redonda, como en “oro”.",
+      "ja": "「オ」のような音。",
+      "ko": "‘오’와 비슷한 소리입니다.",
+      "ru": "Короткое «о», как в слове «дом».",
+      "zh": "类似“喔”，嘴巴圆润地发音。"
+    }
+  },
+  "e": {
+    "siblings": [
+      "a",
+      "o"
+    ],
+    "hint": {
+      "en": "Like 'uh' in 'her' but without the 'r' sound.",
+      "de": "Wie ein kurzes 'ö' oder 'e' im Englischen 'her'.",
+      "fr": "Comme le 'e' dans « le ».",
+      "it": "Come 'e' in 'però', ma più centrale.",
+      "es": "Como una 'e' cerrada, parecida a 'eh'.",
+      "ja": "「エ」と「ウ」の中間の音。",
+      "ko": "‘어’에 가까운 소리입니다.",
+      "ru": "Похоже на «э», но с округлением.",
+      "zh": "类似“饿”，发音时嘴巴略张。"
+    }
+  },
+  "ang": {
+    "siblings": [
+      "an",
+      "eng"
+    ],
+    "hint": {
+      "en": "A nasal 'ahng' — tongue low, sound resonates in nose.",
+      "de": "Ein nasales 'ang', wie in „Sang“.",
+      "fr": "Un 'ang' nasal, comme dans « sang ». ",
+      "it": "Un suono nasale, come 'ang' in 'mangiare'.",
+      "es": "Un sonido nasal como en “tang”.",
+      "ja": "鼻に響く「アン」のような音。",
+      "ko": "‘앙’과 비슷한 비음입니다.",
+      "ru": "Носовой звук, как в «банг».",
+      "zh": "类似“昂”，鼻音较重，嘴巴张开。"
+    }
+  },
+  "an": {
+    "siblings": [
+      "ang",
+      "en"
+    ],
+    "hint": {
+      "en": "A shorter nasal 'an' sound, less open than 'ang'.",
+      "de": "Ein kürzeres, nasales 'an', wie in „dann“. ",
+      "fr": "Un 'an' nasal plus court, comme dans « banc ».",
+      "it": "Suono nasale breve come in 'piano'.",
+      "es": "Un nasal corto como en “pan”.",
+      "ja": "「アン」に近いが短めの音。",
+      "ko": "‘안’과 비슷하지만 더 짧습니다.",
+      "ru": "Короткий носовой звук, как в «сан».",
+      "zh": "类似“安”，鼻音轻，口型较小。"
+    }
+  },
+  "eng": {
+    "siblings": [
+      "ang",
+      "en"
+    ],
+    "hint": {
+      "en": "A nasal 'uhng' — like in 'hung', tongue back and mouth open.",
+      "de": "Ein nasales 'ung', wie in „sung“. ",
+      "fr": "Un son nasal 'ung', comme dans « long ».",
+      "it": "Un nasale 'eng', simile a 'lungo'.",
+      "es": "Un nasal 'ung' como en “sung”.",
+      "ja": "「オン」に近く鼻に響きます。",
+      "ko": "‘엉’과 비슷한 소리입니다.",
+      "ru": "Носовой звук, как в «пинг».",
+      "zh": "类似“嗯”，鼻音重，嘴巴张开。"
+    }
+  },
+  "en": {
+    "siblings": [
+      "eng",
+      "an"
+    ],
+    "hint": {
+      "en": "A shorter, nasal 'en', like 'un' in French.",
+      "de": "Ein kurzes, nasales 'en', ähnlich dem französischen 'un'.",
+      "fr": "Comme le 'un' français, mais plus court.",
+      "it": "Suono nasale corto, simile a 'en'.",
+      "es": "Un sonido nasal breve como en “ten”.",
+      "ja": "「エン」に似た音で、鼻に響きます。",
+      "ko": "‘엔’에 가까운 비음입니다.",
+      "ru": "Короткий носовой звук, как в «пен».",
+      "zh": "类似“恩”，发音短促，鼻音轻。"
+    }
+  }
+}

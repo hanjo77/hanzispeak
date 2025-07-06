@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Threading;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.TextCore.Text;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 
 public class GameManager : MonoBehaviour
