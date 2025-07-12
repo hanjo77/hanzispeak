@@ -49,6 +49,7 @@ public class SettingsView : AppView
         PlayerPrefs.SetInt("pinyin", savedPinyin);
         PlayerPrefs.SetInt("translation", savedTranslation);
         PlayerPrefs.SetInt("speak", savedSpeak);
+        OnCategoryChanged(savedCategory);
         PlayerPrefs.Save();
 
 

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4826630445614569978}
   - component: {fileID: 5263773971317729979}
-  - component: {fileID: 6135578393460541853}
   - component: {fileID: 2671627207551644193}
   - component: {fileID: 3214823855955064492}
   - component: {fileID: 8342025725175191420}
@@ -510,19 +509,6 @@ MonoBehaviour:
   voskEngine: {fileID: 2671627207551644193}
   checkInterval: 1
   filteredCharacters: []
---- !u!114 &6135578393460541853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6307675216817845718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 906a173f361568d47ba4bffa46b5aaee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonAction: {fileID: 7755813758095364831, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &2671627207551644193
 MonoBehaviour:
   m_ObjectHideFlags: 0
