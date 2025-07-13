@@ -73,7 +73,7 @@ public class HanziSpawner : MonoBehaviour
 
     void OnVoiceInput(string jsonResult)
     {
-        if (ValidateHanzi(jsonResult))
+        if (ValidateHanzi(jsonResult) && filteredCharacters.Count > activeFilterIndex)
         {
             GameManager.Instance.SetScore(++score);
             filteredCharacters.RemoveAt(activeFilterIndex);

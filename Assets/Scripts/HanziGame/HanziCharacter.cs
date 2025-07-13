@@ -22,7 +22,9 @@ public class HanziCharacter : MonoBehaviour
         GameManager.Instance.AddSuccessChar(hanziText);
         isRecognized = true;
         GetComponent<MeshExploder>().Explode();
-        GameManager.Instance.VibrateControllers(.5f, .1f);
+
+        HapticFeedbackManager hapticFeedbackManager = new HapticFeedbackManager();
+        hapticFeedbackManager.VibrateControllers(.5f, .1f);
         GameManager.Instance.PlayExplosion(transform);
         StartCoroutine(WaitForRespawn(false));
     }
@@ -32,7 +34,8 @@ public class HanziCharacter : MonoBehaviour
         if (!isRecognized && !hasFailed)
         {
             GameManager.Instance.AddFailedChar(hanziText);
-            GameManager.Instance.VibrateControllers(1f, .5f);
+            HapticFeedbackManager hapticFeedbackManager = new HapticFeedbackManager();
+            hapticFeedbackManager.VibrateControllers(1f, .5f);
             GameManager.Instance.PlayPinyinAudio("explosion");
             StartCoroutine(WaitForRespawn(true));
             hasFailed = true;
