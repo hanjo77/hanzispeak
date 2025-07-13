@@ -10,6 +10,7 @@ public class SettingsView : AppView
     public UnityEngine.UI.Toggle pinyinToggle;
     public UnityEngine.UI.Toggle translationToggle;
     public UnityEngine.UI.Toggle speakToggle;
+    public UnityEngine.UI.Toggle passthroughToggle;
 
     // Example dictionary
     private Dictionary<string, HanziCategory> categories;
@@ -43,12 +44,14 @@ public class SettingsView : AppView
         int savedPinyin = PlayerPrefs.GetInt("pinyin", 1);
         int savedTranslation = PlayerPrefs.GetInt("translation", 1);
         int savedSpeak = PlayerPrefs.GetInt("speak", 1);
+        int savedPassthrough = PlayerPrefs.GetInt("passthrough", 0);
         PlayerPrefs.SetString("hanzifilter", string.Empty);
         PlayerPrefs.SetString("language", languageKey);
         PlayerPrefs.SetInt("category", savedCategory < categoryDropdown.options.Count() ? savedCategory : 0);
         PlayerPrefs.SetInt("pinyin", savedPinyin);
         PlayerPrefs.SetInt("translation", savedTranslation);
         PlayerPrefs.SetInt("speak", savedSpeak);
+        PlayerPrefs.SetInt("passthrough", savedPassthrough);
         OnCategoryChanged(savedCategory);
         PlayerPrefs.Save();
 
@@ -73,6 +76,7 @@ public class SettingsView : AppView
         pinyinToggle.onValueChanged.AddListener(OnPinyinChanged);
         translationToggle.onValueChanged.AddListener(OnTranslationChanged);
         speakToggle.onValueChanged.AddListener(OnSpeakChanged);
+        passthroughToggle.onValueChanged.AddListener(OnPassthroughChanged);
         foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
         {
             translator.UpdateTranslation();
@@ -190,5 +194,15 @@ public class SettingsView : AppView
         PlayerPrefs.Save(); // Ensure changes are saved to disk
 
         UnityEngine.Debug.Log("Selected speak Value: " + actualValue); // Optional debug log
+    }
+
+    public void OnPassthroughChanged(bool value)
+    {
+        int actualValue = passthroughToggle.isOn ? 1 : 0;
+        PlayerPrefs.SetInt("passthrough", actualValue);
+        PlayerPrefs.Save(); // Ensure changes are saved to disk
+        AppManager.Instance.TogglePassThrough();
+
+        UnityEngine.Debug.Log("Selected passthrough Value: " + actualValue); // Optional debug log
     }
 }

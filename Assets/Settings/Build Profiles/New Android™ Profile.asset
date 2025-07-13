@@ -17,7 +17,7 @@ MonoBehaviour:
   m_Subtarget: 0
   m_PlatformId: b9b35072a6f44c2e863f17467ea3dc13
   m_PlatformBuildProfile:
-    rid: 4843263646807621705
+    rid: 7213277078714843218
   m_OverrideGlobalSceneList: 0
   m_Scenes: []
   m_ScriptingDefines: []
@@ -63,13 +63,14 @@ MonoBehaviour:
     - line: '|     width: 1'
     - line: '|     height: 1'
     - line: '|   m_SplashScreenLogos: []'
-    - line: '|   m_VirtualRealitySplashScreen: {instanceID: 0}'
+    - line: '|   m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 2af9c193a22e11147b8b81b5bcc21a86,
+        type: 3}'
     - line: '|   m_HolographicTrackingLossScreen: {instanceID: 0}'
     - line: '|   defaultScreenWidth: 1024'
     - line: '|   defaultScreenHeight: 768'
     - line: '|   defaultScreenWidthWeb: 960'
     - line: '|   defaultScreenHeightWeb: 600'
-    - line: '|   m_StereoRenderingPath: 2'
+    - line: '|   m_StereoRenderingPath: 0'
     - line: '|   m_ActiveColorSpace: 1'
     - line: '|   unsupportedMSAAFallback: 0'
     - line: '|   m_SpriteBatchMaxVertexCount: 65535'
@@ -166,6 +167,10 @@ MonoBehaviour:
     - line: '|   bundleVersion: 0.1'
     - line: '|   preloadedAssets:'
     - line: '|   - {instanceID: 0}'
+    - line: '|   - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f,
+        type: 3}'
+    - line: '|   - {fileID: 11400000, guid: 6e997d826e686c14abc5279647fe1874, type:
+        2}'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
     - line: '|   m_HolographicPauseOnTrackingLoss: 1'
@@ -198,7 +203,7 @@ MonoBehaviour:
     - line: '|   overrideDefaultApplicationIdentifier: 1'
     - line: '|   AndroidBundleVersionCode: 1'
     - line: '|   AndroidMinSdkVersion: 32'
-    - line: '|   AndroidTargetSdkVersion: 32'
+    - line: '|   AndroidTargetSdkVersion: 0'
     - line: '|   AndroidPreferredInstallLocation: 0'
     - line: '|   aotOptions: '
     - line: '|   stripEngineCode: 1'
@@ -596,7 +601,7 @@ MonoBehaviour:
     - line: '|   - m_BuildTarget: LuminSupport'
     - line: '|     m_GraphicsJobs: 0'
     - line: '|   - m_BuildTarget: AndroidPlayer'
-    - line: '|     m_GraphicsJobs: 1'
+    - line: '|     m_GraphicsJobs: 0'
     - line: '|   - m_BuildTarget: WebGLSupport'
     - line: '|     m_GraphicsJobs: 0'
     - line: '|   m_BuildTargetGraphicsJobMode:'
@@ -604,8 +609,6 @@ MonoBehaviour:
     - line: '|     m_GraphicsJobMode: 0'
     - line: '|   - m_BuildTarget: XboxOnePlayer'
     - line: '|     m_GraphicsJobMode: 0'
-    - line: '|   - m_BuildTarget: AndroidPlayer'
-    - line: '|     m_GraphicsJobMode: 1'
     - line: '|   m_BuildTargetGraphicsAPIs:'
     - line: '|   - m_BuildTarget: AndroidPlayer'
     - line: '|     m_APIs: 15000000'
@@ -1052,7 +1055,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 4843263646807621705
+    - rid: 7213277078714843218
       type: {class: AndroidPlatformBuildSettings, ns: UnityEditor.Android, asm: UnityEditor.Android.Extensions}
       data:
         m_Development: 0
@@ -1071,7 +1074,7 @@ MonoBehaviour:
         m_ExportAsGoogleAndroidProject: 0
         m_DebugSymbolLevel: 1
         m_DebugSymbolFormat: 5
-        m_CurrentDeploymentTargetId: __builtin__target_default
+        m_CurrentDeploymentTargetId: 2G0YC5ZF8P00WQ
         m_BuildType: 2
         m_BuildAppBundle: 0
         m_IPAddressToConnect: 
