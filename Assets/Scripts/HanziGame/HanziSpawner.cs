@@ -11,6 +11,7 @@ public class HanziSpawner : MonoBehaviour
     [Header("Settings")]
     public GameObject[] characterPrefabs; // Assign your 3D character models
     public Transform playerHead; // Assign XR Origin Camera
+    public Material hanziMaterial;
     public float spawnDistance = 3f;
     public float moveSpeed = 1f;
     public float spawnInterval = 2f;
@@ -115,6 +116,7 @@ public class HanziSpawner : MonoBehaviour
         spawnPos.y = playerHead.position.y; // Keep at eye level
         activeFilterIndex = UnityEngine.Random.Range(0, filteredCharacters.Count);
         GameObject prefab = filteredCharacters[activeFilterIndex];
+        prefab.GetComponent<Renderer>().material = hanziMaterial;
 
         // Instantiate random character
         GameObject newChar = Instantiate(

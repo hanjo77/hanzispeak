@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SettingsView : AppView
 {
+    public GameObject passthroughLayer;
     public TMP_Dropdown languageDropdown;
     public TMP_Dropdown categoryDropdown;
     public UnityEngine.UI.Toggle pinyinToggle;
@@ -15,6 +16,7 @@ public class SettingsView : AppView
     // Example dictionary
     private Dictionary<string, HanziCategory> categories;
     private string needsPracticeIndex;
+    private string passthroughKey = "passthrough";
 
     private Dictionary<string, string> languages = new Dictionary<string, string>
     {
@@ -36,6 +38,40 @@ public class SettingsView : AppView
 
         UpdateCategories();
 
+        // Add listener for value change
+        languageDropdown.onValueChanged.AddListener(OnLanguageChanged);
+        categoryDropdown.onValueChanged.AddListener(OnCategoryChanged);
+        pinyinToggle.onValueChanged.AddListener(OnPinyinChanged);
+        translationToggle.onValueChanged.AddListener(OnTranslationChanged);
+        speakToggle.onValueChanged.AddListener(OnSpeakChanged);
+        passthroughToggle.onValueChanged.AddListener(OnPassthroughChanged);
+        foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
+        {
+            translator.UpdateTranslation();
+        }
+    }
+
+    public override void ShowView()
+    {
+        base.ShowView();
+        UpdateCategories();
+        InitPlayerPrefs();
+    }
+
+    public void UpdateCategories()
+    {
+        categoryDropdown.options.Clear();
+        categories = HanziCategoryDB.Categories;
+        AddNeedsPracticeOption(PlayerPrefs.GetString("failedHanzi"));
+        categoryDropdown.AddOptions(categories.Keys.ToList());
+        foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
+        {
+            translator.UpdateTranslation();
+        }
+    }
+
+    private void InitPlayerPrefs()
+    {
         int savedIndex;
         // Optionally load previously saved value from PlayerPrefs
         string languageKey = PlayerPrefs.GetString("language", "en");
@@ -44,17 +80,16 @@ public class SettingsView : AppView
         int savedPinyin = PlayerPrefs.GetInt("pinyin", 1);
         int savedTranslation = PlayerPrefs.GetInt("translation", 1);
         int savedSpeak = PlayerPrefs.GetInt("speak", 1);
-        int savedPassthrough = PlayerPrefs.GetInt("passthrough", 0);
+        int savedPassthrough = PlayerPrefs.GetInt(passthroughKey, 0);
         PlayerPrefs.SetString("hanzifilter", string.Empty);
         PlayerPrefs.SetString("language", languageKey);
         PlayerPrefs.SetInt("category", savedCategory < categoryDropdown.options.Count() ? savedCategory : 0);
         PlayerPrefs.SetInt("pinyin", savedPinyin);
         PlayerPrefs.SetInt("translation", savedTranslation);
         PlayerPrefs.SetInt("speak", savedSpeak);
-        PlayerPrefs.SetInt("passthrough", savedPassthrough);
+        PlayerPrefs.SetInt(passthroughKey, savedPassthrough);
         OnCategoryChanged(savedCategory);
         PlayerPrefs.Save();
-
 
         // Set the dropdown value based on saved value
         savedIndex = languageDropdown.options.FindIndex(option => option.text == savedLanguage);
@@ -69,36 +104,6 @@ public class SettingsView : AppView
         pinyinToggle.isOn = savedPinyin == 1;
         translationToggle.isOn = savedTranslation == 1;
         speakToggle.isOn = savedSpeak == 1;
-
-        // Add listener for value change
-        languageDropdown.onValueChanged.AddListener(OnLanguageChanged);
-        categoryDropdown.onValueChanged.AddListener(OnCategoryChanged);
-        pinyinToggle.onValueChanged.AddListener(OnPinyinChanged);
-        translationToggle.onValueChanged.AddListener(OnTranslationChanged);
-        speakToggle.onValueChanged.AddListener(OnSpeakChanged);
-        passthroughToggle.onValueChanged.AddListener(OnPassthroughChanged);
-        foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
-        {
-            translator.UpdateTranslation();
-        }
-    }
-
-    public void ShowView()
-    {
-        base.ShowView();
-        UpdateCategories();
-    }
-
-    public void UpdateCategories()
-    {
-        categoryDropdown.options.Clear();
-        categories = HanziCategoryDB.Categories;
-        AddNeedsPracticeOption(PlayerPrefs.GetString("failedHanzi"));
-        categoryDropdown.AddOptions(categories.Keys.ToList());
-        foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
-        {
-            translator.UpdateTranslation();
-        }
     }
 
     private void AddNeedsPracticeOption(string failedChars)
@@ -137,6 +142,14 @@ public class SettingsView : AppView
     private void OnDestroy()
     {
         PlayerPrefs.Save();
+    }
+
+    public void InitPassthrough()
+    {
+        if (PlayerPrefs.GetInt(passthroughKey) == 1)
+        {
+            SetPassThrough(true);
+        }
     }
 
     public void OnLanguageChanged(int index)
@@ -199,10 +212,40 @@ public class SettingsView : AppView
     public void OnPassthroughChanged(bool value)
     {
         int actualValue = passthroughToggle.isOn ? 1 : 0;
-        PlayerPrefs.SetInt("passthrough", actualValue);
+        PlayerPrefs.SetInt(passthroughKey, actualValue);
         PlayerPrefs.Save(); // Ensure changes are saved to disk
-        AppManager.Instance.TogglePassThrough();
+        SetPassThrough(passthroughToggle.isOn);
 
         UnityEngine.Debug.Log("Selected passthrough Value: " + actualValue); // Optional debug log
     }
+
+    public void SetPassThrough(bool isEnabled)
+    {
+        OVRManager.instance.isInsightPassthroughEnabled = isEnabled;
+        passthroughLayer.SetActive(isEnabled);
+        if (isEnabled)
+        {
+            SetClearFlagsForAllCameras(CameraClearFlags.SolidColor);
+            PlayerPrefs.SetInt(passthroughKey, 1);
+        }
+        else
+        {
+            SetClearFlagsForAllCameras(CameraClearFlags.Skybox);
+            PlayerPrefs.SetInt(passthroughKey, 0);
+        }
+    }
+
+    private void SetClearFlagsForAllCameras(CameraClearFlags flags)
+    {
+        foreach (var cam in Camera.allCameras)
+        {
+            if (cam.isActiveAndEnabled)
+            {
+                cam.clearFlags = flags;
+                cam.backgroundColor = new Color(0, 0, 0, 0);
+            }
+        }
+    }
+
+
 }

@@ -500,6 +500,7 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: 8e4611ed619398e4691e1740c3f492e8, type: 3}
   - {fileID: 919132149155446097, guid: 33cd09c0f6138514c8c972d27d11f989, type: 3}
   playerHead: {fileID: 0}
+  hanziMaterial: {fileID: 2100000, guid: 48b0467b7278d1a448700b5227f96617, type: 2}
   spawnDistance: 1000
   moveSpeed: 120
   spawnInterval: 5

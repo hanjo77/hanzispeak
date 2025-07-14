@@ -17,12 +17,11 @@ public class AppManager : MonoBehaviour
     [Header("Elements")]
     public GameObject uiBackground;
 
-
-
     private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        settingsView.InitPassthrough();
         if (Permission.HasUserAuthorizedPermission(Permission.Microphone))
         {
             StartView();
@@ -89,35 +88,6 @@ public class AppManager : MonoBehaviour
         else
         {
             StartView();
-        }
-    }
-
-    public void TogglePassThrough()
-    {
-        string passthroughKey = "passthrough";
-        if (PlayerPrefs.GetInt(passthroughKey) != 1)
-        {
-            SetClearFlagsForAllCameras(CameraClearFlags.SolidColor);
-            OVRManager.instance.isInsightPassthroughEnabled = true;
-            PlayerPrefs.SetInt(passthroughKey, 1);
-        }
-        else
-        {
-            SetClearFlagsForAllCameras(CameraClearFlags.Skybox);
-            OVRManager.instance.isInsightPassthroughEnabled = false;
-            PlayerPrefs.SetInt(passthroughKey, 0);
-        }
-    }
-
-    private void SetClearFlagsForAllCameras(CameraClearFlags flags)
-    {
-        foreach (var cam in Camera.allCameras)
-        {
-            if (cam.isActiveAndEnabled)
-            {
-                cam.clearFlags = flags;
-                cam.backgroundColor = new Color(0, 0, 0, 0);
-            }
         }
     }
 
