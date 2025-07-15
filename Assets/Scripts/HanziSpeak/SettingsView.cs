@@ -104,13 +104,12 @@ public class SettingsView : AppView
         pinyinToggle.isOn = savedPinyin == 1;
         translationToggle.isOn = savedTranslation == 1;
         speakToggle.isOn = savedSpeak == 1;
+        passthroughToggle.isOn = savedPassthrough == 1;
     }
 
     private void AddNeedsPracticeOption(string failedChars)
     {
-        UnityEngine.Debug.Log(failedChars);
         if (string.IsNullOrEmpty(failedChars)) {
-            UnityEngine.Debug.Log($"needs practice index: {needsPracticeIndex}");
             if (needsPracticeIndex != null && HanziCategoryDB.Categories.ContainsKey(needsPracticeIndex))
             {
                 HanziCategoryDB.Categories.Remove(needsPracticeIndex);
@@ -146,10 +145,7 @@ public class SettingsView : AppView
 
     public void InitPassthrough()
     {
-        if (PlayerPrefs.GetInt(passthroughKey) == 1)
-        {
-            SetPassThrough(true);
-        }
+        SetPassThrough(PlayerPrefs.GetInt(passthroughKey) == 1);
     }
 
     public void OnLanguageChanged(int index)
@@ -233,6 +229,7 @@ public class SettingsView : AppView
             SetClearFlagsForAllCameras(CameraClearFlags.Skybox);
             PlayerPrefs.SetInt(passthroughKey, 0);
         }
+        PlayerPrefs.Save();
     }
 
     private void SetClearFlagsForAllCameras(CameraClearFlags flags)

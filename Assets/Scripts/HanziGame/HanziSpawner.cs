@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class HanziSpawner : MonoBehaviour
 {
@@ -153,6 +153,7 @@ public class HanziSpawner : MonoBehaviour
         newChar.AddComponent<ApproachingCharacter>().Init(playerHead, moveSpeed);
         newChar.AddComponent<MeshExploder>();
         activeHanzi = newChar.AddComponent<HanziCharacter>();
+        activeHanzi.Init();
         activeHanzi.hanziText = prefab.name;
         activeHanzi.transform.parent = transform;
     }
@@ -179,21 +180,36 @@ public class HanziSpawner : MonoBehaviour
 
             foreach (Match match in matches)
             {
-                string matchPinyin = pinyinData.FirstOrDefault(x => x.Value.Contains(match.Value)).Key;
-                bool isCorrect = (matchPinyin == currentPinyin);
-                if (!isCorrect)
+                StringCollection chars = new StringCollection();
+                if (match.Value.Length > 1)
                 {
-                    if (wrongGuesses.Contains(matchPinyin))
+                    foreach (char chr in match.Value)
                     {
-                        continue;
+                        chars.Add(chr.ToString());
                     }
-                    wrongGuesses.Add(matchPinyin);
                 }
-                UnityEngine.Debug.Log($"... trying {matchPinyin} for {currentPinyin}");
-                if (isCorrect)
+                else
                 {
-                    UnityEngine.Debug.Log($"... with SUCCESS!!!");
-                    return true;
+                    chars.Add(match.Value);
+                }
+                foreach (string chr in chars)
+                {
+                    string matchPinyin = pinyinData.FirstOrDefault(x => x.Value.Contains(chr)).Key;
+                    bool isCorrect = (matchPinyin == currentPinyin);
+                    if (!isCorrect)
+                    {
+                        if (wrongGuesses.Contains(matchPinyin))
+                        {
+                            continue;
+                        }
+                        wrongGuesses.Add(matchPinyin);
+                    }
+                    UnityEngine.Debug.Log($"... trying {matchPinyin} for {currentPinyin}");
+                    if (isCorrect)
+                    {
+                        UnityEngine.Debug.Log($"... with SUCCESS!!!");
+                        return true;
+                    }
                 }
             }
             if (IsPinyinFairlyRepresented(currentPinyin, wrongGuesses))

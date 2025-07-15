@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Diagnostics;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class HanziCharacter : MonoBehaviour
 {
@@ -10,6 +7,12 @@ public class HanziCharacter : MonoBehaviour
     public float fadeTime = 1.0f;
     private bool isRecognized;
     private bool hasFailed;
+    HapticFeedbackManager hapticFeedbackManager;
+
+    public void Init()
+    {
+        hapticFeedbackManager = this.gameObject.AddComponent<HapticFeedbackManager>();
+    }
 
     public void MarkRecognized()
     {
@@ -23,7 +26,6 @@ public class HanziCharacter : MonoBehaviour
         isRecognized = true;
         GetComponent<MeshExploder>().Explode();
 
-        HapticFeedbackManager hapticFeedbackManager = new HapticFeedbackManager();
         hapticFeedbackManager.VibrateControllers(.5f, .1f);
         GameManager.Instance.PlayExplosion(transform);
         StartCoroutine(WaitForRespawn(false));
@@ -34,7 +36,6 @@ public class HanziCharacter : MonoBehaviour
         if (!isRecognized && !hasFailed)
         {
             GameManager.Instance.AddFailedChar(hanziText);
-            HapticFeedbackManager hapticFeedbackManager = new HapticFeedbackManager();
             hapticFeedbackManager.VibrateControllers(1f, .5f);
             GameManager.Instance.PlayPinyinAudio("explosion");
             StartCoroutine(WaitForRespawn(true));
