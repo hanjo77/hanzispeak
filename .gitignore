@@ -85,3 +85,9 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 Python/fbx-new/
 Assets/Resources/Audio/relax-tune.*
+Web/relax-tune.ogg
+Assets/TextMesh Pro/Resources/Fonts & Materials/Gen Jyuu Gothic ExtraLight outline.asset
+Assets/TextMesh Pro/Resources/Fonts & Materials/Gen Jyuu Gothic ExtraLight outline.asset.meta
+Assets/TextMesh Pro/Resources/Fonts & Materials/Gen Jyuu Gothic ExtraLight.asset
+Assets/TextMesh Pro/Resources/Fonts & Materials/Gen Jyuu Gothic ExtraLight.asset.meta
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset

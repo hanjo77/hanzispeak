@@ -21,14 +21,11 @@ public class HudFollower : MonoBehaviour
     {
         if (cameraTransform == null) return;
 
-        // Get horizontal forward vector (ignore pitch)
-        Vector3 flatForward = Vector3.ProjectOnPlane(cameraTransform.forward, Vector3.up).normalized;
-
         // Desired position
-        Vector3 desiredPosition = cameraTransform.position + flatForward * followDistance;
-        desiredPosition.y = fixedY;
+        Vector3 desiredPosition = cameraTransform.position + (cameraTransform.forward * followDistance);
+        // desiredPosition.y = fixedY;
 
-        parentTransform.position = Vector3.SmoothDamp(transform.position, desiredPosition, ref velocity, smoothTime);
+        parentTransform.position = Vector3.SmoothDamp(parentTransform.position, desiredPosition, ref velocity, smoothTime);
 
         // Y-only LookAt toward camera (for horizontal rotation only)
         Vector3 lookAt = cameraTransform.position;
