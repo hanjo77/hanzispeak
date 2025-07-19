@@ -80,13 +80,15 @@ public class SettingsView : AppView
         int savedPinyin = PlayerPrefs.GetInt("pinyin", 1);
         int savedTranslation = PlayerPrefs.GetInt("translation", 1);
         int savedSpeak = PlayerPrefs.GetInt("speak", 1);
-        int savedPassthrough = PlayerPrefs.GetInt(passthroughKey, 0);
+        int savedAcceptedRisks = PlayerPrefs.GetInt("acceptedRisks", 1);
+        int savedPassthrough = PlayerPrefs.GetInt(passthroughKey, 1);
         PlayerPrefs.SetString("hanzifilter", string.Empty);
         PlayerPrefs.SetString("language", languageKey);
         PlayerPrefs.SetInt("category", savedCategory < categoryDropdown.options.Count() ? savedCategory : 0);
         PlayerPrefs.SetInt("pinyin", savedPinyin);
         PlayerPrefs.SetInt("translation", savedTranslation);
         PlayerPrefs.SetInt("speak", savedSpeak);
+        PlayerPrefs.SetInt("acceptedRisks", savedAcceptedRisks);
         PlayerPrefs.SetInt(passthroughKey, savedPassthrough);
         OnCategoryChanged(savedCategory);
         PlayerPrefs.Save();
@@ -217,8 +219,8 @@ public class SettingsView : AppView
 
     public void SetPassThrough(bool isEnabled)
     {
-        OVRManager.instance.isInsightPassthroughEnabled = isEnabled;
         passthroughLayer.SetActive(isEnabled);
+        OVRManager.instance.isInsightPassthroughEnabled = isEnabled;
         if (isEnabled)
         {
             SetClearFlagsForAllCameras(CameraClearFlags.SolidColor);
@@ -236,11 +238,8 @@ public class SettingsView : AppView
     {
         foreach (var cam in Camera.allCameras)
         {
-            if (cam.isActiveAndEnabled)
-            {
-                cam.clearFlags = flags;
-                cam.backgroundColor = new Color(0, 0, 0, 0);
-            }
+            cam.clearFlags = flags;
+            cam.backgroundColor = new Color(0, 0, 0, 0);
         }
     }
 

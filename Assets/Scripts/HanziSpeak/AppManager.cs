@@ -21,8 +21,11 @@ public class AppManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-        settingsView.InitPassthrough();
-        if (Permission.HasUserAuthorizedPermission(Permission.Microphone))
+        OVRCameraRig rig = FindFirstObjectByType<OVRCameraRig>();
+        OVRManager.eyeFovPremultipliedAlphaModeEnabled = true;
+        rig.usePerEyeCameras = false;
+        // settingsView.InitPassthrough();
+        if (PlayerPrefs.GetInt("acceptedRisks") > 0)
         {
             StartView();
         }
@@ -30,7 +33,6 @@ public class AppManager : MonoBehaviour
         {
             MicWarningView();
         }
-        MicWarningView();
         HanziGroupDB.Initialize();
     }
 

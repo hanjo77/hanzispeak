@@ -6,7 +6,7 @@ public class CalloutSpawner : MonoBehaviour
 {
     public OVRControllerHelper controllerHelper;
     public GameObject calloutUIPrefab;
-    public Vector3 calloutOffset = new Vector3(0, 0.015f, 0);
+    public Vector3 calloutOffset;
     public OVRInput.Button quitButton = OVRInput.Button.Two; // B
 
     private GameObject currentCallout;

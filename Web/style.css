@@ -5,6 +5,8 @@ html, body {
     color: white;
     background-color: #000;
     overflow: hidden;
+    background-image: url(hanzispeak-skybg.jpg);
+    background-position: center;
 }
 canvas { position: absolute; top: 0; left: 0; z-index: 0; }
 #overlay {

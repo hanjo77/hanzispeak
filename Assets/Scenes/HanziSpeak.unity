@@ -528,6 +528,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1168042863143544390, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 807636876}
     - targetCorrespondingSourceObject: {fileID: 1168042862848623612, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
       insertIndex: 0
       addedObject: {fileID: 715651236}
@@ -2578,7 +2581,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -42}
+  m_AnchoredPosition: {x: -0, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &248443433
@@ -2909,6 +2912,11 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!4 &308426917 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1168042863143544390, guid: 0a7d2469f24041c4284c66706f84c45e, type: 3}
+  m_PrefabInstance: {fileID: 42629980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &310988240
 GameObject:
   m_ObjectHideFlags: 0
@@ -5344,12 +5352,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee10491ef6d5d1d49a270cf6b09bdc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enableMipmapping: 1
-  _dynamicResolution: 0
+  _enableMipmapping: 0
+  _dynamicResolution: 1
   _redrawResolutionThreshold: 2147483647
   rectTransform: {fileID: 606241502}
   maxTextureSize: 2048
-  manualRedraw: 1
+  manualRedraw: 0
   renderInterval: 1
   renderIntervalFrameOffset: 0
   expensive: 0
@@ -6433,7 +6441,6 @@ GameObject:
   - component: {fileID: 715651236}
   - component: {fileID: 715651240}
   - component: {fileID: 715651239}
-  - component: {fileID: 715651238}
   - component: {fileID: 715651237}
   m_Layer: 3
   m_Name: CalloutQuit
@@ -6441,7 +6448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &715651236
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6474,39 +6481,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee10491ef6d5d1d49a270cf6b09bdc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enableMipmapping: 0
-  _dynamicResolution: 1
+  _enableMipmapping: 1
+  _dynamicResolution: 0
   _redrawResolutionThreshold: 2147483647
   rectTransform: {fileID: 715651236}
   maxTextureSize: 2048
-  manualRedraw: 0
+  manualRedraw: 1
   renderInterval: 1
   renderIntervalFrameOffset: 0
   expensive: 0
   layer: 5
-  opacity: 2
+  opacity: 4
   shape: 0
   curveRadius: 1
   overlapMask: 0
-  overlayType: 1
+  overlayType: 2
   _overlayEnabled: 1
---- !u!114 &715651238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715651235}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bc4b69a930db7c4ca8627f377349367, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentTransform: {fileID: 2083165138}
-  cameraTransform: {fileID: 2006562240}
-  followDistance: 1
-  fixedY: 0
-  smoothTime: 0.5
 --- !u!114 &715651239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6946,7 +6936,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767689848}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -6970,9 +6960,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
+  field of view: 100
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -6987,7 +6977,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!114 &767689851
@@ -7395,6 +7385,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796372727}
   m_CullTransparentMesh: 1
+--- !u!1 &807636875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 807636876}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &807636876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807636875}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 308426917}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &811954897
 GameObject:
   m_ObjectHideFlags: 0
@@ -8884,12 +8905,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee10491ef6d5d1d49a270cf6b09bdc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enableMipmapping: 1
-  _dynamicResolution: 0
+  _enableMipmapping: 0
+  _dynamicResolution: 1
   _redrawResolutionThreshold: 2147483647
   rectTransform: {fileID: 1070712841}
   maxTextureSize: 2048
-  manualRedraw: 1
+  manualRedraw: 0
   renderInterval: 1
   renderIntervalFrameOffset: 0
   expensive: 0
@@ -11541,12 +11562,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee10491ef6d5d1d49a270cf6b09bdc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enableMipmapping: 1
-  _dynamicResolution: 0
+  _enableMipmapping: 0
+  _dynamicResolution: 1
   _redrawResolutionThreshold: 2147483647
   rectTransform: {fileID: 1296238150}
   maxTextureSize: 2048
-  manualRedraw: 1
+  manualRedraw: 0
   renderInterval: 1
   renderIntervalFrameOffset: 0
   expensive: 0
@@ -11795,7 +11816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enableMipmapping: 0
-  _dynamicResolution: 1
+  _dynamicResolution: 0
   _redrawResolutionThreshold: 2147483647
   rectTransform: {fileID: 1340644737}
   maxTextureSize: 2048
@@ -11804,11 +11825,11 @@ MonoBehaviour:
   renderIntervalFrameOffset: 0
   expensive: 0
   layer: 5
-  opacity: 2
+  opacity: 4
   shape: 0
   curveRadius: 1
   overlapMask: 0
-  overlayType: 1
+  overlayType: 2
   _overlayEnabled: 1
 --- !u!1 &1356881837
 GameObject:
@@ -12844,12 +12865,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee10491ef6d5d1d49a270cf6b09bdc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enableMipmapping: 1
-  _dynamicResolution: 0
+  _enableMipmapping: 0
+  _dynamicResolution: 1
   _redrawResolutionThreshold: 2147483647
   rectTransform: {fileID: 1409542095}
   maxTextureSize: 2048
-  manualRedraw: 1
+  manualRedraw: 0
   renderInterval: 1
   renderIntervalFrameOffset: 0
   expensive: 0
@@ -13542,7 +13563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usePerEyeCameras: 0
+  usePerEyeCameras: 1
   useFixedUpdateForTracking: 0
   disableEyeAnchorCameras: 0
 --- !u!114 &1523945830
@@ -14304,12 +14325,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee10491ef6d5d1d49a270cf6b09bdc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enableMipmapping: 1
-  _dynamicResolution: 0
+  _enableMipmapping: 0
+  _dynamicResolution: 1
   _redrawResolutionThreshold: 2147483647
   rectTransform: {fileID: 1604186780}
   maxTextureSize: 2048
-  manualRedraw: 1
+  manualRedraw: 0
   renderInterval: 1
   renderIntervalFrameOffset: 0
   expensive: 0
@@ -15573,8 +15594,8 @@ Transform:
   m_GameObject: {fileID: 1824081340}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.89, y: 1.83, z: 3.68}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.286, y: 1.78, z: 1.22}
+  m_LocalScale: {x: 0.70720774, y: 0.70720774, z: 0.70720774}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 504704644}
@@ -17497,7 +17518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllerHelper: {fileID: 1971695319}
   calloutUIPrefab: {fileID: 715651235}
-  calloutOffset: {x: 0, y: 0.015, z: 0}
+  calloutOffset: {x: 0, y: 0.5, z: 0}
   quitButton: 2
 --- !u!1 &1979755075
 GameObject:
@@ -17726,7 +17747,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006562237}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
@@ -17752,7 +17773,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 1000
-  field of view: 90
+  field of view: 100
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -18939,7 +18960,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093210119}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -18963,9 +18984,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
-  field of view: 60
+  field of view: 100
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -18980,7 +19001,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!114 &2093210122
