@@ -1,0 +1,16 @@
+{
+  "name": "hanzispeak-web",
+  "version": "1.0.0",
+  "description": "Static site for HanziSpeak with three.js FBX background",
+  "type": "module",
+  "scripts": {
+    "dev": "esbuild src/main.js --bundle --outfile=script.js --sourcemap",
+    "build": "esbuild src/main.js --bundle --minify --outfile=script.js"
+  },
+  "dependencies": {
+    "three": "^0.157.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0"
+  }
+}
