@@ -224,9 +224,9 @@ public class HanziSpawner : MonoBehaviour
             }
             foreach (string wrongGuess in wrongGuesses)
             {
-                    GetComponent<FlyInPinyin>().Fly(wrongGuess, false, playerHead.transform, activeHanzi);
+                GetComponent<FlyInPinyin>().Fly(wrongGuess, false, playerHead.transform, activeHanzi);
             }
-
+        }
 
         return false;
     }
