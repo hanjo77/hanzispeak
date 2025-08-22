@@ -26,7 +26,6 @@ public class HanziSpawner : MonoBehaviour
     public static HanziSpawner Instance;
 
     // Assign in Inspector
-    public VoskSpeechToText voskEngine;
     public float checkInterval = 1.5f;
 
     // Track active characters
@@ -51,7 +50,7 @@ public class HanziSpawner : MonoBehaviour
         UnityEngine.Debug.Log("StartGame");
         HanziDB.Initialize();
         isPlaying = true;
-        voskEngine.OnTranscriptionResult = OnVoiceInput;
+        AppManager.Instance.voskEngine.OnTranscriptionResult = OnVoiceInput;
         score = 0;
         currentLives = lives;
         GameManager.Instance.SetLives(currentLives);
@@ -67,7 +66,7 @@ public class HanziSpawner : MonoBehaviour
             Destroy(activeHanzi.gameObject);
         }
         isPlaying = false;
-        voskEngine.OnTranscriptionResult = null;
+        AppManager.Instance.voskEngine.OnTranscriptionResult = null;
         UnityEngine.Debug.Log("Spawner StopGame");
     }
 
