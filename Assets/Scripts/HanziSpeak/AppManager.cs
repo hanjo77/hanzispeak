@@ -17,13 +17,9 @@ public class AppManager : MonoBehaviour
     [Header("Elements")]
     public GameObject uiBackground;
 
-<<<<<<< HEAD
-
-=======
     [Header("Speech")]
     public VoskSpeechToText voskEngine;
     public float checkInterval = 1.5f;
->>>>>>> 8e727c7 (Fix issues with Android mic recognition on 2nd / 4rd / ... round by adding voskEngine to AppManager and therefore not destroying it.)
 
     private void Awake()
     {
