@@ -82,28 +82,28 @@ MonoBehaviour:
   m_Version: 1.1.0
   m_FaceInfo:
     m_FaceIndex: 0
-    m_FamilyName: Noto Sans
+    m_FamilyName: Gen Jyuu Gothic
     m_StyleName: ExtraLight
     m_PointSize: 86
     m_Scale: 1
-    m_UnitsPerEM: 1000
-    m_LineHeight: 117.132
-    m_AscentLine: 91.934
-    m_CapLine: 62
+    m_UnitsPerEM: 1024
+    m_LineHeight: 127.740234
+    m_AscentLine: 92.4668
+    m_CapLine: 63
     m_MeanLine: 46
     m_Baseline: 0
-    m_DescentLine: -25.198
-    m_SuperscriptOffset: 91.934
+    m_DescentLine: -27.546875
+    m_SuperscriptOffset: 92.4668
     m_SuperscriptSize: 0.5
-    m_SubscriptOffset: -25.198
+    m_SubscriptOffset: -27.546875
     m_SubscriptSize: 0.5
-    m_UnderlineOffset: -10.75
-    m_UnderlineThickness: 4.3
+    m_UnderlineOffset: -12.849609
+    m_UnderlineThickness: 4.283203
     m_StrikethroughOffset: 18.4
-    m_StrikethroughThickness: 4.3
-    m_TabWidth: 22
+    m_StrikethroughThickness: 4.283203
+    m_TabWidth: 19
   m_Material: {fileID: 2180264}
-  m_SourceFontFileGUID: 93849a8d54e62e74c9b7d7772eaca231
+  m_SourceFontFileGUID: 0293f70e2251ca6429c5c3369063bdff
   m_CreationSettings:
     sourceFontFileName: 
     sourceFontFileGUID: e3265ab4bf004d28a9537516768c1c75
@@ -154,9 +154,6 @@ MonoBehaviour:
   m_ShouldReimportFontFeatures: 0
   m_FallbackFontAssetTable:
   - {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  - {fileID: 11400000, guid: b12d185b3b0693643a1b1a9faaa4c40d, type: 2}
-  - {fileID: 11400000, guid: 1405cd944a8d4ce4f89295cbcfea8cdf, type: 2}
-  - {fileID: 11400000, guid: 328e7b4e6a97dab448a0da9b60511963, type: 2}
   m_FontWeightTable:
   - regularTypeface: {fileID: 0}
     italicTypeface: {fileID: 0}
