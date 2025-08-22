@@ -1956,7 +1956,7 @@ MonoBehaviour:
   VoiceProcessor: {fileID: 146513884}
   MaxAlternatives: 200
   MaxRecordLength: 1
-  AutoStart: 1
+  AutoStart: 0
   KeyPhrases: []
 --- !u!114 &146513884
 MonoBehaviour:
