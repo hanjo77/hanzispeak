@@ -17,6 +17,10 @@ public class AppManager : MonoBehaviour
     [Header("Elements")]
     public GameObject uiBackground;
 
+    [Header("Speech")]
+    public VoskSpeechToText voskEngine;
+    public float checkInterval = 1.5f;
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
