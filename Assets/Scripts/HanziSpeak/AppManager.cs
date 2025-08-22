@@ -19,6 +19,7 @@ public class AppManager : MonoBehaviour
 
     [Header("Speech")]
     public VoskSpeechToText voskEngine;
+    private bool isVoskInitialized;
     public float checkInterval = 1.5f;
 
     private void Awake()
@@ -48,6 +49,11 @@ public class AppManager : MonoBehaviour
 
     public void StartView()
     {
+        if (!isVoskInitialized)
+        {
+            voskEngine.StartVoskStt();
+            isVoskInitialized = true;
+        }
         HideAllViews();
         startView.ShowView();
     }

@@ -219,10 +219,13 @@ public class HanziSpawner : MonoBehaviour
             {
                 if (IsSomehowValid(wrongGuess, currentPinyin))
                 {
-                    GetComponent<FlyInPinyin>().Fly(wrongGuess, false, playerHead.transform, activeHanzi);
+                    return true;
                 }
             }
-        }
+            foreach (string wrongGuess in wrongGuesses)
+            {
+                    GetComponent<FlyInPinyin>().Fly(wrongGuess, false, playerHead.transform, activeHanzi);
+            }
 
 
         return false;

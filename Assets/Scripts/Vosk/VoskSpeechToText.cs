@@ -27,7 +27,7 @@ public class VoskSpeechToText : MonoBehaviour
 	public float MaxRecordLength = 1;
 
 	[Tooltip("Should the recognizer start when the application is launched?")]
-	public bool AutoStart = true;
+	public bool AutoStart = false;
 
 	[Tooltip("The phrases that will be detected. If left empty, all words will be detected.")]
 	public List<string> KeyPhrases = new List<string>();
