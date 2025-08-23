@@ -1396,6 +1396,8 @@ GameObject:
   m_Component:
   - component: {fileID: 146513880}
   - component: {fileID: 146513881}
+  - component: {fileID: 146513883}
+  - component: {fileID: 146513884}
   - component: {fileID: 146513882}
   m_Layer: 0
   m_Name: HanziSpeakManager
@@ -1438,6 +1440,8 @@ MonoBehaviour:
   gameOverView: {fileID: 536928162}
   trainingView: {fileID: 1922670756}
   uiBackground: {fileID: 1824081340}
+  voskEngine: {fileID: 146513883}
+  checkInterval: 1.5
 --- !u!82 &146513882
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1535,6 +1539,40 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &146513883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146513879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f217616079a9a74489a1ae3cd9178787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ModelPath: vosk-model-small-cn-0.22.zip
+  VoiceProcessor: {fileID: 146513884}
+  MaxAlternatives: 200
+  MaxRecordLength: 1
+  AutoStart: 1
+  KeyPhrases: []
+--- !u!114 &146513884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146513879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf39116cc6db44d47b2eaf534e0f6682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MicrophoneIndex: 0
+  _minimumSpeakingSampleValue: 0.05
+  _silenceTimer: 1
+  _autoDetect: 0
 --- !u!1001 &147624606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4792,19 +4830,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c02a229c3edb1d44ab26e779900d6e53, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.67296
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c02a229c3edb1d44ab26e779900d6e53, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.67296
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c02a229c3edb1d44ab26e779900d6e53, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.67296
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c02a229c3edb1d44ab26e779900d6e53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c02a229c3edb1d44ab26e779900d6e53, type: 3}
       propertyPath: m_LocalPosition.y
@@ -11235,7 +11273,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 673a5d97f59d0b74d99b9c226de2af05, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: -8848810374240701247, guid: 436757056de26e144b330984c539cecd, type: 3}
+      objectReference: {fileID: 2100000, guid: 802a9ee83d16208458855d1bb40b6892, type: 2}
     - target: {fileID: 919132149155446097, guid: 673a5d97f59d0b74d99b9c226de2af05, type: 3}
       propertyPath: m_Name
       value: "\u8BF4"
@@ -16233,7 +16271,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 9a4309afa94301241a6437e5ab3fedea, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: -8848810374240701247, guid: 436757056de26e144b330984c539cecd, type: 3}
+      objectReference: {fileID: 2100000, guid: 802a9ee83d16208458855d1bb40b6892, type: 2}
     - target: {fileID: 919132149155446097, guid: 9a4309afa94301241a6437e5ab3fedea, type: 3}
       propertyPath: m_Name
       value: "\u6C49\u5B57"
@@ -16496,8 +16534,8 @@ Transform:
   m_GameObject: {fileID: 1980880506}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.25, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: -0.15, y: -0.2, z: 0}
+  m_LocalScale: {x: 0.47924843, y: 0.47924843, z: 0.47924843}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 94038370}
