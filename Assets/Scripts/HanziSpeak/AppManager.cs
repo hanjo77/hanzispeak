@@ -25,6 +25,7 @@ public class AppManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         if (Permission.HasUserAuthorizedPermission(Permission.Microphone))
         {
             StartView();

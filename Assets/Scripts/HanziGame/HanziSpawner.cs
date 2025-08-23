@@ -242,37 +242,90 @@ public class HanziSpawner : MonoBehaviour
         return false;
     }
 
-    private static bool IsPinyinFairlyRepresented(string targetPinyin, IEnumerable<string> guesses)
+    /// <summary>
+    /// Checks if the target pinyin is fairly represented in the list of guesses,
+    /// allowing for tone differences and common pronunciation errors.
+    /// </summary>
+    public static bool IsPinyinFairlyRepresented(string targetPinyin, IEnumerable<string> guesses)
     {
         if (string.IsNullOrWhiteSpace(targetPinyin) || targetPinyin.Length < 2)
             return false;
 
-        bool[] matches = new bool[targetPinyin.Length];
-        for (int guessCounter = 0; guessCounter < guesses.Count(); ++guessCounter)
+        string normalizedTarget = NormalizePinyin(targetPinyin);
+
+        foreach (string guess in guesses)
         {
-            string guess = guesses.ElementAt(guessCounter);
-            if (guess == targetPinyin)
-                return true;
-            if (guess == null)
+            if (string.IsNullOrWhiteSpace(guess))
                 continue;
-            for (int charCounter = 0; charCounter < guess.Count(); ++charCounter)
+
+            string normalizedGuess = NormalizePinyin(guess);
+
+            // Exact match
+            if (normalizedGuess == normalizedTarget)
+                return true;
+
+            // Fuzzy match within 2 edits
+            int distance = LevenshteinDistance(normalizedTarget, normalizedGuess);
+            if (distance <= 1)
             {
-                // Harder:: if (guess[charCounter] == targetPinyin[charCounter])
-                int targetIndex = targetPinyin.IndexOf(guess[charCounter]);
-                if (targetIndex > -1)
-                {
-                    UnityEngine.Debug.Log($"Found {guess[charCounter]} in {targetPinyin} at position {targetIndex}");
-                    matches[targetIndex] = true;
-                }
+                Debug.Log($"[Pinyin Match] '{normalizedGuess}' is close to '{normalizedTarget}' (distance: {distance})");
+                return true;
             }
         }
-        for (int matchCount = 0; matchCount < matches.Length; ++matchCount)
+
+        return false;
+    }
+
+    /// <summary>
+    /// Normalizes pinyin by removing tones and applying common pronunciation mappings.
+    /// </summary>
+    private static string NormalizePinyin(string input)
+    {
+        string s = input.ToLowerInvariant();
+
+        // Remove numeric tones
+        s = Regex.Replace(s, @"[1-5]", "");
+
+        /* Replace tone marks
+        s = s.Replace("ā", "a").Replace("á", "a").Replace("ǎ", "a").Replace("à", "a");
+        s = s.Replace("ē", "e").Replace("é", "e").Replace("ě", "e").Replace("è", "e");
+        s = s.Replace("ī", "i").Replace("í", "i").Replace("ǐ", "i").Replace("ì", "i");
+        s = s.Replace("ō", "o").Replace("ó", "o").Replace("ǒ", "o").Replace("ò", "o");
+        s = s.Replace("ū", "u").Replace("ú", "u").Replace("ǔ", "u").Replace("ù", "u"); */
+
+        // Handle confusing initials and substitutions
+        s = s.Replace("c", "z").Replace("zh", "j").Replace("ch", "q").Replace("sh", "x");
+        s = s.Replace("z", "j").Replace("c", "q").Replace("s", "x");
+        s = s.Replace("l", "n");  // Dialectal n/l confusion
+
+        return s;
+    }
+
+    /// <summary>
+    /// Calculates Levenshtein edit distance between two strings.
+    /// </summary>
+    private static int LevenshteinDistance(string s, string t)
+    {
+        if (s == t) return 0;
+        if (s.Length == 0) return t.Length;
+        if (t.Length == 0) return s.Length;
+
+        int[,] d = new int[s.Length + 1, t.Length + 1];
+
+        for (int i = 0; i <= s.Length; i++) d[i, 0] = i;
+        for (int j = 0; j <= t.Length; j++) d[0, j] = j;
+
+        for (int i = 1; i <= s.Length; i++)
         {
-            if (!matches[matchCount])
+            for (int j = 1; j <= t.Length; j++)
             {
-                return false;
+                int cost = (t[j - 1] == s[i - 1]) ? 0 : 1;
+                d[i, j] = Math.Min(
+                    Math.Min(d[i - 1, j] + 1, d[i, j - 1] + 1),
+                    d[i - 1, j - 1] + cost);
             }
         }
-        return true;
+
+        return d[s.Length, t.Length];
     }
 }
