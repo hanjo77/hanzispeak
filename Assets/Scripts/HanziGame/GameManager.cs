@@ -2,7 +2,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,8 +18,6 @@ public class GameManager : MonoBehaviour
     public GameObject explosionClip;
     public float explosionDuration;
     public Transform playerHead;
-    public HapticImpulsePlayer leftController;
-    public HapticImpulsePlayer rightController;
     public string failedHanzi;
     public string successfulHanzi;
 
@@ -129,8 +126,8 @@ public class GameManager : MonoBehaviour
 
     public void VibrateControllers(float amplitude, float duration)
     {
-        leftController.SendHapticImpulse(amplitude, duration);
-        rightController.SendHapticImpulse(amplitude, duration);
+        /* leftController.SendHapticImpulse(amplitude, duration);
+        rightController.SendHapticImpulse(amplitude, duration); */
     }
 
     IEnumerator explosionLoader(Transform transform)

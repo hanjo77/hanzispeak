@@ -109335,7 +109335,6 @@ MonoBehaviour:
   m_ShouldReimportFontFeatures: 0
   m_FallbackFontAssetTable:
   - {fileID: 11400000, guid: f318218216d2e0c4d9d38f2fde8d0c1a, type: 2}
-  - {fileID: 11400000, guid: bd06cc182109ba445877b8850e378205, type: 2}
   - {fileID: 11400000, guid: 328e7b4e6a97dab448a0da9b60511963, type: 2}
   m_FontWeightTable:
   - regularTypeface: {fileID: 0}
