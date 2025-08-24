@@ -296,7 +296,6 @@ public class HanziSpawner : MonoBehaviour
         // Handle confusing initials and substitutions
         s = s.Replace("c", "z").Replace("zh", "j").Replace("ch", "q").Replace("sh", "x");
         s = s.Replace("z", "j").Replace("c", "q").Replace("s", "x");
-        s = s.Replace("l", "n");  // Dialectal n/l confusion
 
         return s;
     }

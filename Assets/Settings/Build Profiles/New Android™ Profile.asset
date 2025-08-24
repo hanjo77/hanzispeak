@@ -38,8 +38,8 @@ MonoBehaviour:
     - line: '|   productName: HanziSpeak'
     - line: '|   defaultCursor: {instanceID: 0}'
     - line: '|   cursorHotspot: {x: 0, y: 0}'
-    - line: '|   m_SplashScreenBackgroundColor: {r: 0, g: 0.011928253, b: 0.2264151,
-        a: 1}'
+    - line: '|   m_SplashScreenBackgroundColor: {r: 0.2784314, g: 0.2784314, b: 0.2784314,
+        a: 0}'
     - line: '|   m_ShowUnitySplashScreen: 0'
     - line: '|   m_ShowUnitySplashLogo: 1'
     - line: '|   m_SplashScreenOverlayOpacity: 1'
