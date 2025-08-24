@@ -164,7 +164,7 @@ MonoBehaviour:
     - line: '|   loadStoreDebugModeEnabled: 0'
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
-    - line: '|   bundleVersion: 1.1'
+    - line: '|   bundleVersion: 1.0'
     - line: '|   preloadedAssets:'
     - line: '|   - {instanceID: 0}'
     - line: '|   - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f,
@@ -1095,7 +1095,7 @@ MonoBehaviour:
         m_ExportAsGoogleAndroidProject: 0
         m_DebugSymbolLevel: 1
         m_DebugSymbolFormat: 5
-        m_CurrentDeploymentTargetId: __builtin__target_default
+        m_CurrentDeploymentTargetId: 54241FDAP003LF
         m_BuildType: 2
         m_BuildAppBundle: 1
         m_IPAddressToConnect: 

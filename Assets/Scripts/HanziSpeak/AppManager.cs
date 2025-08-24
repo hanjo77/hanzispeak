@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.InputSystem;
 
 public class AppManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class AppManager : MonoBehaviour
     public SettingsView settingsView;
     public GameOverView gameOverView;
     public TrainingView trainingView;
+    public GameObject quitWarning;
 
     [Header("Elements")]
     public GameObject uiBackground;
@@ -20,6 +22,8 @@ public class AppManager : MonoBehaviour
     [Header("Speech")]
     public VoskSpeechToText voskEngine;
     public float checkInterval = 1.5f;
+
+    private float touchStartTime = 0f;
 
     private void Awake()
     {
@@ -36,6 +40,50 @@ public class AppManager : MonoBehaviour
         }
         MicWarningView();
         HanziGroupDB.Initialize();
+    }
+
+    void Update()
+    {
+        var touch = Touchscreen.current?.primaryTouch;
+
+        if (touch == null)
+            return;
+
+        if (touch.press.isPressed)
+        {
+            if (touchStartTime == 0f)
+            {
+                touchStartTime = Time.time;
+                quitWarning.SetActive(false);
+            }
+            else
+            {
+                float duration = Time.time - touchStartTime;
+
+                if (duration > 0.5f && !quitWarning.activeSelf)
+                {
+                    quitWarning.SetActive(true);
+                    Debug.Log("Long press detected. Hold to quit...");
+                }
+
+                if (duration > 1.5f)
+                {
+                    Debug.Log("Quitting game...");
+                    AppManager.Instance.SettingsView();
+                    ResetTouch();
+                }
+            }
+        }
+        else if (touch.press.wasReleasedThisFrame)
+        {
+            ResetTouch();
+        }
+    }
+
+    private void ResetTouch()
+    {
+        touchStartTime = 0f;
+        quitWarning.SetActive(false);
     }
 
     public void MicWarningView()

@@ -286,13 +286,6 @@ public class HanziSpawner : MonoBehaviour
         // Remove numeric tones
         s = Regex.Replace(s, @"[1-5]", "");
 
-        /* Replace tone marks
-        s = s.Replace("ā", "a").Replace("á", "a").Replace("ǎ", "a").Replace("à", "a");
-        s = s.Replace("ē", "e").Replace("é", "e").Replace("ě", "e").Replace("è", "e");
-        s = s.Replace("ī", "i").Replace("í", "i").Replace("ǐ", "i").Replace("ì", "i");
-        s = s.Replace("ō", "o").Replace("ó", "o").Replace("ǒ", "o").Replace("ò", "o");
-        s = s.Replace("ū", "u").Replace("ú", "u").Replace("ǔ", "u").Replace("ù", "u"); */
-
         // Handle confusing initials and substitutions
         s = s.Replace("c", "z").Replace("zh", "j").Replace("ch", "q").Replace("sh", "x");
         s = s.Replace("z", "j").Replace("c", "q").Replace("s", "x");
