@@ -1,0 +1,22 @@
+﻿{
+  "male": {
+    "en": "Male",
+    "de": "Männlich",
+    "fr": "Homme",
+    "it": "Maschile",
+    "es": "Masculino",
+    "ja": "男性",
+    "ko": "남성",
+    "ru": "Мужской"
+  },
+  "female": {
+    "en": "Female",
+    "de": "Weiblich",
+    "fr": "Femme",
+    "it": "Femminile",
+    "es": "Femenino",
+    "ja": "女性",
+    "ko": "여성",
+    "ru": "Женский"
+  }
+}

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class GameManager : MonoBehaviour
 {
@@ -57,7 +60,7 @@ public class GameManager : MonoBehaviour
 
     public void SetTranslation(HanziData hanziData)
     {
-        translationTextField.text = hanziData.GetTranslationString();
+        translationTextField.text = hanziData.GetTranslation();
     }
 
     public void SetPinyin(string pinyin)
@@ -65,14 +68,27 @@ public class GameManager : MonoBehaviour
         pinyinTextField.text = pinyin;
     }
 
-    public void PlayPinyinAudio(string pinyin)
+    public async void PlayPinyinAudio(string pinyin)
     {
         // Load from Resources/Audio
         try
         {
-            AudioClip clip = Resources.Load<AudioClip>($"Audio/{pinyin}");
-            float volume = pinyin.Length > 1 ? .6f : 1.0f;
-            AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, volume);
+            AsyncOperationHandle<AudioClip> handle = Addressables.LoadAssetAsync<AudioClip>($"Audio/{pinyin}");
+            await handle.Task;
+
+            if (handle.Status == AsyncOperationStatus.Succeeded)
+            {
+                AudioClip clip = handle.Result;
+                float volume = pinyin.Length > 1 ? .6f : 1.0f;
+                if (clip == null)
+                {
+                    Debug.LogError("❌ Clip is null before playing");
+                }
+                else
+                {
+                    AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, volume);
+                }
+            }
         }
         catch (Exception e)
         {

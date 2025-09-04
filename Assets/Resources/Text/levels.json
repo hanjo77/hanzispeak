@@ -1,0 +1,32 @@
+﻿{
+  "beginner": {
+    "en": "Beginner",
+    "de": "Anfänger",
+    "fr": "Débutant",
+    "it": "Principiante",
+    "es": "Principiante",
+    "ja": "初心者",
+    "ko": "초보자",
+    "ru": "Новичок"
+  },
+  "intermediate": {
+    "en": "Intermediate",
+    "de": "Mittelstufe",
+    "fr": "Intermédiaire",
+    "it": "Intermedio",
+    "es": "Intermedio",
+    "ja": "中級",
+    "ko": "중급",
+    "ru": "Средний уровень"
+  },
+  "advanced": {
+    "en": "Advanced",
+    "de": "Fortgeschritten",
+    "fr": "Avancé",
+    "it": "Avanzato",
+    "es": "Avanzado",
+    "ja": "上級",
+    "ko": "고급",
+    "ru": "Продвинутый"
+  }
+}

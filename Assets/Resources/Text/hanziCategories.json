@@ -1,170 +1,282 @@
 {
-  "0": {
-    "title": {
-      "cn": "数字",
-      "en": "Numbers",
-      "de": "Zahlen",
-      "fr": "Nombres",
-      "it": "Numeri",
-      "es": "Números",
-      "ja": "数字",
-      "ko": "숫자",
-      "ru": "Числа"
-    },
-    "hanzi": "一二三四五六七八九十"
+  "numeral": {
+    "en": "Numbers",
+    "de": "Zahlen",
+    "fr": "Nombres",
+    "it": "Numeri",
+    "es": "Números",
+    "ja": "数字",
+    "ko": "숫자",
+    "ru": "Числа"
   },
-  "1": {
-    "title": {
-      "cn": "动物",
-      "en": "Animals",
-      "de": "Tiere",
-      "fr": "Animaux",
-      "it": "Animali",
-      "es": "Animales",
-      "ja": "動物",
-      "ko": "동물",
-      "ru": "Животные"
-    },
-    "hanzi": "狗猫鱼鸡"
+  "animals": {
+    "en": "Animals",
+    "de": "Tiere",
+    "fr": "Animaux",
+    "it": "Animali",
+    "es": "Animales",
+    "ja": "動物",
+    "ko": "동물",
+    "ru": "Животные"
   },
-  "2": {
-    "title": {
-      "cn": "家庭",
-      "en": "Family",
-      "de": "Familie",
-      "fr": "Famille",
-      "it": "Famiglia",
-      "es": "Familia",
-      "ja": "家族",
-      "ko": "가족",
-      "ru": "Семья"
-    },
-    "hanzi": "父母兄弟姐妹子戚亲家姻婚"
+  "body": {
+    "en": "Body & health",
+    "de": "Körper & Gesundheit",
+    "fr": "Corps et santé",
+    "it": "Corpo e salute",
+    "es": "Cuerpo y salud",
+    "ja": "体と健康",
+    "ko": "신체 및 건강",
+    "ru": "Тело и здоровье"
   },
-  "3": {
-    "title": {
-      "cn": "代词",
-      "en": "Pronouns",
-      "de": "Pronomen",
-      "fr": "Pronoms",
-      "it": "Pronomi",
-      "es": "Pronombres",
-      "ja": "代名詞",
-      "ko": "대명사",
-      "ru": "Местоимения"
-    },
-    "hanzi": "我你他们谁这那哪"
+  "building": {
+    "en": "Buildings",
+    "de": "Gebäude",
+    "fr": "Bâtiments",
+    "it": "Edifici",
+    "es": "Edificios",
+    "ja": "建物",
+    "ko": "건물",
+    "ru": "Здания"
   },
-  "4": {
-    "title": {
-      "cn": "食品",
-      "en": "Food & Drink",
-      "de": "Essen & Trinken",
-      "fr": "Nourriture & Boissons",
-      "it": "Cibo e bevande",
-      "es": "Comida y bebida",
-      "ja": "食べ物と飲み物",
-      "ko": "음식과 음료",
-      "ru": "Еда и напитки"
-    },
-    "hanzi": "水茶米菜饭鱼肉苹"
+  "business": {
+    "en": "Business",
+    "de": "Geschäft",
+    "fr": "Affaires",
+    "it": "Affari",
+    "es": "Negocios",
+    "ja": "ビジネス",
+    "ko": "비즈니스",
+    "ru": "Бизнес"
   },
-  "5": {
-    "title": {
-      "cn": "方向",
-      "en": "Directions",
-      "de": "Richtungen",
-      "fr": "Directions",
-      "it": "Direzioni",
-      "es": "Direcciones",
-      "ja": "方向",
-      "ko": "방향",
-      "ru": "Направления"
-    },
-    "hanzi": "上下东南西北前后左右近远里出进到走路道"
+  "clothes": {
+    "en": "Clothing",
+    "de": "Kleidung",
+    "fr": "Vêtements",
+    "it": "Abbigliamento",
+    "es": "Ropa",
+    "ja": "衣類",
+    "ko": "의류",
+    "ru": "Одежда"
   },
-  "6": {
-    "title": {
-      "cn": "自然",
-      "en": "Nature",
-      "de": "Natur",
-      "fr": "Nature",
-      "it": "Natura",
-      "es": "Naturaleza",
-      "ja": "自然",
-      "ko": "자연",
-      "ru": "Природа"
-    },
-    "hanzi": "天地风雨雪火水"
+  "communication": {
+    "en": "Communication",
+    "de": "Kommunikation",
+    "fr": "Communication",
+    "it": "Comunicazione",
+    "es": "Comunicación",
+    "ja": "コミュニケーション",
+    "ko": "의사소통",
+    "ru": "Коммуникация"
   },
-  "7": {
-    "title": {
-      "cn": "基础",
-      "en": "Basics",
-      "de": "Grundlagen",
-      "fr": "Bases",
-      "it": "Basi",
-      "es": "Básicos",
-      "ja": "基本",
-      "ko": "기초",
-      "ru": "Основы"
-    },
-    "hanzi": "是不有在的"
+  "datetime": {
+    "en": "Date and time",
+    "de": "Datum und Uhrzeit",
+    "fr": "Date et heure",
+    "it": "Data e ora",
+    "es": "Fecha y hora",
+    "ja": "日付と時間",
+    "ko": "날짜와 시간",
+    "ru": "Дата и время"
   },
-  "8": {
-    "title": {
-      "cn": "HSK 一级",
-      "en": "HSK Level 1",
-      "de": "HSK Stufe 1",
-      "fr": "HSK Niveau 1",
-      "it": "HSK Livello 1",
-      "es": "HSK Nivel 1",
-      "ja": "HSK レベル1",
-      "ko": "HSK 1급",
-      "ru": "HSK Уровень 1"
-    },
-    "hanzi": "一七三上下不东个中么九习书买了二五京人什他们会作你先八六关兴再写冷出分前北医十去友叫吃同名后吗听呢和哪商喜喝四国在多大天太好姐习子字学季宇宙定实家对小少就展工左市师帮平年幸床应店府康开弟当影很律得德心志快态怎怕思息情想意感慢成我战户房所手技把护据放政效教数文料斯新方旅日旧时明易星春是晴最月有朋服期机来果校样桌椅欢气水没火点炼热爱狗猫现生电的目看真站米系老能脑苹茶菜衣西见视认话说读谁起车这那都里钟钱院雨面飞饭馆高"
+  "directions": {
+    "en": "Directions",
+    "de": "Richtungen",
+    "fr": "Directions",
+    "it": "Direzioni",
+    "es": "Direcciones",
+    "ja": "方向",
+    "ko": "방향",
+    "ru": "Направления"
   },
-  "9": {
-    "title": {
-      "cn": "HSK 二级",
-      "en": "HSK Level 2",
-      "de": "HSK Stufe 2",
-      "fr": "HSK Niveau 2",
-      "it": "HSK Livello 2",
-      "es": "HSK Nivel 2",
-      "ja": "HSK レベル2",
-      "ko": "HSK 2급",
-      "ru": "HSK Уровень 2"
-    },
-    "hanzi": "为乐也事介从以件但公准别到公务动助可右司吧告员唱因场妹室就左帮床弟得快思息情意慢房所手报教新旅晴最歌比汽球真知票离穿等纸绍经考肉自舞药行要试走路跳过运近还进远道长门问间阴雪题鱼鸡"
+  "entertainment": {
+    "en": "Entertainment",
+    "de": "Unterhaltung",
+    "fr": "Divertissement",
+    "it": "Intrattenimento",
+    "es": "Entretenimiento",
+    "ja": "娯楽",
+    "ko": "오락",
+    "ru": "Развлечения"
   },
-  "10": {
-    "title": {
-      "cn": "HSK 三级",
-      "en": "HSK Level 3",
-      "de": "HSK Stufe 3",
-      "fr": "HSK Niveau 3",
-      "it": "HSK Livello 3",
-      "es": "HSK Nivel 3",
-      "ja": "HSK レベル3",
-      "ko": "HSK 3급",
-      "ru": "HSK Уровень 3"
-    },
-    "hanzi": "业主低信健决办化单南历发口只史园图地城境如婚季定实害容居市平应康当心怕感成把护据放数文方旧易春条查法灯炼然物特环理用画目短种简结绩网而节蕉虽角解议调赛超通遇邻重锻闻难音风香"
+  "expression": {
+    "en": "Expressions",
+    "de": "Ausdrücke",
+    "fr": "Expressions",
+    "it": "Espressioni",
+    "es": "Expresiones",
+    "ja": "表現",
+    "ko": "표현",
+    "ru": "Выражения"
   },
-  "11": {
-    "title": {
-      "cn": "HSK 4-6 级",
-      "en": "HSK Level 4-6",
-      "de": "HSK Stufe 4-6",
-      "fr": "HSK Niveau 4-6",
-      "it": "HSK Livello 4-6",
-      "es": "HSK Nivel 4-6",
-      "ja": "HSK レベル4～6",
-      "ko": "HSK 4-6급",
-      "ru": "HSK Уровень 4–6"
-    },
-    "hanzi": "专义乡争亲价任份伊优传伤佛保修兄全兰养农划创判利劣势博危反合命品哲困基失姻宇宗导展幸广府度建律德志材村构析染标此母毕民污治济海源父牌率由略督研社福科程究窗竞管素组织络统维缺股营融观计讨论证评责败质贸资跨辑逻量金销际险革项领验"
+  "family": {
+    "en": "Family",
+    "de": "Familie",
+    "fr": "Famille",
+    "it": "Famiglia",
+    "es": "Familia",
+    "ja": "家族",
+    "ko": "가족",
+    "ru": "Семья"
+  },
+  "food": {
+    "en": "Food and drinks",
+    "de": "Essen und Trinken",
+    "fr": "Nourriture et boissons",
+    "it": "Cibo e bevande",
+    "es": "Comida y bebida",
+    "ja": "食べ物と飲み物",
+    "ko": "음식과 음료",
+    "ru": "Еда и напитки"
+  },
+  "general": {
+    "en": "General",
+    "de": "Allgemein",
+    "fr": "Général",
+    "it": "Generale",
+    "es": "General",
+    "ja": "一般",
+    "ko": "일반",
+    "ru": "Общее"
+  },
+  "jobs": {
+    "en": "Jobs",
+    "de": "Berufe",
+    "fr": "Métiers",
+    "it": "Lavori",
+    "es": "Trabajos",
+    "ja": "職業",
+    "ko": "직업",
+    "ru": "Профессии"
+  },
+  "language": {
+    "en": "Language",
+    "de": "Sprache",
+    "fr": "Langue",
+    "it": "Lingua",
+    "es": "Idioma",
+    "ja": "言語",
+    "ko": "언어",
+    "ru": "Язык"
+  },
+  "measure": {
+    "en": "Measure words",
+    "de": "Zähleinheitswörter",
+    "fr": "Classificateurs",
+    "it": "Classificatori",
+    "es": "Clasificadores",
+    "ja": "助数詞",
+    "ko": "단위 명사",
+    "ru": "Счётные слова"
+  },
+  "nature": {
+    "en": "Nature",
+    "de": "Natur",
+    "fr": "Nature",
+    "it": "Natura",
+    "es": "Naturaleza",
+    "ja": "自然",
+    "ko": "자연",
+    "ru": "Природа"
+  },
+  "places": {
+    "en": "Places",
+    "de": "Orte",
+    "fr": "Lieux",
+    "it": "Luoghi",
+    "es": "Lugares",
+    "ja": "場所",
+    "ko": "장소",
+    "ru": "Места"
+  },
+  "question": {
+    "en": "Questions",
+    "de": "Fragen",
+    "fr": "Questions",
+    "it": "Domande",
+    "es": "Preguntas",
+    "ja": "質問",
+    "ko": "질문",
+    "ru": "Вопросы"
+  },
+  "sports": {
+    "en": "Sports",
+    "de": "Sport",
+    "fr": "Sports",
+    "it": "Sport",
+    "es": "Deportes",
+    "ja": "スポーツ",
+    "ko": "스포츠",
+    "ru": "Спорт"
+  },
+  "transport": {
+    "en": "Transportation",
+    "de": "Transport",
+    "fr": "Transport",
+    "it": "Trasporto",
+    "es": "Transporte",
+    "ja": "交通",
+    "ko": "교통",
+    "ru": "Транспорт"
+  },
+  "verb": {
+    "en": "Verbs",
+    "de": "Verben",
+    "fr": "Verbes",
+    "it": "Verbi",
+    "es": "Verbos",
+    "ja": "動詞",
+    "ko": "동사",
+    "ru": "Глаголы"
+  },
+  "adjective": {
+    "en": "Adjectives",
+    "de": "Adjektive",
+    "fr": "Adjectifs",
+    "it": "Aggettivi",
+    "es": "Adjetivos",
+    "ja": "形容詞",
+    "ko": "형용사",
+    "ru": "Прилагательные"
+  },
+  "adverb": {
+    "en": "Adverbs",
+    "de": "Adverbien",
+    "fr": "Adverbes",
+    "it": "Avverbi",
+    "es": "Adverbios",
+    "ja": "副詞",
+    "ko": "부사",
+    "ru": "Наречия"
+  },
+  "conjunction": {
+    "en": "Conjunctions",
+    "de": "Konjunktionen",
+    "fr": "Conjonctions",
+    "it": "Congiunzioni",
+    "es": "Conjunciones",
+    "ja": "接続詞",
+    "ko": "접속사",
+    "ru": "Союзы"
+  },
+  "preposition": {
+    "en": "Prepositions",
+    "de": "Präpositionen",
+    "fr": "Prépositions",
+    "it": "Preposizioni",
+    "es": "Preposiciones",
+    "ja": "前置詞",
+    "ko": "전치사",
+    "ru": "Предлоги"
+  },
+  "pronoun": {
+    "en": "Pronouns",
+    "de": "Pronomen",
+    "fr": "Pronoms",
+    "it": "Pronomi",
+    "es": "Pronombres",
+    "ja": "代名詞",
+    "ko": "대명사",
+    "ru": "Местоимения"
   }
 }

@@ -106,7 +106,6 @@ public class AppManager : MonoBehaviour
 
     public void StartTraining(string hanziGroup)
     {
-        PlayerPrefs.SetString("hanzifilter", HanziGroupDB.GetGroup(hanziGroup));
         PlayView();
     }
 

@@ -36,9 +36,6 @@ public class ApproachingCharacter : MonoBehaviour
                 speed * Time.deltaTime
             );
 
-        // Rotate to always face player
-        transform.LookAt(targetPos);
-
         // Destroy if too close
         if (Vector3.Distance(transform.position, targetPos) < 0.5f)
         {

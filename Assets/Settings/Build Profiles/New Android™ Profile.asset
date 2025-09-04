@@ -156,6 +156,7 @@ MonoBehaviour:
     - line: '|   switchNVNMaxPublicSamplerIDCount: 0'
     - line: '|   switchMaxWorkerMultiple: 8'
     - line: '|   switchNVNGraphicsFirmwareMemory: 32'
+    - line: '|   switchGraphicsJobsSyncAfterKick: 1'
     - line: '|   vulkanNumSwapchainBuffers: 3'
     - line: '|   vulkanEnableSetSRGBWrite: 0'
     - line: '|   vulkanEnablePreTransform: 0'
@@ -164,7 +165,7 @@ MonoBehaviour:
     - line: '|   loadStoreDebugModeEnabled: 0'
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
-    - line: '|   bundleVersion: 1.0'
+    - line: '|   bundleVersion: 1.1'
     - line: '|   preloadedAssets:'
     - line: '|   - {instanceID: 0}'
     - line: '|   - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f,
@@ -203,7 +204,7 @@ MonoBehaviour:
     - line: '|     iPhone: 0'
     - line: '|     tvOS: 0'
     - line: '|   overrideDefaultApplicationIdentifier: 1'
-    - line: '|   AndroidBundleVersionCode: 3'
+    - line: '|   AndroidBundleVersionCode: 4'
     - line: '|   AndroidMinSdkVersion: 32'
     - line: '|   AndroidTargetSdkVersion: 0'
     - line: '|   AndroidPreferredInstallLocation: 0'
@@ -305,6 +306,9 @@ MonoBehaviour:
     - line: '|   AndroidBuildApkPerCpuArchitecture: 0'
     - line: '|   AndroidTVCompatibility: 0'
     - line: '|   AndroidIsGame: 1'
+    - line: '|   androidAppCategory: 3'
+    - line: '|   useAndroidAppCategory: 1'
+    - line: '|   androidAppCategoryOther: '
     - line: '|   AndroidEnableTango: 0'
     - line: '|   androidEnableBanner: 1'
     - line: '|   androidUseLowAccuracyLocation: 0'
@@ -934,12 +938,12 @@ MonoBehaviour:
     - line: '|   webGLMemoryLinearGrowthStep: 16'
     - line: '|   webGLMemoryGeometricGrowthStep: 0.2'
     - line: '|   webGLMemoryGeometricGrowthCap: 96'
-    - line: '|   webGLEnableWebGPU: 0'
     - line: '|   webGLPowerPreference: 2'
     - line: '|   webGLWebAssemblyTable: 0'
     - line: '|   webGLWebAssemblyBigInt: 0'
     - line: '|   webGLCloseOnQuit: 0'
     - line: '|   webWasm2023: 0'
+    - line: '|   webEnableSubmoduleStrippingCompatibility: 0'
     - line: '|   scriptingDefineSymbols:'
     - line: '|     Android: USE_INPUT_SYSTEM_POSE_CONTROL;UNITY_POST_PROCESSING_STACK_V2;USE_STICK_CONTROL_THUMBSTICKS'
     - line: '|     CloudRendering: UNITY_POST_PROCESSING_STACK_V2'
@@ -1070,6 +1074,7 @@ MonoBehaviour:
     - line: '|   insecureHttpOption: 0'
     - line: '|   androidVulkanDenyFilterList: []'
     - line: '|   androidVulkanAllowFilterList: []'
+    - line: '|   androidVulkanDeviceFilterListAsset: {instanceID: 0}'
     - line: '| '
   references:
     version: 2
@@ -1088,6 +1093,8 @@ MonoBehaviour:
         m_ExplicitArrayBoundsChecks: 0
         m_CompressionType: 2
         m_InstallInBuildFolder: 0
+        m_InsightsSettingsContainer:
+          m_BuildProfileEngineDiagnosticsState: 2
         m_BuildSubtarget: 0
         m_BuildSystem: 1
         m_ExportAsGoogleAndroidProject: 0
@@ -1095,6 +1102,7 @@ MonoBehaviour:
         m_DebugSymbolFormat: 5
         m_CurrentDeploymentTargetId: __builtin__target_default
         m_BuildType: 2
+        m_LinkTimeOptimization: 0
         m_BuildAppBundle: 1
         m_IPAddressToConnect: 
         m_SymlinkSources: 0

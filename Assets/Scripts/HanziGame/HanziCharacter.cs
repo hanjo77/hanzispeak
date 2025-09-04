@@ -21,7 +21,11 @@ public class HanziCharacter : MonoBehaviour
         // Visual/Audio feedback
         GameManager.Instance.AddSuccessChar(hanziText);
         isRecognized = true;
-        GetComponent<MeshExploder>().Explode();
+
+        foreach (Transform child in transform)
+        {
+            child.gameObject.GetComponent<MeshExploder>().Explode();
+        }
         GameManager.Instance.VibrateControllers(.5f, .1f);
         GameManager.Instance.PlayExplosion(transform);
         StartCoroutine(WaitForRespawn(false));
@@ -45,7 +49,10 @@ public class HanziCharacter : MonoBehaviour
         {
             GameManager.Instance.ShakeCamera();
         }
-        GetComponent<MeshRenderer>().enabled = false;
+        foreach (Transform child in transform)
+        {
+            child.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        }
         yield return new WaitForSecondsRealtime(2f);
         HanziSpawner.Instance.SpawnCharacter(removeLive);
     }
