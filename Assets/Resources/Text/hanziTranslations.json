@@ -250,14 +250,24 @@
       "ru": "Добро пожаловать, отважный ученик! Выберите группу произношений, чтобы улучшить свои навыки мандаринского. Нажмите на категорию ниже, чтобы начать.",
       "zh": "欢迎你，勇敢的学习者！请选择一个发音组来提升你的普通话发音技巧。点击下方任意一项开始训练吧！"
     },
-    "quitWarning": {
-      "en": "Hold to exit",
-      "de": "Zum Beenden gedrückt halten",
-      "fr": "Maintenez pour quitter",
-      "it": "Tieni premuto per uscire",
-      "es": "Mantén pulsado para salir",
-      "ja": "長押しで終了",
-      "ko": "길게 눌러 종료",
-      "ru": "Удерживайте для выхода"
-    }
+  "quitWarning": {
+    "en": "Hold to exit",
+    "de": "Zum Beenden gedrückt halten",
+    "fr": "Maintenez pour quitter",
+    "it": "Tieni premuto per uscire",
+    "es": "Mantén pulsado para salir",
+    "ja": "長押しで終了",
+    "ko": "길게 눌러 종료",
+    "ru": "Удерживайте для выхода"
+  },
+  "wordLength": {
+    "en": "Word length",
+    "de": "Wortlänge",
+    "fr": "Longueur du mot",
+    "it": "Lunghezza parola",
+    "es": "Longitud de palabra",
+    "ja": "単語の長さ",
+    "ko": "단어 길이",
+    "ru": "Длина слова"
   }
+}

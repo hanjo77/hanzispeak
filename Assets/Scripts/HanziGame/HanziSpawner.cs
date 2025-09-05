@@ -56,26 +56,13 @@ public class HanziSpawner : MonoBehaviour
         string desiredLevel = HanziLevelDB.GetAllKeys().ElementAt(PlayerPrefs.GetInt("level")).ToLower();
         string desiredClass = HanziCategoryDB.GetAllKeys().ElementAt(PlayerPrefs.GetInt("category")).ToLower();
 
-        List<string> FilterHanzi(List<string> hanziList)
-        {
-            return hanziList.Where(hanzi => (desiredLevel == "advanced")
-                ? (
-                    HanziDB.GetCharacter(hanzi).source.Any(source => 
-                        source.@class.ToLower().Contains("beginner") && source.@class.ToLower().Contains("intermediate")
-                    )
-                )
-                : HanziDB.GetCharacter(hanzi).source.Any(source => source.@class.ToLower().Contains(desiredLevel)))
-            .ToList();
-        }
-        
-        PrepareWordPrefabs(
-            FilterHanzi(HanziDB.GetHanziByClass(desiredClass))
-        );
-        AppManager.Instance.voskEngine.OnTranscriptionResult = OnVoiceInput;
         score = 0;
         currentLives = lives;
         GameManager.Instance.SetLives(currentLives);
         GameManager.Instance.SetScore(score);
+        PrepareWordPrefabs(
+            HanziLevelDB.FilterHanzi(desiredClass, desiredLevel)
+        );
     }
 
     void OnDestroy()
@@ -353,10 +340,11 @@ public class HanziSpawner : MonoBehaviour
 
             if (!isPlaying)
             {
+                AppManager.Instance.voskEngine.OnTranscriptionResult = OnVoiceInput;
                 isPlaying = true;
-                SpawnCharacter(false);
             }
         }
+        SpawnCharacter(false);
     }
 
     /// <summary>

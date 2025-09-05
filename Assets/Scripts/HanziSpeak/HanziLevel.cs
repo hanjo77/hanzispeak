@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public static class HanziLevelDB
@@ -40,5 +41,12 @@ public static class HanziLevelDB
     {
         if (!_isInitialized) Initialize();
         return _levels;
+    }
+
+    public static List<string> FilterHanzi(string category, string level)
+    {
+        return HanziDB.GetHanziByClass(category).Where(hanzi => (level == "beginner") ? hanzi.Length == 1
+            : (level == "intermediate") ? hanzi.Length == 2 : hanzi.Length > 2)
+        .ToList();
     }
 }

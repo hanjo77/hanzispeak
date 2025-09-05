@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingsView : AppView
 {
+    public List<GameObject> startButtons;
     public TMP_Dropdown languageDropdown;
     public TMP_Dropdown categoryDropdown;
-    public TMP_Dropdown levelDropdown;
     public TMP_Dropdown voiceDropdown;
     public UnityEngine.UI.Toggle pinyinToggle;
     public UnityEngine.UI.Toggle translationToggle;
@@ -15,9 +17,9 @@ public class SettingsView : AppView
 
     // Example dictionary
     private Dictionary<string, HanziTranslations> categories;
-    private Dictionary<string, HanziTranslations> levels;
     private Dictionary<string, HanziTranslations> voices;
     private string needsPracticeIndex;
+    private List<List<int>> levelCounts;
 
     private Dictionary<string, string> languages = new Dictionary<string, string>
     {
@@ -40,7 +42,6 @@ public class SettingsView : AppView
         TranslationDB.Initialize();
 
         UpdateCategories();
-        UpdateLevels();
         UpdateVoices();
 
         int savedIndex;
@@ -49,7 +50,6 @@ public class SettingsView : AppView
         string savedLanguage = languages.FirstOrDefault(x => x.Key == languageKey).Value;
         int savedVoice = PlayerPrefs.GetInt("voice", 0);
         int savedCategory = PlayerPrefs.GetInt("category", 0);
-        int savedLevel = PlayerPrefs.GetInt("level", 0);
         int savedPinyin = PlayerPrefs.GetInt("pinyin", 1);
         int savedTranslation = PlayerPrefs.GetInt("translation", 1);
         int savedSpeak = PlayerPrefs.GetInt("speak", 1);
@@ -57,12 +57,10 @@ public class SettingsView : AppView
         PlayerPrefs.SetString("language", languageKey);
         PlayerPrefs.SetInt("voice", savedVoice < voiceDropdown.options.Count() ? savedVoice : 0);
         PlayerPrefs.SetInt("category", savedCategory < categoryDropdown.options.Count() ? savedCategory : 0);
-        PlayerPrefs.SetInt("level", savedLevel < levelDropdown.options.Count() ? savedLevel : 0);
         PlayerPrefs.SetInt("pinyin", savedPinyin);
         PlayerPrefs.SetInt("translation", savedTranslation);
         PlayerPrefs.SetInt("speak", savedSpeak);
         OnCategoryChanged(savedCategory);
-        OnLevelChanged(savedLevel);
         OnVoiceChanged(savedVoice);
         PlayerPrefs.Save();
 
@@ -84,7 +82,6 @@ public class SettingsView : AppView
         // Add listener for value change
         languageDropdown.onValueChanged.AddListener(OnLanguageChanged);
         categoryDropdown.onValueChanged.AddListener(OnCategoryChanged);
-        levelDropdown.onValueChanged.AddListener(OnLevelChanged);
         voiceDropdown.onValueChanged.AddListener(OnVoiceChanged);
         pinyinToggle.onValueChanged.AddListener(OnPinyinChanged);
         translationToggle.onValueChanged.AddListener(OnTranslationChanged);
@@ -99,7 +96,6 @@ public class SettingsView : AppView
     {
         base.ShowView();
         UpdateCategories();
-        UpdateLevels();
         UpdateVoices();
     }
 
@@ -109,17 +105,6 @@ public class SettingsView : AppView
         categories = HanziCategoryDB.GetAllCategories();
         AddNeedsPracticeOption(PlayerPrefs.GetString("failedHanzi"));
         categoryDropdown.AddOptions(HanziCategoryDB.GetAllKeys().ToList());
-        foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
-        {
-            translator.UpdateTranslation();
-        }
-    }
-
-    public void UpdateLevels()
-    {
-        levelDropdown.options.Clear();
-        levels = HanziLevelDB.GetAllLevels();
-        levelDropdown.AddOptions(HanziLevelDB.GetAllKeys().ToList());
         foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
         {
             translator.UpdateTranslation();
@@ -198,16 +183,49 @@ public class SettingsView : AppView
         {
             PlayerPrefs.SetInt("needsPractice", 1);
         }
+
+        HandleStartButtons(hanziCategory);
         // Save the selected value to PlayerPrefs
         PlayerPrefs.SetInt("category", index);
         PlayerPrefs.Save(); // Ensure changes are saved to disk
     }
 
-    public void OnLevelChanged(int index)
+    public void HandleStartButtons(string hanziCategory)
     {
-        // Save the selected value to PlayerPrefs
-        PlayerPrefs.SetInt("level", index);
-        PlayerPrefs.Save(); // Ensure changes are saved to disk
+        List<int> levelCounts = new List<int>();
+
+        for (int index = 0; index < HanziLevelDB.GetAllKeys().Count(); index++)
+        {
+            string level = HanziLevelDB.GetAllKeys().ElementAt(index);
+            List<string> hanziList = HanziLevelDB.FilterHanzi(hanziCategory, level);
+            GameObject button = startButtons[index];
+            if (hanziList.Count > 0)
+            {
+                levelCounts.Add(hanziList.Count);
+                string levelKey = button.name;
+                // Show the button
+                button.SetActive(true);
+
+                // Remove existing listeners to avoid duplicates
+                Button btn = button.GetComponent<Button>();
+                btn.onClick.RemoveAllListeners();
+
+                int levelCopy = index; // Avoid closure issue
+
+                // Bind level to button click
+                btn.onClick.AddListener(() =>
+                {
+                    PlayerPrefs.SetInt("level", levelCopy);
+                    PlayerPrefs.Save();
+                    AppManager.Instance.PlayView();
+                });
+            }
+            else if (button)
+            {
+                // Hide unused buttons
+                button.SetActive(false);
+            }
+        }
     }
 
     public void OnVoiceChanged(int index)
