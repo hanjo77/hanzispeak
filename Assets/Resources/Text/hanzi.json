@@ -66,7 +66,8 @@
   "知道": {
     "pinyin": "zhī dào",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to know",
@@ -179,6 +180,7 @@
   "呢": {
     "pinyin": "ne",
     "class": [
+      "datetime",
       "preposition"
     ],
     "translations": {
@@ -211,7 +213,10 @@
   "钱": {
     "pinyin": "qián",
     "class": [
-      "general"
+      "business",
+      "general",
+      "jobs",
+      "datetime"
     ],
     "translations": {
       "en": "money",
@@ -259,7 +264,9 @@
   "买": {
     "pinyin": "mǎi",
     "class": [
+      "jobs",
       "verb",
+      "body",
       "business"
     ],
     "translations": {
@@ -292,7 +299,9 @@
   "块": {
     "pinyin": "kuài",
     "class": [
-      "measure"
+      "measure",
+      "jobs",
+      "business"
     ],
     "translations": {
       "en": "(measure word for money)",
@@ -372,7 +381,8 @@
   "怎么样": {
     "pinyin": "zěn me yàng",
     "class": [
-      "question"
+      "question",
+      "expression"
     ],
     "translations": {
       "en": "how about it, how is it",
@@ -388,6 +398,10 @@
   "便宜": {
     "pinyin": "pián yi",
     "class": [
+      "building",
+      "places",
+      "business",
+      "jobs",
       "adjective"
     ],
     "translations": {
@@ -628,7 +642,10 @@
   "贵": {
     "pinyin": "guì",
     "class": [
-      "adjective"
+      "business",
+      "jobs",
+      "adjective",
+      "transport"
     ],
     "translations": {
       "en": "expensive, honored",
@@ -660,7 +677,8 @@
   "张": {
     "pinyin": "zhāng",
     "class": [
-      "measure"
+      "measure",
+      "body"
     ],
     "translations": {
       "en": "(measure word for flat objects)",
@@ -820,6 +838,7 @@
   "饿": {
     "pinyin": "è",
     "class": [
+      "food",
       "adjective"
     ],
     "translations": {
@@ -836,7 +855,9 @@
   "困": {
     "pinyin": "kùn",
     "class": [
-      "adjective"
+      "family",
+      "adjective",
+      "body"
     ],
     "translations": {
       "en": "sleepy",
@@ -852,7 +873,8 @@
   "累": {
     "pinyin": "lèi",
     "class": [
-      "adjective"
+      "adjective",
+      "body"
     ],
     "translations": {
       "en": "tired",
@@ -884,7 +906,8 @@
   "忙": {
     "pinyin": "máng",
     "class": [
-      "adjective"
+      "adjective",
+      "transport"
     ],
     "translations": {
       "en": "busy",
@@ -932,7 +955,8 @@
   "转": {
     "pinyin": "zhuǎn",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to turn",
@@ -949,7 +973,8 @@
     "pinyin": "dǎ",
     "class": [
       "verb",
-      "jobs"
+      "jobs",
+      "datetime"
     ],
     "translations": {
       "en": "to flag down, to hit, to give (injection)",
@@ -981,7 +1006,9 @@
   "留⾔": {
     "pinyin": "liú yán",
     "class": [
-      "verb"
+      "communication",
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to leave a message",
@@ -997,8 +1024,9 @@
   "喂": {
     "pinyin": "wèi",
     "class": [
-      "expression",
-      "verb"
+      "communication",
+      "verb",
+      "expression"
     ],
     "translations": {
       "en": "hello, hello (answering telephone), to feed",
@@ -1047,6 +1075,7 @@
   "号码": {
     "pinyin": "hào mǎ",
     "class": [
+      "communication",
       "general"
     ],
     "translations": {
@@ -1111,7 +1140,8 @@
   "晚点⼉": {
     "pinyin": "wǎn diǎn ér",
     "class": [
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "a little later",
@@ -1303,7 +1333,8 @@
   "⼏岁": {
     "pinyin": "jǐ suì",
     "class": [
-      "question"
+      "question",
+      "datetime"
     ],
     "translations": {
       "en": "how old",
@@ -1319,7 +1350,8 @@
   "多⼤": {
     "pinyin": "duō dà",
     "class": [
-      "question"
+      "question",
+      "datetime"
     ],
     "translations": {
       "en": "how old",
@@ -1335,7 +1367,8 @@
   "⽼": {
     "pinyin": "lǎo",
     "class": [
-      "adjective"
+      "adjective",
+      "datetime"
     ],
     "translations": {
       "en": "old",
@@ -1351,7 +1384,8 @@
   "年轻": {
     "pinyin": "nián qīng",
     "class": [
-      "adjective"
+      "adjective",
+      "datetime"
     ],
     "translations": {
       "en": "young",
@@ -1383,6 +1417,8 @@
   "酒吧": {
     "pinyin": "jiǔ bā",
     "class": [
+      "building",
+      "places",
       "entertainment"
     ],
     "translations": {
@@ -1415,6 +1451,9 @@
   "电影院": {
     "pinyin": "diàn yǐng yuàn",
     "class": [
+      "food",
+      "building",
+      "places",
       "entertainment"
     ],
     "translations": {
@@ -1431,6 +1470,9 @@
   "⽹吧": {
     "pinyin": "wǎng ba",
     "class": [
+      "communication",
+      "building",
+      "places",
       "entertainment"
     ],
     "translations": {
@@ -1447,6 +1489,8 @@
   "热": {
     "pinyin": "rè",
     "class": [
+      "nature",
+      "food",
       "adjective"
     ],
     "translations": {
@@ -1463,7 +1507,9 @@
   "冷": {
     "pinyin": "lěng",
     "class": [
-      "adjective"
+      "nature",
+      "adjective",
+      "datetime"
     ],
     "translations": {
       "en": "cold",
@@ -1479,6 +1525,7 @@
   "渴": {
     "pinyin": "kě",
     "class": [
+      "food",
       "adjective"
     ],
     "translations": {
@@ -1592,6 +1639,7 @@
   "到底": {
     "pinyin": "dào dǐ",
     "class": [
+      "family",
       "adverb"
     ],
     "translations": {
@@ -1608,6 +1656,7 @@
   "⽕锅": {
     "pinyin": "huǒ guō",
     "class": [
+      "nature",
       "food"
     ],
     "translations": {
@@ -1640,7 +1689,9 @@
   "烧烤": {
     "pinyin": "shāo kǎo",
     "class": [
-      "food"
+      "food",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "barbecue",
@@ -1656,8 +1707,10 @@
   "有事": {
     "pinyin": "yǒu shì",
     "class": [
+      "transport",
       "verb",
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "to be busy or engaged, to have something",
@@ -1801,8 +1854,10 @@
   "下⻋": {
     "pinyin": "xià chē",
     "class": [
-      "expression",
-      "verb"
+      "nature",
+      "transport",
+      "verb",
+      "expression"
     ],
     "translations": {
       "en": "to get off to get out (train or car)",
@@ -1818,9 +1873,11 @@
   "⼩⼼": {
     "pinyin": "xiǎo xīn",
     "class": [
-      "adjective",
+      "family",
+      "transport",
       "expression",
-      "verb"
+      "verb",
+      "adjective"
     ],
     "translations": {
       "en": "(to) be careful, careful",
@@ -1884,7 +1941,9 @@
   "房⼦": {
     "pinyin": "fáng zi",
     "class": [
-      "building"
+      "family",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "house",
@@ -1916,7 +1975,8 @@
   "楼房": {
     "pinyin": "lóu fáng",
     "class": [
-      "building"
+      "building",
+      "places"
     ],
     "translations": {
       "en": "apartment building",
@@ -1932,7 +1992,9 @@
   "平房": {
     "pinyin": "píng fáng",
     "class": [
-      "building"
+      "family",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "single story house",
@@ -1948,7 +2010,9 @@
   "别墅": {
     "pinyin": "bié shù",
     "class": [
-      "building"
+      "family",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "town house, villa",
@@ -1964,7 +2028,9 @@
   "⺠宅": {
     "pinyin": "mín zhái",
     "class": [
-      "building"
+      "building",
+      "places",
+      "datetime"
     ],
     "translations": {
       "en": "older apartment",
@@ -1980,7 +2046,9 @@
   "公寓": {
     "pinyin": "gōng yù",
     "class": [
-      "building"
+      "family",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "apartment, condominium",
@@ -2028,7 +2096,9 @@
   "⽇语": {
     "pinyin": "rì yǔ",
     "class": [
-      "language"
+      "body",
+      "language",
+      "datetime"
     ],
     "translations": {
       "en": "Japanese language",
@@ -2204,7 +2274,9 @@
   "旅途愉快": {
     "pinyin": "lǚ tú yú kuài",
     "class": [
-      "expression"
+      "transport",
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "have a nice trip",
@@ -2221,7 +2293,8 @@
     "pinyin": "měi tiān",
     "class": [
       "adverb",
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "every day",
@@ -2285,6 +2358,7 @@
   "度": {
     "pinyin": "dù",
     "class": [
+      "nature",
       "measure"
     ],
     "translations": {
@@ -2349,7 +2423,8 @@
   "欢迎": {
     "pinyin": "huān yíng",
     "class": [
-      "verb"
+      "verb",
+      "expression"
     ],
     "translations": {
       "en": "to welcome",
@@ -2365,7 +2440,8 @@
   "下午好": {
     "pinyin": "xià wǔ hǎo",
     "class": [
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "good afternoon",
@@ -2381,7 +2457,8 @@
   "乘客": {
     "pinyin": "chéng kè",
     "class": [
-      "transport"
+      "transport",
+      "datetime"
     ],
     "translations": {
       "en": "passenger",
@@ -2413,7 +2490,10 @@
   "现在": {
     "pinyin": "xiàn zài",
     "class": [
-      "adverb"
+      "jobs",
+      "adverb",
+      "business",
+      "datetime"
     ],
     "translations": {
       "en": "now",
@@ -2445,7 +2525,8 @@
   "位": {
     "pinyin": "wèi",
     "class": [
-      "measure"
+      "measure",
+      "family"
     ],
     "translations": {
       "en": "formal measure word for people",
@@ -2493,7 +2574,11 @@
   "名⽚": {
     "pinyin": "míng piàn",
     "class": [
-      "general"
+      "communication",
+      "business",
+      "transport",
+      "general",
+      "jobs"
     ],
     "translations": {
       "en": "name card, business card",
@@ -2509,6 +2594,7 @@
   "保持联系": {
     "pinyin": "bǎo chí lián xì",
     "class": [
+      "communication",
       "expression"
     ],
     "translations": {
@@ -2638,7 +2724,8 @@
   "⽔": {
     "pinyin": "shuǐ",
     "class": [
-      "nature"
+      "nature",
+      "food"
     ],
     "translations": {
       "en": "water",
@@ -2702,7 +2789,8 @@
   "包": {
     "pinyin": "bāo",
     "class": [
-      "measure"
+      "measure",
+      "datetime"
     ],
     "translations": {
       "en": "(measure word for package)",
@@ -2750,6 +2838,7 @@
   "好吃": {
     "pinyin": "hǎo chī",
     "class": [
+      "food",
       "adjective"
     ],
     "translations": {
@@ -2766,6 +2855,7 @@
   "瓶": {
     "pinyin": "píng",
     "class": [
+      "communication",
       "food"
     ],
     "translations": {
@@ -2830,7 +2920,10 @@
   "⼩卖部": {
     "pinyin": "xiǎo mài bù",
     "class": [
-      "building"
+      "business",
+      "jobs",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "small shop",
@@ -2976,6 +3069,8 @@
   "⻓城": {
     "pinyin": "chǎng chéng",
     "class": [
+      "building",
+      "food",
       "places"
     ],
     "translations": {
@@ -3090,8 +3185,10 @@
   "⻥": {
     "pinyin": "yú",
     "class": [
+      "food",
+      "family",
       "animals",
-      "food"
+      "transport"
     ],
     "translations": {
       "en": "fish",
@@ -3107,8 +3204,10 @@
   "点": {
     "pinyin": "diǎn",
     "class": [
+      "communication",
+      "verb",
       "adverb",
-      "verb"
+      "transport"
     ],
     "translations": {
       "en": "a little, to order",
@@ -3140,6 +3239,7 @@
   "吃饱了": {
     "pinyin": "chī bǎo le",
     "class": [
+      "food",
       "expression"
     ],
     "translations": {
@@ -3172,6 +3272,8 @@
   "公园": {
     "pinyin": "gōng yuán",
     "class": [
+      "building",
+      "family",
       "places"
     ],
     "translations": {
@@ -3220,6 +3322,7 @@
   "聊聊": {
     "pinyin": "liáo liáo",
     "class": [
+      "communication",
       "verb"
     ],
     "translations": {
@@ -3236,8 +3339,9 @@
   "还": {
     "pinyin": "hái",
     "class": [
+      "verb",
       "adverb",
-      "verb"
+      "transport"
     ],
     "translations": {
       "en": "yet, still, to return",
@@ -3253,6 +3357,7 @@
   "挺": {
     "pinyin": "tǐng",
     "class": [
+      "family",
       "adverb"
     ],
     "translations": {
@@ -3381,7 +3486,8 @@
   "听说": {
     "pinyin": "tīng shuō",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to hear of, to hear said",
@@ -3397,7 +3503,9 @@
   "经理": {
     "pinyin": "jīng lǐ",
     "class": [
-      "jobs"
+      "jobs",
+      "business",
+      "datetime"
     ],
     "translations": {
       "en": "manager",
@@ -3509,7 +3617,8 @@
   "⽣⽇快乐": {
     "pinyin": "shēng rì kuài lè",
     "class": [
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "happy birthday",
@@ -3589,6 +3698,7 @@
   "真": {
     "pinyin": "zhēn",
     "class": [
+      "family",
       "adverb"
     ],
     "translations": {
@@ -3720,7 +3830,8 @@
   "道歉": {
     "pinyin": "dào qiàn",
     "class": [
-      "verb"
+      "verb",
+      "expression"
     ],
     "translations": {
       "en": "to apologize",
@@ -3736,7 +3847,8 @@
   "别": {
     "pinyin": "bié",
     "class": [
-      "adverb"
+      "adverb",
+      "expression"
     ],
     "translations": {
       "en": "do not, don't",
@@ -3817,7 +3929,8 @@
   "⼿机": {
     "pinyin": "shǒu jī",
     "class": [
-      "communication"
+      "communication",
+      "body"
     ],
     "translations": {
       "en": "cellphone",
@@ -3833,7 +3946,10 @@
   "专卖店": {
     "pinyin": "zhuān mài diàn",
     "class": [
-      "building"
+      "business",
+      "jobs",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "specialty shop",
@@ -3945,6 +4061,7 @@
   "要不": {
     "pinyin": "yào bù",
     "class": [
+      "family",
       "conjunction"
     ],
     "translations": {
@@ -3961,7 +4078,8 @@
   "打开": {
     "pinyin": "dǎ kāi",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to turn on",
@@ -4074,6 +4192,8 @@
   "辣": {
     "pinyin": "là",
     "class": [
+      "nature",
+      "food",
       "adjective"
     ],
     "translations": {
@@ -4122,6 +4242,7 @@
   "⾹": {
     "pinyin": "xiāng",
     "class": [
+      "food",
       "adjective"
     ],
     "translations": {
@@ -4154,6 +4275,7 @@
   "实在": {
     "pinyin": "shí zài",
     "class": [
+      "family",
       "adverb"
     ],
     "translations": {
@@ -4170,7 +4292,8 @@
   "糖": {
     "pinyin": "táng",
     "class": [
-      "food"
+      "food",
+      "transport"
     ],
     "translations": {
       "en": "sugar",
@@ -4202,7 +4325,10 @@
   "放": {
     "pinyin": "fàng",
     "class": [
-      "verb"
+      "building",
+      "verb",
+      "transport",
+      "places"
     ],
     "translations": {
       "en": "to place, to put to put in",
@@ -4234,6 +4360,7 @@
   "苦": {
     "pinyin": "kǔ",
     "class": [
+      "food",
       "adjective"
     ],
     "translations": {
@@ -4250,7 +4377,8 @@
   "受不了": {
     "pinyin": "shòu bù liǎo",
     "class": [
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "to be unable to bear",
@@ -4266,7 +4394,8 @@
   "下次": {
     "pinyin": "xià cì",
     "class": [
-      "conjunction"
+      "conjunction",
+      "datetime"
     ],
     "translations": {
       "en": "next time",
@@ -4410,7 +4539,8 @@
   "午饭": {
     "pinyin": "wǔ fàn",
     "class": [
-      "food"
+      "food",
+      "datetime"
     ],
     "translations": {
       "en": "lunch",
@@ -4522,7 +4652,11 @@
   "加班": {
     "pinyin": "jiā bān",
     "class": [
-      "verb"
+      "business",
+      "datetime",
+      "verb",
+      "body",
+      "jobs"
     ],
     "translations": {
       "en": "to work overtime",
@@ -4554,7 +4688,8 @@
   "抽时间": {
     "pinyin": "chōu shí jiān",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to find time",
@@ -4571,7 +4706,8 @@
     "pinyin": "yǒu kòng",
     "class": [
       "verb",
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "to have free time, to be free",
@@ -4587,6 +4723,8 @@
   "特别": {
     "pinyin": "tè bié",
     "class": [
+      "food",
+      "family",
       "adverb"
     ],
     "translations": {
@@ -4603,7 +4741,8 @@
   "改天": {
     "pinyin": "gǎi tiān",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to change days",
@@ -4619,7 +4758,9 @@
   "改天再说": {
     "pinyin": "gǎi tiān zài shuō",
     "class": [
-      "verb"
+      "communication",
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "let's talk about it later / another day",
@@ -4699,7 +4840,8 @@
   "灯泡": {
     "pinyin": "dēng pào",
     "class": [
-      "general"
+      "general",
+      "transport"
     ],
     "translations": {
       "en": "light bulb",
@@ -4748,7 +4890,8 @@
   "扶": {
     "pinyin": "fú",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to hold",
@@ -4796,7 +4939,8 @@
   "拿": {
     "pinyin": "ná",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to hold, to take",
@@ -4910,7 +5054,9 @@
   "医院": {
     "pinyin": "yī yuàn",
     "class": [
-      "building"
+      "body",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "hospital",
@@ -4990,7 +5136,8 @@
   "回去": {
     "pinyin": "huí qù",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to return, to go back",
@@ -5071,8 +5218,9 @@
   "问": {
     "pinyin": "wèn",
     "class": [
+      "communication",
       "verb",
-      "communication"
+      "datetime"
     ],
     "translations": {
       "en": "to ask",
@@ -5088,7 +5236,8 @@
   "打喷嚏": {
     "pinyin": "dǎ pēn tì",
     "class": [
-      "verb"
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "sneeze",
@@ -5184,6 +5333,7 @@
   "凉快": {
     "pinyin": "liáng kuài",
     "class": [
+      "nature",
       "adjective"
     ],
     "translations": {
@@ -5200,6 +5350,7 @@
   "秋天": {
     "pinyin": "qiū tiān",
     "class": [
+      "nature",
       "datetime"
     ],
     "translations": {
@@ -5296,7 +5447,10 @@
   "在家": {
     "pinyin": "zài jiā",
     "class": [
-      "adjective"
+      "adjective",
+      "family",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "at home",
@@ -5312,7 +5466,8 @@
   "出去": {
     "pinyin": "chū qù",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to get out, to go out",
@@ -5346,6 +5501,7 @@
   "做饭": {
     "pinyin": "zuò fàn",
     "class": [
+      "food",
       "verb"
     ],
     "translations": {
@@ -5378,7 +5534,8 @@
   "⼥⼉": {
     "pinyin": "nǚ ér",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "daughter",
@@ -5394,7 +5551,8 @@
   "可爱": {
     "pinyin": "kě ài",
     "class": [
-      "adjective"
+      "adjective",
+      "transport"
     ],
     "translations": {
       "en": "cute, lovely",
@@ -5426,7 +5584,9 @@
   "岁": {
     "pinyin": "suì",
     "class": [
-      "general"
+      "general",
+      "family",
+      "datetime"
     ],
     "translations": {
       "en": "age",
@@ -5458,6 +5618,7 @@
   "公狗": {
     "pinyin": "gōng gǒu",
     "class": [
+      "family",
       "animals"
     ],
     "translations": {
@@ -5490,7 +5651,8 @@
   "公的": {
     "pinyin": "gōng de",
     "class": [
-      "adjective"
+      "adjective",
+      "family"
     ],
     "translations": {
       "en": "male",
@@ -5667,7 +5829,8 @@
   "往前": {
     "pinyin": "wǎng qián",
     "class": [
-      "adverb"
+      "adverb",
+      "transport"
     ],
     "translations": {
       "en": "forward",
@@ -5683,7 +5846,8 @@
   "往后": {
     "pinyin": "wǎng hòu",
     "class": [
-      "adverb"
+      "adverb",
+      "transport"
     ],
     "translations": {
       "en": "backward",
@@ -5699,7 +5863,8 @@
   "左转": {
     "pinyin": "zuǒ zhuǎn",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to turn left",
@@ -5715,7 +5880,8 @@
   "右转": {
     "pinyin": "yòu zhuǎn",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to turn right",
@@ -5779,6 +5945,7 @@
   "字": {
     "pinyin": "zì",
     "class": [
+      "transport",
       "language"
     ],
     "translations": {
@@ -5811,7 +5978,8 @@
   "查": {
     "pinyin": "chá",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to look up",
@@ -5923,7 +6091,10 @@
   "旅⾏": {
     "pinyin": "lǚ xíng",
     "class": [
+      "building",
+      "places",
       "transport",
+      "datetime",
       "verb"
     ],
     "translations": {
@@ -5972,6 +6143,7 @@
   "信⽤卡": {
     "pinyin": "xìn yòng kǎ",
     "class": [
+      "communication",
       "transport"
     ],
     "translations": {
@@ -6052,7 +6224,8 @@
   "纸": {
     "pinyin": "zhǐ",
     "class": [
-      "general"
+      "general",
+      "transport"
     ],
     "translations": {
       "en": "paper",
@@ -6116,7 +6289,9 @@
   "⼯作": {
     "pinyin": "gōng zuò",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "jobs"
     ],
     "translations": {
       "en": "job, to work",
@@ -6132,7 +6307,9 @@
   "房客": {
     "pinyin": "fáng kè",
     "class": [
-      "general"
+      "business",
+      "general",
+      "jobs"
     ],
     "translations": {
       "en": "tenant",
@@ -6164,7 +6341,10 @@
   "合租": {
     "pinyin": "hé zū",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "jobs",
+      "datetime"
     ],
     "translations": {
       "en": "to share the rent",
@@ -6180,7 +6360,10 @@
   "买得起": {
     "pinyin": "mǎi de qǐ",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "body",
+      "jobs"
     ],
     "translations": {
       "en": "to afford, to buy",
@@ -6196,7 +6379,8 @@
   "房东": {
     "pinyin": "fáng dōng",
     "class": [
-      "jobs"
+      "jobs",
+      "business"
     ],
     "translations": {
       "en": "landlord",
@@ -6212,7 +6396,9 @@
   "租": {
     "pinyin": "zū",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "jobs"
     ],
     "translations": {
       "en": "to rent",
@@ -6228,6 +6414,8 @@
   "房租": {
     "pinyin": "fáng zū",
     "class": [
+      "business",
+      "jobs",
       "building"
     ],
     "translations": {
@@ -6244,7 +6432,10 @@
   "看病": {
     "pinyin": "kàn bìng",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "body",
+      "jobs"
     ],
     "translations": {
       "en": "to see a doctor",
@@ -6260,7 +6451,8 @@
   "流⾎": {
     "pinyin": "liú xiě",
     "class": [
-      "verb"
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "to bleed",
@@ -6324,6 +6516,7 @@
   "挂号": {
     "pinyin": "guà hào",
     "class": [
+      "communication",
       "verb"
     ],
     "translations": {
@@ -6340,7 +6533,8 @@
   "护⼠": {
     "pinyin": "hù shì",
     "class": [
-      "jobs"
+      "jobs",
+      "business"
     ],
     "translations": {
       "en": "nurse",
@@ -6372,7 +6566,10 @@
   "饮料": {
     "pinyin": "yǐn liào",
     "class": [
-      "food"
+      "nature",
+      "food",
+      "family",
+      "datetime"
     ],
     "translations": {
       "en": "(non-alcoholic) drink, beverage",
@@ -6420,6 +6617,8 @@
   "吧台": {
     "pinyin": "bā tái",
     "class": [
+      "building",
+      "places",
       "entertainment"
     ],
     "translations": {
@@ -6452,7 +6651,9 @@
   "酒保": {
     "pinyin": "jiǔ bǎo",
     "class": [
-      "jobs"
+      "jobs",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "bartender",
@@ -6468,7 +6669,8 @@
   "别⼈": {
     "pinyin": "bié rén",
     "class": [
-      "pronoun"
+      "pronoun",
+      "body"
     ],
     "translations": {
       "en": "somebody else",
@@ -6484,6 +6686,7 @@
   "地铁": {
     "pinyin": "dì tiě",
     "class": [
+      "nature",
       "transport"
     ],
     "translations": {
@@ -6516,6 +6719,7 @@
   "告诉": {
     "pinyin": "gào sù",
     "class": [
+      "communication",
       "verb"
     ],
     "translations": {
@@ -6548,6 +6752,7 @@
   "根本": {
     "pinyin": "gēn běn",
     "class": [
+      "communication",
       "adverb"
     ],
     "translations": {
@@ -6580,7 +6785,9 @@
   "出汗": {
     "pinyin": "chū hàn",
     "class": [
-      "verb"
+      "food",
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "to sweat",
@@ -6596,7 +6803,8 @@
   "继续": {
     "pinyin": "jì xù",
     "class": [
-      "verb"
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "to continue",
@@ -6628,7 +6836,11 @@
   "锻炼": {
     "pinyin": "duàn liàn",
     "class": [
-      "verb"
+      "business",
+      "transport",
+      "verb",
+      "nature",
+      "jobs"
     ],
     "translations": {
       "en": "to exercise, to work out",
@@ -6644,7 +6856,8 @@
   "静⾳": {
     "pinyin": "jìng yīn",
     "class": [
-      "verb"
+      "verb",
+      "family"
     ],
     "translations": {
       "en": "to mute (the sound)",
@@ -6692,7 +6905,8 @@
   "关": {
     "pinyin": "guān",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to turn off",
@@ -6708,6 +6922,7 @@
   "打电话": {
     "pinyin": "dǎ diàn huà",
     "class": [
+      "communication",
       "verb",
       "expression"
     ],
@@ -6805,7 +7020,8 @@
   "过⼏天": {
     "pinyin": "guò jǐ tiān",
     "class": [
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "after a couple of days",
@@ -6869,7 +7085,8 @@
   "菊花茶": {
     "pinyin": "jú huā chá",
     "class": [
-      "food"
+      "food",
+      "family"
     ],
     "translations": {
       "en": "chrysanthemum tea",
@@ -6917,7 +7134,9 @@
   "咖啡因": {
     "pinyin": "kā fēi yīn",
     "class": [
-      "food"
+      "food",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "caffeine",
@@ -6949,7 +7168,9 @@
   "茶馆": {
     "pinyin": "chá guǎn",
     "class": [
-      "building"
+      "food",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "tea house",
@@ -7029,7 +7250,8 @@
   "公司": {
     "pinyin": "gōng sī",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "company",
@@ -7061,7 +7283,8 @@
   "⼯⼈": {
     "pinyin": "gōng rén",
     "class": [
-      "jobs"
+      "jobs",
+      "business"
     ],
     "translations": {
       "en": "worker",
@@ -7077,7 +7300,8 @@
   "⽼板": {
     "pinyin": "lǎo bǎn",
     "class": [
-      "jobs"
+      "jobs",
+      "business"
     ],
     "translations": {
       "en": "boss",
@@ -7125,6 +7349,8 @@
   "照⽚": {
     "pinyin": "zhào piān",
     "class": [
+      "nature",
+      "food",
       "general"
     ],
     "translations": {
@@ -7189,6 +7415,7 @@
   "酸甜": {
     "pinyin": "suān tián",
     "class": [
+      "food",
       "adjective"
     ],
     "translations": {
@@ -7253,7 +7480,8 @@
   "鸡⾁": {
     "pinyin": "jī ròu",
     "class": [
-      "food"
+      "food",
+      "transport"
     ],
     "translations": {
       "en": "chicken (meat)",
@@ -7301,6 +7529,7 @@
   "酷": {
     "pinyin": "kù",
     "class": [
+      "nature",
       "adjective"
     ],
     "translations": {
@@ -7317,7 +7546,8 @@
   "特⾊": {
     "pinyin": "tè sè",
     "class": [
-      "general"
+      "general",
+      "transport"
     ],
     "translations": {
       "en": "characteristics",
@@ -7333,6 +7563,7 @@
   "冬天": {
     "pinyin": "dōng tiān",
     "class": [
+      "nature",
       "datetime"
     ],
     "translations": {
@@ -7494,7 +7725,8 @@
   "玩⼉": {
     "pinyin": "wán ér",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to play",
@@ -7526,7 +7758,8 @@
   "⼤钱": {
     "pinyin": "dà qián",
     "class": [
-      "general"
+      "general",
+      "datetime"
     ],
     "translations": {
       "en": "old Chinese currency",
@@ -7558,7 +7791,8 @@
   "对": {
     "pinyin": "duì",
     "class": [
-      "adjective"
+      "adjective",
+      "transport"
     ],
     "translations": {
       "en": "right",
@@ -7606,7 +7840,9 @@
   "⽗⺟": {
     "pinyin": "fù mǔ",
     "class": [
-      "family"
+      "jobs",
+      "family",
+      "business"
     ],
     "translations": {
       "en": "parents",
@@ -7622,7 +7858,9 @@
   "当时": {
     "pinyin": "dāng shí",
     "class": [
-      "adverb"
+      "family",
+      "adverb",
+      "datetime"
     ],
     "translations": {
       "en": "at that time",
@@ -7638,7 +7876,8 @@
   "离婚": {
     "pinyin": "lí hūn",
     "class": [
-      "verb"
+      "verb",
+      "family"
     ],
     "translations": {
       "en": "to divorce",
@@ -7654,6 +7893,8 @@
   "照": {
     "pinyin": "zhào",
     "class": [
+      "nature",
+      "food",
       "verb"
     ],
     "translations": {
@@ -7686,6 +7927,7 @@
   "⼤学": {
     "pinyin": "dà xué",
     "class": [
+      "family",
       "building"
     ],
     "translations": {
@@ -7702,6 +7944,7 @@
   "⻋站": {
     "pinyin": "chē zhàn",
     "class": [
+      "communication",
       "transport"
     ],
     "translations": {
@@ -7718,6 +7961,7 @@
   "⼀站地": {
     "pinyin": "yī zhàn dì",
     "class": [
+      "communication",
       "transport"
     ],
     "translations": {
@@ -7734,7 +7978,8 @@
   "上⻋": {
     "pinyin": "shàng chē",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to get on the bus",
@@ -7766,7 +8011,8 @@
   "结婚": {
     "pinyin": "jié hūn",
     "class": [
-      "verb"
+      "verb",
+      "family"
     ],
     "translations": {
       "en": "to get married, to marry",
@@ -7798,7 +8044,8 @@
   "包⼦": {
     "pinyin": "bāo zi",
     "class": [
-      "food"
+      "food",
+      "body"
     ],
     "translations": {
       "en": "stuffed bun",
@@ -7862,6 +8109,7 @@
   "煎饼果⼦": {
     "pinyin": "jiān bǐng guǒ zi",
     "class": [
+      "communication",
       "food"
     ],
     "translations": {
@@ -7910,7 +8158,8 @@
   "舞台": {
     "pinyin": "wǔ tái",
     "class": [
-      "general"
+      "general",
+      "datetime"
     ],
     "translations": {
       "en": "stage",
@@ -8022,7 +8271,8 @@
   "锁": {
     "pinyin": "suǒ",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to lock",
@@ -8038,7 +8288,8 @@
   "担⼼": {
     "pinyin": "dān xīn",
     "class": [
-      "verb"
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "to worry, worry",
@@ -8070,7 +8321,9 @@
   "保安": {
     "pinyin": "bǎo ān",
     "class": [
-      "jobs"
+      "jobs",
+      "family",
+      "datetime"
     ],
     "translations": {
       "en": "security guard",
@@ -8102,7 +8355,10 @@
   "偷": {
     "pinyin": "tōu",
     "class": [
-      "verb"
+      "food",
+      "verb",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "to steal",
@@ -8150,7 +8406,9 @@
   "挪": {
     "pinyin": "nuó",
     "class": [
-      "verb"
+      "verb",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "to move (something)",
@@ -8166,7 +8424,8 @@
   "坐坐": {
     "pinyin": "zuò zuò",
     "class": [
-      "verb"
+      "verb",
+      "family"
     ],
     "translations": {
       "en": "to sit for a while",
@@ -8215,7 +8474,8 @@
   "浪费时间": {
     "pinyin": "làng fèi shí jiān",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to waste time",
@@ -8231,7 +8491,8 @@
   "打发时间": {
     "pinyin": "dǎ fā shí jiān",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to kill time",
@@ -8327,7 +8588,8 @@
   "团队": {
     "pinyin": "tuán duì",
     "class": [
-      "sports"
+      "sports",
+      "food"
     ],
     "translations": {
       "en": "team",
@@ -8359,7 +8621,8 @@
   "进球": {
     "pinyin": "jìn qiú",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to score a goal",
@@ -8407,7 +8670,9 @@
   "⾜球队": {
     "pinyin": "zú qiú duì",
     "class": [
-      "sports"
+      "sports",
+      "food",
+      "body"
     ],
     "translations": {
       "en": "football team",
@@ -8487,7 +8752,8 @@
   "公⾥": {
     "pinyin": "gōng lǐ",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "kilometer",
@@ -8631,7 +8897,8 @@
   "防守": {
     "pinyin": "fáng shǒu",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to play defense",
@@ -8647,7 +8914,8 @@
   "进攻": {
     "pinyin": "jìn gōng",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to play offense",
@@ -8679,6 +8947,7 @@
   "撞⻋": {
     "pinyin": "zhuàng chē",
     "class": [
+      "transport",
       "expression"
     ],
     "translations": {
@@ -8695,6 +8964,7 @@
   "⾬⾐": {
     "pinyin": "yǔ yī",
     "class": [
+      "nature",
       "clothes"
     ],
     "translations": {
@@ -8711,6 +8981,8 @@
   "防⽔": {
     "pinyin": "fáng shuǐ",
     "class": [
+      "nature",
+      "food",
       "verb",
       "adjective"
     ],
@@ -8792,7 +9064,8 @@
   "游泳": {
     "pinyin": "yóu yǒng",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to swim",
@@ -8808,7 +9081,9 @@
   "退货": {
     "pinyin": "tuì huò",
     "class": [
-      "verb"
+      "verb",
+      "body",
+      "transport"
     ],
     "translations": {
       "en": "return of goods, products",
@@ -8840,7 +9115,9 @@
   "瓶装⽔": {
     "pinyin": "píng zhuāng shuǐ",
     "class": [
-      "food"
+      "communication",
+      "food",
+      "nature"
     ],
     "translations": {
       "en": "bottled water",
@@ -8968,6 +9245,7 @@
   "⾃来⽔": {
     "pinyin": "zì lái shuǐ",
     "class": [
+      "nature",
       "food"
     ],
     "translations": {
@@ -9016,7 +9294,8 @@
   "交给": {
     "pinyin": "jiāo gěi",
     "class": [
-      "verb"
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "to hand something over to someone",
@@ -9080,7 +9359,8 @@
   "刮": {
     "pinyin": "guā",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to blow, to scratch",
@@ -9160,6 +9440,7 @@
   "世界⼤国": {
     "pinyin": "shì jiè dà guó",
     "class": [
+      "food",
       "business"
     ],
     "translations": {
@@ -9176,6 +9457,7 @@
   "⽣产": {
     "pinyin": "shēng chǎn",
     "class": [
+      "communication",
       "verb"
     ],
     "translations": {
@@ -9224,7 +9506,9 @@
   "语⾔": {
     "pinyin": "yǔ yán",
     "class": [
-      "language"
+      "body",
+      "language",
+      "datetime"
     ],
     "translations": {
       "en": "language",
@@ -9240,6 +9524,7 @@
   "想象": {
     "pinyin": "xiǎng xiàng",
     "class": [
+      "communication",
       "verb"
     ],
     "translations": {
@@ -9272,6 +9557,8 @@
   "努⼒⼯作": {
     "pinyin": "nǔ lì gōng zuò",
     "class": [
+      "business",
+      "jobs",
       "expression"
     ],
     "translations": {
@@ -9304,7 +9591,9 @@
   "⾟苦": {
     "pinyin": "xīn kǔ",
     "class": [
-      "adjective"
+      "business",
+      "adjective",
+      "jobs"
     ],
     "translations": {
       "en": "hard (of work), laborious",
@@ -9320,7 +9609,8 @@
   "安全帽": {
     "pinyin": "ān quán mào",
     "class": [
-      "clothes"
+      "clothes",
+      "family"
     ],
     "translations": {
       "en": "safety helmet",
@@ -9608,6 +9898,7 @@
   "阳台": {
     "pinyin": "yáng tái",
     "class": [
+      "family",
       "building"
     ],
     "translations": {
@@ -9640,7 +9931,8 @@
   "⾼层": {
     "pinyin": "gāo céng",
     "class": [
-      "building"
+      "building",
+      "datetime"
     ],
     "translations": {
       "en": "high floor",
@@ -9656,7 +9948,8 @@
   "阁楼": {
     "pinyin": "gé lóu",
     "class": [
-      "building"
+      "building",
+      "places"
     ],
     "translations": {
       "en": "penthouse",
@@ -9672,6 +9965,7 @@
   "家具": {
     "pinyin": "jiā jù",
     "class": [
+      "family",
       "building"
     ],
     "translations": {
@@ -9704,7 +9998,8 @@
   "商店": {
     "pinyin": "shāng diàn",
     "class": [
-      "building"
+      "building",
+      "places"
     ],
     "translations": {
       "en": "store",
@@ -9720,7 +10015,9 @@
   "招牌": {
     "pinyin": "zhāo pái",
     "class": [
-      "general"
+      "communication",
+      "general",
+      "transport"
     ],
     "translations": {
       "en": "sign",
@@ -9784,7 +10081,10 @@
   "⼴告栏": {
     "pinyin": "guǎng gào lán",
     "class": [
-      "business"
+      "communication",
+      "transport",
+      "business",
+      "datetime"
     ],
     "translations": {
       "en": "billboard",
@@ -9816,6 +10116,7 @@
   "虚假⼴告": {
     "pinyin": "xū jiǎ guǎng gào",
     "class": [
+      "family",
       "business"
     ],
     "translations": {
@@ -9832,7 +10133,9 @@
   "怀孕": {
     "pinyin": "huái yùn",
     "class": [
-      "verb"
+      "verb",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "pregnant",
@@ -9928,7 +10231,8 @@
   "坐⽉⼦": {
     "pinyin": "zuò yuè zi",
     "class": [
-      "family"
+      "family",
+      "datetime"
     ],
     "translations": {
       "en": "a rest month after having a baby",
@@ -9960,7 +10264,8 @@
   "安排": {
     "pinyin": "ān pái",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "plan, schedule, to prepare",
@@ -9992,7 +10297,9 @@
   "兼职": {
     "pinyin": "jiān zhí",
     "class": [
-      "jobs"
+      "jobs",
+      "business",
+      "datetime"
     ],
     "translations": {
       "en": "part time job",
@@ -10008,7 +10315,8 @@
   "上课": {
     "pinyin": "shàng kè",
     "class": [
-      "verb"
+      "verb",
+      "family"
     ],
     "translations": {
       "en": "attend class",
@@ -10040,7 +10348,8 @@
   "睡觉": {
     "pinyin": "shuì jiào",
     "class": [
-      "verb"
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "to sleep",
@@ -10104,7 +10413,8 @@
   "卖完": {
     "pinyin": "mài wán",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "sold out, to be sold out",
@@ -10120,7 +10430,9 @@
   "售票处": {
     "pinyin": "shòu piào chù",
     "class": [
+      "communication",
       "transport",
+      "nature",
       "entertainment"
     ],
     "translations": {
@@ -10137,6 +10449,8 @@
   "上映时间": {
     "pinyin": "shàng yìng shí jiān",
     "class": [
+      "communication",
+      "datetime",
       "entertainment"
     ],
     "translations": {
@@ -10153,8 +10467,9 @@
   "会员卡": {
     "pinyin": "huì yuán kǎ",
     "class": [
-      "business",
       "transport",
+      "communication",
+      "business",
       "entertainment"
     ],
     "translations": {
@@ -10208,7 +10523,10 @@
   "下班": {
     "pinyin": "xià bān",
     "class": [
-      "verb"
+      "business",
+      "jobs",
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to get off work",
@@ -10224,7 +10542,8 @@
   "打呼噜": {
     "pinyin": "dǎ hū lū",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to snore",
@@ -10256,7 +10575,8 @@
   "睡不着": {
     "pinyin": "shuì bù zhe",
     "class": [
-      "verb"
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "bu to be unable to get to sleep",
@@ -10288,7 +10608,8 @@
   "醒": {
     "pinyin": "xǐng",
     "class": [
-      "verb"
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "to wake up",
@@ -10320,7 +10641,8 @@
   "失眠": {
     "pinyin": "shī mián",
     "class": [
-      "verb"
+      "verb",
+      "family"
     ],
     "translations": {
       "en": "insomnia",
@@ -10336,7 +10658,9 @@
   "安眠药": {
     "pinyin": "ān mián yào",
     "class": [
-      "general"
+      "family",
+      "general",
+      "body"
     ],
     "translations": {
       "en": "sleeping pills",
@@ -10417,7 +10741,10 @@
   "出差": {
     "pinyin": "chū chāi",
     "class": [
-      "business"
+      "transport",
+      "jobs",
+      "business",
+      "datetime"
     ],
     "translations": {
       "en": "to go on a business trip",
@@ -10433,7 +10760,8 @@
   "过⽬": {
     "pinyin": "guò mù",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to look over to check for approval",
@@ -10643,6 +10971,9 @@
   "请病假": {
     "pinyin": "qǐng bìng jià",
     "class": [
+      "communication",
+      "family",
+      "body",
       "business"
     ],
     "translations": {
@@ -10675,7 +11006,9 @@
   "感冒": {
     "pinyin": "gǎn mào",
     "class": [
-      "verb"
+      "nature",
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to have / catch a cold",
@@ -10755,7 +11088,8 @@
   "加班费": {
     "pinyin": "jiā bān fèi",
     "class": [
-      "business"
+      "business",
+      "datetime"
     ],
     "translations": {
       "en": "overtime pay",
@@ -10803,7 +11137,8 @@
   "告": {
     "pinyin": "gào",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to sue",
@@ -10851,7 +11186,9 @@
   "对待": {
     "pinyin": "duì dài",
     "class": [
-      "verb"
+      "food",
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "to treat",
@@ -10883,6 +11220,7 @@
   "员⼯": {
     "pinyin": "yuán gōng",
     "class": [
+      "family",
       "business"
     ],
     "translations": {
@@ -10979,6 +11317,7 @@
   "机会": {
     "pinyin": "jī huì",
     "class": [
+      "family",
       "business"
     ],
     "translations": {
@@ -11044,6 +11383,7 @@
   "矿泉⽔": {
     "pinyin": "kuàng quán shuǐ",
     "class": [
+      "nature",
       "food"
     ],
     "translations": {
@@ -11060,7 +11400,8 @@
   "过年": {
     "pinyin": "guò nián",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to celebrate the Chinese New Year",
@@ -11076,7 +11417,8 @@
   "期待": {
     "pinyin": "qī dài",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to expect; to look forward to",
@@ -11109,7 +11451,8 @@
   "年终奖": {
     "pinyin": "nián zhōng jiǎng",
     "class": [
-      "business"
+      "business",
+      "datetime"
     ],
     "translations": {
       "en": "year-end bonus",
@@ -11141,6 +11484,7 @@
   "建筑公司": {
     "pinyin": "jiàn zhù gōng sī",
     "class": [
+      "family",
       "business"
     ],
     "translations": {
@@ -11223,7 +11567,8 @@
   "⼀边": {
     "pinyin": "yī biān",
     "class": [
-      "conjunction"
+      "conjunction",
+      "datetime"
     ],
     "translations": {
       "en": "to do at the same time of doing",
@@ -11352,7 +11697,9 @@
   "第⼀名": {
     "pinyin": "dì yì míng",
     "class": [
-      "sports"
+      "sports",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "first place",
@@ -11449,6 +11796,7 @@
   "师傅": {
     "pinyin": "shī fù",
     "class": [
+      "jobs",
       "business"
     ],
     "translations": {
@@ -11465,7 +11813,8 @@
   "堵⻋": {
     "pinyin": "dǔ chē",
     "class": [
-      "transport"
+      "transport",
+      "datetime"
     ],
     "translations": {
       "en": "traffic jam",
@@ -11481,6 +11830,7 @@
   "⼀般来说": {
     "pinyin": "yì bān lái shuō",
     "class": [
+      "communication",
       "expression"
     ],
     "translations": {
@@ -11529,6 +11879,7 @@
   "停": {
     "pinyin": "tíng",
     "class": [
+      "transport",
       "directions"
     ],
     "translations": {
@@ -11545,6 +11896,7 @@
   "发现": {
     "pinyin": "fā xiàn",
     "class": [
+      "food",
       "verb"
     ],
     "translations": {
@@ -11593,6 +11945,7 @@
   "粉": {
     "pinyin": "fěn",
     "class": [
+      "communication",
       "food"
     ],
     "translations": {
@@ -11609,7 +11962,8 @@
   "⽜⾁": {
     "pinyin": "niú ròu",
     "class": [
-      "food"
+      "food",
+      "transport"
     ],
     "translations": {
       "en": "beef",
@@ -11673,7 +12027,8 @@
   "不到": {
     "pinyin": "bú dào",
     "class": [
-      "adverb"
+      "adverb",
+      "datetime"
     ],
     "translations": {
       "en": "not be able to",
@@ -11722,6 +12077,7 @@
   "号": {
     "pinyin": "hào",
     "class": [
+      "communication",
       "general"
     ],
     "translations": {
@@ -11738,7 +12094,8 @@
   "⼈": {
     "pinyin": "rén",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "local, person",
@@ -11802,6 +12159,7 @@
   "附近": {
     "pinyin": "fù jìn",
     "class": [
+      "family",
       "directions"
     ],
     "translations": {
@@ -11882,7 +12240,8 @@
   "⼿机号码": {
     "pinyin": "shǒu jī hào mǎ",
     "class": [
-      "communication"
+      "communication",
+      "body"
     ],
     "translations": {
       "en": "cell phone number",
@@ -11898,6 +12257,7 @@
   "酒店": {
     "pinyin": "jiǔ diàn",
     "class": [
+      "food",
       "building"
     ],
     "translations": {
@@ -11914,6 +12274,7 @@
   "座位": {
     "pinyin": "zuò wèi",
     "class": [
+      "food",
       "transport"
     ],
     "translations": {
@@ -11930,7 +12291,10 @@
   "订座": {
     "pinyin": "dìng zuò",
     "class": [
-      "transport"
+      "building",
+      "food",
+      "transport",
+      "places"
     ],
     "translations": {
       "en": "to reserve seats",
@@ -11946,7 +12310,8 @@
   "稍等": {
     "pinyin": "shāo děng",
     "class": [
-      "verb"
+      "verb",
+      "family"
     ],
     "translations": {
       "en": "to wait a moment",
@@ -12029,7 +12394,8 @@
   "⻘椒⽜柳": {
     "pinyin": "⻘ jiāo niú liǔ",
     "class": [
-      "food"
+      "food",
+      "transport"
     ],
     "translations": {
       "en": "beef strips with green pepper",
@@ -12045,6 +12411,7 @@
   "尝尝": {
     "pinyin": "cháng cháng",
     "class": [
+      "food",
       "verb"
     ],
     "translations": {
@@ -12110,7 +12477,8 @@
   "外卖": {
     "pinyin": "wài mài",
     "class": [
-      "food"
+      "food",
+      "family"
     ],
     "translations": {
       "en": "delivery take-out",
@@ -12159,7 +12527,8 @@
   "丰盛": {
     "pinyin": "fēng shèng",
     "class": [
-      "adjective"
+      "adjective",
+      "family"
     ],
     "translations": {
       "en": "of large variety",
@@ -12271,7 +12640,10 @@
   "光棍": {
     "pinyin": "guāng gùn",
     "class": [
-      "family"
+      "body",
+      "jobs",
+      "family",
+      "business"
     ],
     "translations": {
       "en": "single person, bachelor",
@@ -12319,7 +12691,8 @@
   "包裹": {
     "pinyin": "bāo guǒ",
     "class": [
-      "general"
+      "general",
+      "datetime"
     ],
     "translations": {
       "en": "package",
@@ -12367,7 +12740,12 @@
   "买东⻄": {
     "pinyin": "mǎi dōng xī",
     "class": [
-      "verb"
+      "building",
+      "places",
+      "business",
+      "verb",
+      "body",
+      "jobs"
     ],
     "translations": {
       "en": "to shop to buy something",
@@ -12576,6 +12954,7 @@
     "pinyin": "wán",
     "class": [
       "verb",
+      "transport",
       "entertainment"
     ],
     "translations": {
@@ -12608,7 +12987,8 @@
   "旅游": {
     "pinyin": "lǚ yóu",
     "class": [
-      "transport"
+      "transport",
+      "datetime"
     ],
     "translations": {
       "en": "trip, travel tour",
@@ -12624,7 +13004,8 @@
   "攻略": {
     "pinyin": "gōng lüè",
     "class": [
-      "transport"
+      "transport",
+      "datetime"
     ],
     "translations": {
       "en": "guide tips",
@@ -12640,7 +13021,9 @@
   "玩得开⼼": {
     "pinyin": "wán dé kāi xīn",
     "class": [
-      "expression"
+      "family",
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "to have a good time",
@@ -12689,8 +13072,9 @@
   "价钱": {
     "pinyin": "jià qián",
     "class": [
-      "business",
       "transport",
+      "jobs",
+      "business",
       "entertainment"
     ],
     "translations": {
@@ -12775,7 +13159,8 @@
   "打扫": {
     "pinyin": "dǎ sǎo",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to clean, cleaning",
@@ -12937,7 +13322,9 @@
   "⼝罩": {
     "pinyin": "kǒu zhào",
     "class": [
-      "clothes"
+      "communication",
+      "clothes",
+      "transport"
     ],
     "translations": {
       "en": "face mask, mask",
@@ -13001,7 +13388,9 @@
   "跳槽": {
     "pinyin": "tiào cáo",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "jobs"
     ],
     "translations": {
       "en": "changing jobs",
@@ -13017,6 +13406,7 @@
   "铁饭碗": {
     "pinyin": "tiě fàn wǎn",
     "class": [
+      "jobs",
       "business"
     ],
     "translations": {
@@ -13049,6 +13439,7 @@
   "⼋九不离十": {
     "pinyin": "bā jiǔ bù lí shí",
     "class": [
+      "transport",
       "expression"
     ],
     "translations": {
@@ -13129,6 +13520,7 @@
   "⼩笨蛋": {
     "pinyin": "xiǎo bèn dàn",
     "class": [
+      "food",
       "expression"
     ],
     "translations": {
@@ -13162,7 +13554,11 @@
   "打酱油": {
     "pinyin": "dǎ jiàng yóu",
     "class": [
-      "expression"
+      "family",
+      "transport",
+      "business",
+      "expression",
+      "jobs"
     ],
     "translations": {
       "en": "none of my business",
@@ -13194,7 +13590,9 @@
   "⻢⼤哈": {
     "pinyin": "mǎ dà hā",
     "class": [
-      "adjective"
+      "adjective",
+      "family",
+      "transport"
     ],
     "translations": {
       "en": "a careless or forgetful person",
@@ -13290,7 +13688,9 @@
   "穿⼩鞋": {
     "pinyin": "chuān xiǎo xié",
     "class": [
-      "expression"
+      "body",
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "giving someone a hard time",
@@ -13322,6 +13722,8 @@
   "⽑⽑⾬": {
     "pinyin": "máo máo yǔ",
     "class": [
+      "business",
+      "jobs",
       "expression"
     ],
     "translations": {
@@ -13338,6 +13740,7 @@
   "晴空万⾥": {
     "pinyin": "qíng kōng wàn lǐ",
     "class": [
+      "family",
       "expression"
     ],
     "translations": {
@@ -13354,6 +13757,7 @@
   "雪上加霜": {
     "pinyin": "xuě shàng jiā shuāng",
     "class": [
+      "body",
       "expression"
     ],
     "translations": {
@@ -13402,6 +13806,7 @@
   "睡到⾃然醒": {
     "pinyin": "shuì dào zì rán xǐng",
     "class": [
+      "body",
       "expression"
     ],
     "translations": {
@@ -13434,7 +13839,8 @@
   "低头族": {
     "pinyin": "dī tóu zú",
     "class": [
-      "communication"
+      "communication",
+      "body"
     ],
     "translations": {
       "en": "mobile phone addicts",
@@ -13450,6 +13856,7 @@
   "到时看着办": {
     "pinyin": "dào shí kàn zhe bàn",
     "class": [
+      "transport",
       "expression"
     ],
     "translations": {
@@ -13466,7 +13873,9 @@
   "改天吧": {
     "pinyin": "gǎi tiān ba",
     "class": [
-      "expression"
+      "communication",
+      "expression",
+      "nature"
     ],
     "translations": {
       "en": "to take a rain check",
@@ -13482,8 +13891,10 @@
   "再说": {
     "pinyin": "zài shuō",
     "class": [
+      "communication",
+      "verb",
       "expression",
-      "verb"
+      "datetime"
     ],
     "translations": {
       "en": "talk later, to speak later",
@@ -13595,7 +14006,9 @@
   "囧": {
     "pinyin": "jiǒng",
     "class": [
-      "adjective"
+      "adjective",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "awkward",
@@ -13659,6 +14072,7 @@
   "哪壶不开提哪壶": {
     "pinyin": "nǎ hú bù kāi tí nǎ hú",
     "class": [
+      "communication",
       "expression"
     ],
     "translations": {
@@ -13707,7 +14121,8 @@
   "毒⾆": {
     "pinyin": "dú shé",
     "class": [
-      "adjective"
+      "adjective",
+      "family"
     ],
     "translations": {
       "en": "person who criticizes others harshly",
@@ -13723,6 +14138,7 @@
   "左⽿进右⽿出": {
     "pinyin": "zuǒ ěr jìn yòu ěr chū",
     "class": [
+      "transport",
       "expression"
     ],
     "translations": {
@@ -13915,6 +14331,7 @@
   "没戏": {
     "pinyin": "méi xì",
     "class": [
+      "family",
       "expression"
     ],
     "translations": {
@@ -13947,7 +14364,8 @@
   "占上⻛": {
     "pinyin": "zhàn shàng fēng",
     "class": [
-      "adjective"
+      "adjective",
+      "body"
     ],
     "translations": {
       "en": "gain the upper hand",
@@ -13963,6 +14381,7 @@
   "还嫩点⼉": {
     "pinyin": "hái nèn diǎn ér",
     "class": [
+      "transport",
       "expression"
     ],
     "translations": {
@@ -14044,7 +14463,11 @@
   "⾎拼": {
     "pinyin": "xuè pīn",
     "class": [
-      "verb"
+      "building",
+      "places",
+      "business",
+      "verb",
+      "jobs"
     ],
     "translations": {
       "en": "go shopping",
@@ -14076,7 +14499,8 @@
   "鞋⼦": {
     "pinyin": "xié zi",
     "class": [
-      "clothes"
+      "clothes",
+      "transport"
     ],
     "translations": {
       "en": "shoe",
@@ -14108,7 +14532,9 @@
   "战⽆不胜": {
     "pinyin": "zhàn wú bù shèng",
     "class": [
-      "adjective"
+      "adjective",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "invincible",
@@ -14140,8 +14566,9 @@
   "叫": {
     "pinyin": "jiào",
     "class": [
+      "communication",
       "verb",
-      "communication"
+      "datetime"
     ],
     "translations": {
       "en": "ask",
@@ -14173,7 +14600,9 @@
   "⽼歌": {
     "pinyin": "lǎo gē",
     "class": [
-      "general"
+      "general",
+      "family",
+      "datetime"
     ],
     "translations": {
       "en": "old song",
@@ -14221,7 +14650,8 @@
   "分享": {
     "pinyin": "fēn xiǎng",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "share",
@@ -14237,7 +14667,8 @@
   "⽼⼟": {
     "pinyin": "lǎo tǔ",
     "class": [
-      "adjective"
+      "adjective",
+      "datetime"
     ],
     "translations": {
       "en": "old-fashioned",
@@ -14317,6 +14748,7 @@
   "壮观": {
     "pinyin": "zhuàng guān",
     "class": [
+      "food",
       "adjective"
     ],
     "translations": {
@@ -14349,7 +14781,8 @@
   "同情": {
     "pinyin": "tóng qíng",
     "class": [
-      "verb"
+      "verb",
+      "expression"
     ],
     "translations": {
       "en": "feel sorry for",
@@ -14365,7 +14798,8 @@
   "按摩": {
     "pinyin": "àn mó",
     "class": [
-      "general"
+      "general",
+      "datetime"
     ],
     "translations": {
       "en": "massage",
@@ -14397,7 +14831,8 @@
   "早休息": {
     "pinyin": "zǎo xiū xī",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "have an early night",
@@ -14413,6 +14848,7 @@
   "篮球": {
     "pinyin": "lán qiú",
     "class": [
+      "communication",
       "general"
     ],
     "translations": {
@@ -14445,7 +14881,9 @@
   "不⼩⼼": {
     "pinyin": "bù xiǎo xīn",
     "class": [
-      "adjective"
+      "adjective",
+      "family",
+      "transport"
     ],
     "translations": {
       "en": "careless",
@@ -14493,7 +14931,10 @@
   "城市": {
     "pinyin": "chéng shì",
     "class": [
-      "general"
+      "general",
+      "family",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "city",
@@ -14573,6 +15014,7 @@
   "真的": {
     "pinyin": "zhēn de",
     "class": [
+      "family",
       "expression"
     ],
     "translations": {
@@ -14701,7 +15143,9 @@
   "哥哥": {
     "pinyin": "gē gē",
     "class": [
-      "general"
+      "communication",
+      "general",
+      "family"
     ],
     "translations": {
       "en": "big brother",
@@ -14717,7 +15161,8 @@
   "爸爸": {
     "pinyin": "bà bà",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "father",
@@ -14797,7 +15242,8 @@
   "时刻": {
     "pinyin": "shí kè",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "moment",
@@ -14813,7 +15259,8 @@
   "⼀家⼈": {
     "pinyin": "yī jiā rén",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "the whole family",
@@ -14845,7 +15292,8 @@
   "可惜": {
     "pinyin": "kě xī",
     "class": [
-      "adverb"
+      "adverb",
+      "datetime"
     ],
     "translations": {
       "en": "too bad",
@@ -14878,6 +15326,7 @@
   "好吃的": {
     "pinyin": "hǎo chī de",
     "class": [
+      "food",
       "general"
     ],
     "translations": {
@@ -14894,7 +15343,8 @@
   "⼀路顺⻛": {
     "pinyin": "yī lù shùn fēng",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "bon voyage",
@@ -14942,7 +15392,8 @@
   "东⻄": {
     "pinyin": "dōng xī",
     "class": [
-      "general"
+      "general",
+      "body"
     ],
     "translations": {
       "en": "stuff",
@@ -14974,7 +15425,8 @@
   "感觉": {
     "pinyin": "gǎn jué",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "feel, feelings, to feel",
@@ -14990,7 +15442,8 @@
   "晒⼀下": {
     "pinyin": "shài yī xià",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "check out",
@@ -15038,7 +15491,8 @@
   "美妙绝伦": {
     "pinyin": "měi miào jué lún",
     "class": [
-      "adjective"
+      "adjective",
+      "family"
     ],
     "translations": {
       "en": "truly exceptional",
@@ -15102,7 +15556,8 @@
   "现实": {
     "pinyin": "xiàn shí",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "reality",
@@ -15166,7 +15621,8 @@
   "花灯": {
     "pinyin": "huā dēng",
     "class": [
-      "general"
+      "general",
+      "datetime"
     ],
     "translations": {
       "en": "lantern",
@@ -15182,7 +15638,8 @@
   "灯谜": {
     "pinyin": "dēng mí",
     "class": [
-      "general"
+      "general",
+      "datetime"
     ],
     "translations": {
       "en": "riddles written on lanterns",
@@ -15198,7 +15655,8 @@
   "元宵节": {
     "pinyin": "yuán xiāo jié",
     "class": [
-      "general"
+      "general",
+      "datetime"
     ],
     "translations": {
       "en": "the Lantern Festival",
@@ -15214,7 +15672,8 @@
   "⼤家": {
     "pinyin": "dà jiā",
     "class": [
-      "pronoun"
+      "pronoun",
+      "family"
     ],
     "translations": {
       "en": "you all",
@@ -15230,7 +15689,8 @@
   "感谢": {
     "pinyin": "gǎn xiè",
     "class": [
-      "verb"
+      "verb",
+      "expression"
     ],
     "translations": {
       "en": "thank",
@@ -15294,7 +15754,8 @@
   "新年": {
     "pinyin": "xīn nián",
     "class": [
-      "general"
+      "general",
+      "datetime"
     ],
     "translations": {
       "en": "New Year",
@@ -15310,6 +15771,7 @@
   "转眼": {
     "pinyin": "zhuǎn yǎn",
     "class": [
+      "body",
       "adverb"
     ],
     "translations": {
@@ -15326,7 +15788,8 @@
   "圣诞": {
     "pinyin": "shèng dàn",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "Christmas",
@@ -15342,7 +15805,9 @@
   "雪景": {
     "pinyin": "xuě jǐng",
     "class": [
-      "general"
+      "general",
+      "transport",
+      "datetime"
     ],
     "translations": {
       "en": "snow",
@@ -15390,6 +15855,8 @@
   "甜⾔蜜语": {
     "pinyin": "tián yán mì yǔ",
     "class": [
+      "communication",
+      "food",
       "general"
     ],
     "translations": {
@@ -15470,7 +15937,9 @@
   "也会": {
     "pinyin": "yě huì",
     "class": [
-      "expression"
+      "food",
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "also to be able",
@@ -15486,7 +15955,9 @@
   "还会": {
     "pinyin": "hái huì",
     "class": [
-      "expression"
+      "food",
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "still to be able",
@@ -15535,6 +16006,7 @@
     "pinyin": "jiā",
     "class": [
       "measure",
+      "family",
       "places"
     ],
     "translations": {
@@ -15712,7 +16184,8 @@
   "能": {
     "pinyin": "néng",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to be able",
@@ -15760,6 +16233,7 @@
   "可能": {
     "pinyin": "kě néng",
     "class": [
+      "food",
       "verb",
       "adjective"
     ],
@@ -15826,7 +16300,9 @@
   "替": {
     "pinyin": "tì",
     "class": [
-      "verb"
+      "verb",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "to substitute for",
@@ -15859,6 +16335,7 @@
   "第": {
     "pinyin": "dì",
     "class": [
+      "communication",
       "numeral"
     ],
     "translations": {
@@ -15875,6 +16352,7 @@
   "只": {
     "pinyin": "zhǐ",
     "class": [
+      "communication",
       "measure"
     ],
     "translations": {
@@ -16035,6 +16513,7 @@
   "好莱坞⼤⽚": {
     "pinyin": "hǎo lái wù dà piàn",
     "class": [
+      "transport",
       "entertainment"
     ],
     "translations": {
@@ -16051,6 +16530,7 @@
   "⽐较": {
     "pinyin": "bǐ jiào",
     "class": [
+      "family",
       "adverb"
     ],
     "translations": {
@@ -16197,7 +16677,8 @@
   "疼": {
     "pinyin": "téng",
     "class": [
-      "adjective"
+      "adjective",
+      "body"
     ],
     "translations": {
       "en": "hurt",
@@ -16293,7 +16774,8 @@
   "轻": {
     "pinyin": "qīng",
     "class": [
-      "adjective"
+      "adjective",
+      "transport"
     ],
     "translations": {
       "en": "light",
@@ -16357,7 +16839,8 @@
   "⾜疗": {
     "pinyin": "zú liáo",
     "class": [
-      "body"
+      "body",
+      "datetime"
     ],
     "translations": {
       "en": "foot massage",
@@ -16389,6 +16872,7 @@
   "右": {
     "pinyin": "yòu",
     "class": [
+      "transport",
       "directions"
     ],
     "translations": {
@@ -16469,7 +16953,13 @@
   "便宜没好货": {
     "pinyin": "pián yi méi hǎo huò",
     "class": [
-      "expression"
+      "family",
+      "building",
+      "places",
+      "business",
+      "expression",
+      "body",
+      "jobs"
     ],
     "translations": {
       "en": "cheap things are no good",
@@ -16485,7 +16975,8 @@
   "质量": {
     "pinyin": "zhì liàng",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "quality",
@@ -16501,7 +16992,10 @@
   "砍价": {
     "pinyin": "kǎn jià",
     "class": [
-      "verb"
+      "verb",
+      "body",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "to bargain",
@@ -16613,6 +17107,7 @@
   "没错⼉": {
     "pinyin": "méi cuò ér",
     "class": [
+      "transport",
       "expression"
     ],
     "translations": {
@@ -16629,6 +17124,7 @@
   "夏天": {
     "pinyin": "xià tiān",
     "class": [
+      "nature",
       "datetime"
     ],
     "translations": {
@@ -16645,6 +17141,7 @@
   "那时候": {
     "pinyin": "nà shí hòu",
     "class": [
+      "family",
       "datetime"
     ],
     "translations": {
@@ -16661,7 +17158,8 @@
   "表妹": {
     "pinyin": "biǎo mèi",
     "class": [
-      "family"
+      "family",
+      "datetime"
     ],
     "translations": {
       "en": "younger female cousin",
@@ -16741,7 +17239,8 @@
   "姑娘": {
     "pinyin": "gū niáng",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "girl",
@@ -16757,7 +17256,8 @@
   "⼩伙⼦": {
     "pinyin": "xiǎo huǒ zi",
     "class": [
-      "general"
+      "general",
+      "datetime"
     ],
     "translations": {
       "en": "young man",
@@ -16853,6 +17353,7 @@
   "卖": {
     "pinyin": "mài",
     "class": [
+      "jobs",
       "verb",
       "business"
     ],
@@ -16870,7 +17371,8 @@
   "推销员": {
     "pinyin": "tuī xiāo yuán",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "salesperson",
@@ -16886,6 +17388,7 @@
   "猫咪": {
     "pinyin": "māo mī",
     "class": [
+      "communication",
       "animals"
     ],
     "translations": {
@@ -17079,7 +17582,9 @@
   "趟": {
     "pinyin": "tàng",
     "class": [
-      "measure"
+      "measure",
+      "transport",
+      "datetime"
     ],
     "translations": {
       "en": "(measure word for journeys)",
@@ -17287,6 +17792,7 @@
   "逃不了": {
     "pinyin": "táo bù liǎo",
     "class": [
+      "food",
       "verb"
     ],
     "translations": {
@@ -17303,7 +17809,10 @@
   "骗": {
     "pinyin": "piàn",
     "class": [
-      "verb"
+      "food",
+      "verb",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "to cheat",
@@ -17335,6 +17844,8 @@
   "别废话": {
     "pinyin": "bié fèi huà",
     "class": [
+      "communication",
+      "transport",
       "expression"
     ],
     "translations": {
@@ -17497,7 +18008,9 @@
   "亲爱的": {
     "pinyin": "qīn ài de",
     "class": [
-      "general"
+      "general",
+      "family",
+      "transport"
     ],
     "translations": {
       "en": "darling, dear",
@@ -17513,8 +18026,9 @@
   "听": {
     "pinyin": "tīng",
     "class": [
-      "verb",
-      "communication"
+      "communication",
+      "food",
+      "verb"
     ],
     "translations": {
       "en": "can",
@@ -17530,7 +18044,8 @@
   "健怡可乐": {
     "pinyin": "jiàn yí kě lè",
     "class": [
-      "food"
+      "food",
+      "transport"
     ],
     "translations": {
       "en": "Diet Coke",
@@ -17563,6 +18078,7 @@
   "⽩开⽔": {
     "pinyin": "bái kāi shuǐ",
     "class": [
+      "nature",
       "food"
     ],
     "translations": {
@@ -17579,6 +18095,7 @@
   "猫砂": {
     "pinyin": "māo shā",
     "class": [
+      "communication",
       "animals"
     ],
     "translations": {
@@ -17595,6 +18112,8 @@
   "猫粮": {
     "pinyin": "māo liáng",
     "class": [
+      "communication",
+      "food",
       "animals"
     ],
     "translations": {
@@ -17835,7 +18354,8 @@
   "宝⻉⼉": {
     "pinyin": "bǎo ⻉ ér",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "baby",
@@ -17915,7 +18435,8 @@
   "⼀辈⼦": {
     "pinyin": "yī bèi zi",
     "class": [
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "a lifetime",
@@ -17931,6 +18452,7 @@
   "联系": {
     "pinyin": "lián xì",
     "class": [
+      "communication",
       "verb"
     ],
     "translations": {
@@ -17947,7 +18469,10 @@
   "挣钱": {
     "pinyin": "zhèng qián",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "jobs",
+      "datetime"
     ],
     "translations": {
       "en": "to earn money",
@@ -18075,9 +18600,14 @@
   "好像": {
     "pinyin": "hǎo xiàng",
     "class": [
-      "adverb",
+      "family",
+      "building",
+      "places",
+      "expression",
+      "business",
       "verb",
-      "expression"
+      "jobs",
+      "adverb"
     ],
     "translations": {
       "en": "seemingly, to seem seems to be",
@@ -18109,7 +18639,8 @@
   "撞": {
     "pinyin": "zhuàng",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to collide, to crash",
@@ -18125,7 +18656,8 @@
   "碰": {
     "pinyin": "pèng",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to bump into",
@@ -18205,7 +18737,8 @@
   "植物": {
     "pinyin": "zhí wù",
     "class": [
-      "nature"
+      "nature",
+      "datetime"
     ],
     "translations": {
       "en": "plant",
@@ -18221,7 +18754,13 @@
   "家务": {
     "pinyin": "jiā wù",
     "class": [
-      "general"
+      "family",
+      "building",
+      "places",
+      "business",
+      "datetime",
+      "general",
+      "jobs"
     ],
     "translations": {
       "en": "housework",
@@ -18285,7 +18824,8 @@
   "跑⻋": {
     "pinyin": "pǎo chē",
     "class": [
-      "transport"
+      "transport",
+      "datetime"
     ],
     "translations": {
       "en": "sports car",
@@ -18317,7 +18857,8 @@
   "辆": {
     "pinyin": "liàng",
     "class": [
-      "measure"
+      "measure",
+      "transport"
     ],
     "translations": {
       "en": "(measure word for cars)",
@@ -18349,6 +18890,8 @@
   "速度": {
     "pinyin": "sù dù",
     "class": [
+      "nature",
+      "family",
       "transport"
     ],
     "translations": {
@@ -18397,7 +18940,8 @@
   "噩梦": {
     "pinyin": "è mèng",
     "class": [
-      "general"
+      "general",
+      "datetime"
     ],
     "translations": {
       "en": "nightmare",
@@ -18413,7 +18957,8 @@
   "害怕": {
     "pinyin": "hài pà",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to be scared, fear",
@@ -18461,7 +19006,8 @@
   "穿着": {
     "pinyin": "chuān zhe",
     "class": [
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "to wear",
@@ -18509,6 +19055,7 @@
   "窗户": {
     "pinyin": "chuāng hù",
     "class": [
+      "nature",
       "building"
     ],
     "translations": {
@@ -18573,7 +19120,9 @@
   "刚": {
     "pinyin": "gāng",
     "class": [
-      "adverb"
+      "family",
+      "adverb",
+      "datetime"
     ],
     "translations": {
       "en": "just now",
@@ -18637,6 +19186,7 @@
   "别忘了": {
     "pinyin": "bié wàng le",
     "class": [
+      "transport",
       "expression"
     ],
     "translations": {
@@ -18717,7 +19267,8 @@
   "公平": {
     "pinyin": "gōng píng",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "fair",
@@ -18733,7 +19284,9 @@
   "上班": {
     "pinyin": "shàng bān",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "jobs"
     ],
     "translations": {
       "en": "to start work",
@@ -18749,6 +19302,7 @@
   "头晕": {
     "pinyin": "tóu yūn",
     "class": [
+      "nature",
       "verb"
     ],
     "translations": {
@@ -18813,6 +19367,9 @@
   "照相": {
     "pinyin": "zhào xiàng",
     "class": [
+      "nature",
+      "food",
+      "body",
       "transport"
     ],
     "translations": {
@@ -18861,6 +19418,7 @@
   "拍": {
     "pinyin": "pāi",
     "class": [
+      "communication",
       "verb"
     ],
     "translations": {
@@ -18941,7 +19499,8 @@
   "忘": {
     "pinyin": "wàng",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to forget",
@@ -19008,7 +19567,8 @@
   "剩": {
     "pinyin": "shèng",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to have something left over",
@@ -19072,7 +19632,9 @@
   "开夜⻋": {
     "pinyin": "kāi yè chē",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "jobs"
     ],
     "translations": {
       "en": "to stay up working",
@@ -19088,6 +19650,7 @@
   "隐形眼镜": {
     "pinyin": "yǐn xíng yǎn jìng",
     "class": [
+      "communication",
       "body"
     ],
     "translations": {
@@ -19232,7 +19795,9 @@
   "亲戚": {
     "pinyin": "qīn qī",
     "class": [
-      "family"
+      "jobs",
+      "family",
+      "business"
     ],
     "translations": {
       "en": "relatives",
@@ -19264,6 +19829,7 @@
   "发礼物": {
     "pinyin": "fā lǐ wù",
     "class": [
+      "body",
       "expression"
     ],
     "translations": {
@@ -19296,6 +19862,7 @@
   "圣诞快乐": {
     "pinyin": "shèng dàn kuài lè",
     "class": [
+      "family",
       "expression"
     ],
     "translations": {
@@ -19312,7 +19879,8 @@
   "新年快乐": {
     "pinyin": "xīn nián kuài lè",
     "class": [
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "Happy New Year",
@@ -19344,7 +19912,9 @@
   "圣诞树": {
     "pinyin": "shèng dàn shù",
     "class": [
-      "general"
+      "nature",
+      "general",
+      "family"
     ],
     "translations": {
       "en": "Christmas Tree",
@@ -19360,6 +19930,7 @@
   "圣诞礼物": {
     "pinyin": "shèng dàn lǐ wù",
     "class": [
+      "family",
       "expression"
     ],
     "translations": {
@@ -19376,6 +19947,7 @@
   "⼤⾐": {
     "pinyin": "dà yī",
     "class": [
+      "food",
       "clothes"
     ],
     "translations": {
@@ -19392,7 +19964,8 @@
   "鞋": {
     "pinyin": "xié",
     "class": [
-      "clothes"
+      "clothes",
+      "transport"
     ],
     "translations": {
       "en": "shoes",
@@ -19424,7 +19997,8 @@
   "运动鞋": {
     "pinyin": "yùn dòng xié",
     "class": [
-      "clothes"
+      "clothes",
+      "transport"
     ],
     "translations": {
       "en": "athletic shoes",
@@ -19472,7 +20046,8 @@
   "鞋带": {
     "pinyin": "xié dài",
     "class": [
-      "clothes"
+      "clothes",
+      "transport"
     ],
     "translations": {
       "en": "shoelaces",
@@ -19504,7 +20079,9 @@
   "暖⽓": {
     "pinyin": "nuǎn qì",
     "class": [
-      "building"
+      "food",
+      "building",
+      "datetime"
     ],
     "translations": {
       "en": "heater",
@@ -19520,7 +20097,8 @@
   "空调": {
     "pinyin": "kōng tiáo",
     "class": [
-      "building"
+      "building",
+      "datetime"
     ],
     "translations": {
       "en": "air conditioner",
@@ -19648,6 +20226,8 @@
   "夜店": {
     "pinyin": "yè diàn",
     "class": [
+      "datetime",
+      "transport",
       "entertainment"
     ],
     "translations": {
@@ -19697,6 +20277,7 @@
     "pinyin": "mén piào",
     "class": [
       "sports",
+      "transport",
       "entertainment"
     ],
     "translations": {
@@ -19825,7 +20406,8 @@
   "节⾷": {
     "pinyin": "jié shí",
     "class": [
-      "verb"
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "to go on a diet",
@@ -19841,7 +20423,8 @@
   "天天": {
     "pinyin": "tiān tiān",
     "class": [
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "every day",
@@ -19905,7 +20488,8 @@
   "乘以": {
     "pinyin": "chéng yǐ",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to multiply",
@@ -19921,7 +20505,8 @@
   "拜托": {
     "pinyin": "bài tuō",
     "class": [
-      "verb"
+      "verb",
+      "expression"
     ],
     "translations": {
       "en": "please",
@@ -19985,7 +20570,8 @@
   "好玩": {
     "pinyin": "hǎo wán",
     "class": [
-      "adjective"
+      "adjective",
+      "datetime"
     ],
     "translations": {
       "en": "fun",
@@ -20001,7 +20587,8 @@
   "油": {
     "pinyin": "yóu",
     "class": [
-      "food"
+      "food",
+      "family"
     ],
     "translations": {
       "en": "cooking oil",
@@ -20017,7 +20604,9 @@
   "涨价": {
     "pinyin": "zhǎng jià",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "jobs"
     ],
     "translations": {
       "en": "to rise in price; inflation",
@@ -20033,7 +20622,9 @@
   "降价": {
     "pinyin": "jiàng jià",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "jobs"
     ],
     "translations": {
       "en": "to fall in price",
@@ -20049,7 +20640,9 @@
   "省钱": {
     "pinyin": "shěng qián",
     "class": [
+      "business",
       "adjective",
+      "jobs",
       "verb"
     ],
     "translations": {
@@ -20066,7 +20659,8 @@
   "物业": {
     "pinyin": "wù yè",
     "class": [
-      "jobs"
+      "jobs",
+      "body"
     ],
     "translations": {
       "en": "repairman",
@@ -20082,6 +20676,8 @@
   "⻢桶": {
     "pinyin": "mǎ tǒng",
     "class": [
+      "nature",
+      "food",
       "general"
     ],
     "translations": {
@@ -20114,6 +20710,8 @@
   "漏⽔": {
     "pinyin": "lòu shuǐ",
     "class": [
+      "nature",
+      "food",
       "verb"
     ],
     "translations": {
@@ -20130,7 +20728,9 @@
   "医⽣": {
     "pinyin": "yī shēng",
     "class": [
-      "jobs"
+      "jobs",
+      "body",
+      "business"
     ],
     "translations": {
       "en": "doctor",
@@ -20322,7 +20922,10 @@
   "看来": {
     "pinyin": "kàn lái",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "family",
+      "jobs"
     ],
     "translations": {
       "en": "looks like; apparently",
@@ -20370,6 +20973,7 @@
   "烧": {
     "pinyin": "shāo",
     "class": [
+      "food",
       "verb"
     ],
     "translations": {
@@ -20386,7 +20990,8 @@
   "关⽕": {
     "pinyin": "guān huǒ",
     "class": [
-      "verb"
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "to extinguish, to put out flame",
@@ -20498,7 +21103,11 @@
   "逛街": {
     "pinyin": "guàng jiē",
     "class": [
-      "verb"
+      "building",
+      "places",
+      "business",
+      "verb",
+      "jobs"
     ],
     "translations": {
       "en": "to go shopping",
@@ -20514,7 +21123,8 @@
   "脾⽓": {
     "pinyin": "pí qì",
     "class": [
-      "general"
+      "general",
+      "transport"
     ],
     "translations": {
       "en": "temper",
@@ -20530,7 +21140,8 @@
   "找": {
     "pinyin": "zhǎo",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to seek, to find",
@@ -20594,8 +21205,13 @@
   "租房": {
     "pinyin": "zū fáng",
     "class": [
+      "family",
+      "building",
+      "places",
+      "expression",
+      "business",
       "verb",
-      "expression"
+      "jobs"
     ],
     "translations": {
       "en": "to rent a house",
@@ -20627,8 +21243,13 @@
   "搬家": {
     "pinyin": "bān jiā",
     "class": [
-      "verb",
-      "expression"
+      "family",
+      "building",
+      "places",
+      "expression",
+      "transport",
+      "datetime",
+      "verb"
     ],
     "translations": {
       "en": "to move house",
@@ -20644,6 +21265,8 @@
   "动⻋组": {
     "pinyin": "dòng chē zǔ",
     "class": [
+      "nature",
+      "family",
       "transport"
     ],
     "translations": {
@@ -20692,7 +21315,9 @@
   "餐⻋": {
     "pinyin": "cān chē",
     "class": [
-      "transport"
+      "food",
+      "transport",
+      "datetime"
     ],
     "translations": {
       "en": "dining car",
@@ -20708,7 +21333,8 @@
   "⻋厢": {
     "pinyin": "chē xiāng",
     "class": [
-      "transport"
+      "transport",
+      "datetime"
     ],
     "translations": {
       "en": "carriage",
@@ -20773,6 +21399,9 @@
   "次": {
     "pinyin": "cì",
     "class": [
+      "datetime",
+      "building",
+      "places",
       "preposition"
     ],
     "translations": {
@@ -20789,7 +21418,8 @@
   "银⾏": {
     "pinyin": "yín háng",
     "class": [
-      "building"
+      "building",
+      "places"
     ],
     "translations": {
       "en": "bank",
@@ -20805,6 +21435,8 @@
   "⽔费": {
     "pinyin": "shuǐ fèi",
     "class": [
+      "nature",
+      "food",
       "general"
     ],
     "translations": {
@@ -20869,7 +21501,8 @@
   "裁⼈": {
     "pinyin": "cái rén",
     "class": [
-      "verb"
+      "verb",
+      "family"
     ],
     "translations": {
       "en": "to layoff staff",
@@ -20885,6 +21518,7 @@
   "公积⾦": {
     "pinyin": "gōng jī jīn",
     "class": [
+      "family",
       "business"
     ],
     "translations": {
@@ -20933,7 +21567,8 @@
   "垂头丧⽓": {
     "pinyin": "chuí tóu sàng qì",
     "class": [
-      "adjective"
+      "adjective",
+      "datetime"
     ],
     "translations": {
       "en": "downhearted",
@@ -20949,7 +21584,9 @@
   "婚房": {
     "pinyin": "hūn fáng",
     "class": [
-      "general"
+      "general",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "apartment for newlyweds",
@@ -20965,6 +21602,7 @@
   "⼀⼝价": {
     "pinyin": "yī kǒu jià",
     "class": [
+      "jobs",
       "business"
     ],
     "translations": {
@@ -20997,6 +21635,10 @@
   "家电": {
     "pinyin": "jiā diàn",
     "class": [
+      "family",
+      "building",
+      "places",
+      "datetime",
       "general"
     ],
     "translations": {
@@ -21029,7 +21671,8 @@
   "翻⼀番": {
     "pinyin": "fān yī fān",
     "class": [
-      "adverb"
+      "adverb",
+      "transport"
     ],
     "translations": {
       "en": "to double",
@@ -21045,7 +21688,9 @@
   "续租": {
     "pinyin": "xù zū",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "jobs"
     ],
     "translations": {
       "en": "to continue to rent",
@@ -21077,6 +21722,7 @@
   "公⽤": {
     "pinyin": "gōng yòng",
     "class": [
+      "family",
       "business"
     ],
     "translations": {
@@ -21093,7 +21739,9 @@
   "划算": {
     "pinyin": "huá suàn",
     "class": [
-      "adjective"
+      "business",
+      "adjective",
+      "jobs"
     ],
     "translations": {
       "en": "cost-efficient",
@@ -21109,7 +21757,9 @@
   "出租": {
     "pinyin": "chū zū",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "jobs"
     ],
     "translations": {
       "en": "to rent out",
@@ -21125,7 +21775,8 @@
   "均摊": {
     "pinyin": "jūn tān",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to share equally",
@@ -21173,7 +21824,10 @@
   "拆迁": {
     "pinyin": "chāi qiān",
     "class": [
-      "verb"
+      "food",
+      "verb",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "to tear down",
@@ -21189,7 +21843,10 @@
   "钉⼦户": {
     "pinyin": "dīng zi hù",
     "class": [
-      "general"
+      "general",
+      "building",
+      "places",
+      "datetime"
     ],
     "translations": {
       "en": "nail household",
@@ -21269,7 +21926,8 @@
   "相亲": {
     "pinyin": "xiāng qīn",
     "class": [
-      "verb"
+      "verb",
+      "family"
     ],
     "translations": {
       "en": "blind date",
@@ -21301,6 +21959,7 @@
   "春天": {
     "pinyin": "chūn tiān",
     "class": [
+      "nature",
       "datetime"
     ],
     "translations": {
@@ -21365,7 +22024,8 @@
   "公务员": {
     "pinyin": "gōng wù yuán",
     "class": [
-      "jobs"
+      "jobs",
+      "family"
     ],
     "translations": {
       "en": "civil servant",
@@ -21429,7 +22089,8 @@
   "出⾝": {
     "pinyin": "chū shēn",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "family backgrounds",
@@ -21509,6 +22170,7 @@
   "国产": {
     "pinyin": "guó chǎn",
     "class": [
+      "communication",
       "general"
     ],
     "translations": {
@@ -21541,7 +22203,8 @@
   "能耐": {
     "pinyin": "néng nài",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "ability",
@@ -21573,7 +22236,8 @@
   "奶粉": {
     "pinyin": "nǎi fěn",
     "class": [
-      "food"
+      "food",
+      "family"
     ],
     "translations": {
       "en": "milk powder",
@@ -21589,7 +22253,8 @@
   "废⽓": {
     "pinyin": "fèi qì",
     "class": [
-      "general"
+      "general",
+      "transport"
     ],
     "translations": {
       "en": "coal exhaust",
@@ -21605,7 +22270,8 @@
   "刺⿐": {
     "pinyin": "cì bí",
     "class": [
-      "adjective"
+      "adjective",
+      "transport"
     ],
     "translations": {
       "en": "to sting the nose",
@@ -21621,7 +22287,9 @@
   "尾⽓": {
     "pinyin": "wěi qì",
     "class": [
-      "general"
+      "food",
+      "general",
+      "transport"
     ],
     "translations": {
       "en": "car exhaust",
@@ -21653,7 +22321,9 @@
   "防毒⾯具": {
     "pinyin": "fáng dú miàn jù",
     "class": [
-      "clothes"
+      "communication",
+      "clothes",
+      "transport"
     ],
     "translations": {
       "en": "gas mask",
@@ -21685,7 +22355,8 @@
   "交规": {
     "pinyin": "jiāo guī",
     "class": [
-      "general"
+      "general",
+      "transport"
     ],
     "translations": {
       "en": "traffic rules",
@@ -21701,6 +22372,7 @@
   "掉头": {
     "pinyin": "diào tóu",
     "class": [
+      "transport",
       "expression"
     ],
     "translations": {
@@ -21733,7 +22405,8 @@
   "熄⽕": {
     "pinyin": "xī huǒ",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to extinguish; to stall",
@@ -21749,6 +22422,7 @@
   "晕⻋": {
     "pinyin": "yūn chē",
     "class": [
+      "body",
       "expression"
     ],
     "translations": {
@@ -21781,6 +22455,7 @@
   "⾏⼈": {
     "pinyin": "xíng rén",
     "class": [
+      "food",
       "general"
     ],
     "translations": {
@@ -21813,7 +22488,8 @@
   "并线": {
     "pinyin": "bìng xiàn",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to change lanes",
@@ -21861,6 +22537,7 @@
   "全责": {
     "pinyin": "quán zé",
     "class": [
+      "family",
       "expression"
     ],
     "translations": {
@@ -21877,7 +22554,8 @@
   "有理": {
     "pinyin": "yǒu lǐ",
     "class": [
-      "adjective"
+      "adjective",
+      "family"
     ],
     "translations": {
       "en": "reasonable",
@@ -21893,7 +22571,8 @@
   "交警": {
     "pinyin": "jiāo jǐng",
     "class": [
-      "general"
+      "general",
+      "transport"
     ],
     "translations": {
       "en": "traffic police",
@@ -21958,7 +22637,8 @@
   "刮蹭": {
     "pinyin": "guā cèng",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to scratch",
@@ -21975,6 +22655,7 @@
     "pinyin": "gēn jù",
     "class": [
       "adverb",
+      "datetime",
       "preposition"
     ],
     "translations": {
@@ -21991,6 +22672,7 @@
   "⼀⼤笔": {
     "pinyin": "yī dà bǐ",
     "class": [
+      "family",
       "adverb"
     ],
     "translations": {
@@ -22199,7 +22881,9 @@
   "四通⼋达": {
     "pinyin": "sì tōng bā dá",
     "class": [
-      "adjective"
+      "adjective",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "accessible from all directions",
@@ -22215,7 +22899,8 @@
   "⾼峰": {
     "pinyin": "gāo fēng",
     "class": [
-      "general"
+      "general",
+      "datetime"
     ],
     "translations": {
       "en": "rush hour",
@@ -22279,6 +22964,7 @@
   "季节": {
     "pinyin": "jì jié",
     "class": [
+      "family",
       "datetime"
     ],
     "translations": {
@@ -22295,7 +22981,9 @@
   "横冲直撞": {
     "pinyin": "héng chōng zhí zhuàng",
     "class": [
-      "verb"
+      "verb",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "to barge about",
@@ -22311,7 +22999,9 @@
   "⼈⾏横道": {
     "pinyin": "rén xíng héng dào",
     "class": [
-      "general"
+      "food",
+      "general",
+      "datetime"
     ],
     "translations": {
       "en": "crosswalk",
@@ -22407,7 +23097,8 @@
   "亲密": {
     "pinyin": "qīn mì",
     "class": [
-      "adjective"
+      "adjective",
+      "family"
     ],
     "translations": {
       "en": "close",
@@ -22535,7 +23226,8 @@
   "办": {
     "pinyin": "bàn",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to hold",
@@ -22567,7 +23259,8 @@
   "娶": {
     "pinyin": "qǔ",
     "class": [
-      "verb"
+      "verb",
+      "family"
     ],
     "translations": {
       "en": "to marry",
@@ -22663,7 +23356,9 @@
   "抬": {
     "pinyin": "tái",
     "class": [
-      "verb"
+      "verb",
+      "transport",
+      "datetime"
     ],
     "translations": {
       "en": "to carry",
@@ -22807,7 +23502,10 @@
   "破产": {
     "pinyin": "pò chǎn",
     "class": [
-      "verb"
+      "building",
+      "verb",
+      "transport",
+      "places"
     ],
     "translations": {
       "en": "to go bankrupt, to declare bankruptcy",
@@ -22855,6 +23553,7 @@
   "雇": {
     "pinyin": "gù",
     "class": [
+      "communication",
       "verb"
     ],
     "translations": {
@@ -22887,7 +23586,8 @@
   "出台": {
     "pinyin": "chū tái",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to publish (a regulation or policy etc.)",
@@ -22919,7 +23619,8 @@
   "治理": {
     "pinyin": "zhì lǐ",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to administer, to manage",
@@ -22951,7 +23652,8 @@
   "⿎励": {
     "pinyin": "gǔ lì",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to encourage",
@@ -22967,6 +23669,7 @@
   "其实": {
     "pinyin": "qí shí",
     "class": [
+      "family",
       "adverb"
     ],
     "translations": {
@@ -23015,7 +23718,9 @@
   "毕业": {
     "pinyin": "bì yè",
     "class": [
-      "verb"
+      "family",
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "to graduate",
@@ -23031,7 +23736,8 @@
   "深造": {
     "pinyin": "shēn zào",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to deepen one's knowledge",
@@ -23079,7 +23785,8 @@
   "全额": {
     "pinyin": "quán é",
     "class": [
-      "adjective"
+      "adjective",
+      "family"
     ],
     "translations": {
       "en": "total amount",
@@ -23111,7 +23818,8 @@
   "优秀": {
     "pinyin": "yōu xiù",
     "class": [
-      "adjective"
+      "adjective",
+      "datetime"
     ],
     "translations": {
       "en": "outstanding",
@@ -23127,6 +23835,7 @@
   "不得了": {
     "pinyin": "bù dé le",
     "class": [
+      "family",
       "adverb"
     ],
     "translations": {
@@ -23271,7 +23980,8 @@
   "痛苦": {
     "pinyin": "tòng kǔ",
     "class": [
-      "adjective"
+      "adjective",
+      "body"
     ],
     "translations": {
       "en": "pain",
@@ -23287,6 +23997,9 @@
   "烛光晚餐": {
     "pinyin": "zhú guāng wǎn cān",
     "class": [
+      "food",
+      "body",
+      "transport",
       "entertainment"
     ],
     "translations": {
@@ -23303,6 +24016,8 @@
   "来着": {
     "pinyin": "lái zhe",
     "class": [
+      "family",
+      "datetime",
       "preposition"
     ],
     "translations": {
@@ -23431,7 +24146,9 @@
   "景⽓": {
     "pinyin": "jǐng qì",
     "class": [
-      "adjective"
+      "business",
+      "adjective",
+      "jobs"
     ],
     "translations": {
       "en": "thriving",
@@ -23511,7 +24228,10 @@
   "亏钱": {
     "pinyin": "kuī qián",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "jobs",
+      "datetime"
     ],
     "translations": {
       "en": "to lose money",
@@ -23527,7 +24247,9 @@
   "地段": {
     "pinyin": "dì duàn",
     "class": [
-      "general"
+      "general",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "location",
@@ -23575,7 +24297,8 @@
   "安检": {
     "pinyin": "ān jiǎn",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "security check",
@@ -23591,7 +24314,9 @@
   "带": {
     "pinyin": "dài",
     "class": [
-      "verb"
+      "verb",
+      "transport",
+      "datetime"
     ],
     "translations": {
       "en": "to carry",
@@ -23623,7 +24348,9 @@
   "电⼦邮箱": {
     "pinyin": "diàn zi yóu xiāng",
     "class": [
-      "communication"
+      "communication",
+      "jobs",
+      "business"
     ],
     "translations": {
       "en": "e-mail box",
@@ -23671,7 +24398,8 @@
   "提⽰": {
     "pinyin": "tí shì",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to suggest",
@@ -23911,7 +24639,8 @@
   "当": {
     "pinyin": "dāng",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to hold a position",
@@ -23943,7 +24672,8 @@
   "⼲净": {
     "pinyin": "gān jìng",
     "class": [
-      "adjective"
+      "adjective",
+      "datetime"
     ],
     "translations": {
       "en": "clean",
@@ -23991,7 +24721,8 @@
   "有病": {
     "pinyin": "yǒu bìng",
     "class": [
-      "verb"
+      "verb",
+      "family"
     ],
     "translations": {
       "en": "to have a disease",
@@ -24039,7 +24770,8 @@
   "骑": {
     "pinyin": "qí",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to ride",
@@ -24231,7 +24963,8 @@
   "⽼⽓": {
     "pinyin": "lǎo qì",
     "class": [
-      "adjective"
+      "adjective",
+      "datetime"
     ],
     "translations": {
       "en": "old fashioned",
@@ -24263,7 +24996,8 @@
   "参谋": {
     "pinyin": "cān móu",
     "class": [
-      "verb"
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "to give suggestions",
@@ -24328,6 +25062,7 @@
   "五星级": {
     "pinyin": "wǔ xīng jí",
     "class": [
+      "communication",
       "adjective"
     ],
     "translations": {
@@ -24392,6 +25127,7 @@
   "节约⽤电": {
     "pinyin": "jié yuē yòng diàn",
     "class": [
+      "food",
       "expression"
     ],
     "translations": {
@@ -24424,6 +25160,7 @@
   "占座": {
     "pinyin": "zhàn zuò",
     "class": [
+      "food",
       "verb"
     ],
     "translations": {
@@ -24441,6 +25178,7 @@
     "pinyin": "jiǎng lǐ",
     "class": [
       "verb",
+      "family",
       "expression"
     ],
     "translations": {
@@ -24457,7 +25195,8 @@
   "素质": {
     "pinyin": "sù zhì",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "quality",
@@ -24537,7 +25276,9 @@
   "候机⼤厅": {
     "pinyin": "hòu jī dà tīng",
     "class": [
-      "transport"
+      "building",
+      "transport",
+      "places"
     ],
     "translations": {
       "en": "departure lounge",
@@ -24585,6 +25326,8 @@
   "国航": {
     "pinyin": "guó háng",
     "class": [
+      "business",
+      "jobs",
       "transport"
     ],
     "translations": {
@@ -24619,7 +25362,8 @@
   "掏": {
     "pinyin": "tāo",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to fish out",
@@ -24635,7 +25379,8 @@
   "B超": {
     "pinyin": "B chāo",
     "class": [
-      "general"
+      "general",
+      "family"
     ],
     "translations": {
       "en": "ultrasound",
@@ -24683,6 +25428,9 @@
   "公费医疗": {
     "pinyin": "gōng fèi yī liáo",
     "class": [
+      "food",
+      "family",
+      "body",
       "expression"
     ],
     "translations": {
@@ -24747,7 +25495,8 @@
   "⻋险": {
     "pinyin": "chē xiǎn",
     "class": [
-      "general"
+      "general",
+      "transport"
     ],
     "translations": {
       "en": "car insurance",
@@ -24779,7 +25528,8 @@
   "划": {
     "pinyin": "huà",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to scratch",
@@ -24796,6 +25546,7 @@
     "pinyin": "chū shēng",
     "class": [
       "verb",
+      "body",
       "expression"
     ],
     "translations": {
@@ -24940,7 +25691,9 @@
   "检查": {
     "pinyin": "jiǎn chá",
     "class": [
-      "verb"
+      "verb",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "(to) check",
@@ -24956,7 +25709,8 @@
   "损坏": {
     "pinyin": "sǔn huài",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "(to) damage",
@@ -24988,6 +25742,7 @@
   "公平竞争": {
     "pinyin": "gōng píng jìng zhēng",
     "class": [
+      "family",
       "expression"
     ],
     "translations": {
@@ -25004,6 +25759,8 @@
   "开奖": {
     "pinyin": "kāi jiǎng",
     "class": [
+      "communication",
+      "transport",
       "expression"
     ],
     "translations": {
@@ -25020,7 +25777,10 @@
   "赔": {
     "pinyin": "péi",
     "class": [
-      "verb"
+      "business",
+      "verb",
+      "jobs",
+      "datetime"
     ],
     "translations": {
       "en": "to have lost money",
@@ -25036,7 +25796,8 @@
   "废纸": {
     "pinyin": "fèi zhǐ",
     "class": [
-      "general"
+      "general",
+      "transport"
     ],
     "translations": {
       "en": "rubbish paper",
@@ -25084,7 +25845,8 @@
   "彩票": {
     "pinyin": "cǎi piào",
     "class": [
-      "general"
+      "general",
+      "transport"
     ],
     "translations": {
       "en": "lottery ticket",
@@ -25100,6 +25862,7 @@
   "⼯夫": {
     "pinyin": "gōng fū",
     "class": [
+      "family",
       "datetime"
     ],
     "translations": {
@@ -25164,8 +25927,10 @@
   "净顾着": {
     "pinyin": "jìng gù zhe",
     "class": [
+      "transport",
       "verb",
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "to be solely engaged in something",
@@ -25181,6 +25946,7 @@
   "下馆⼦": {
     "pinyin": "xià guǎn zi",
     "class": [
+      "food",
       "verb",
       "expression"
     ],
@@ -25247,7 +26013,8 @@
   "⽩给": {
     "pinyin": "bái gěi",
     "class": [
-      "verb"
+      "verb",
+      "family"
     ],
     "translations": {
       "en": "to give for free",
@@ -25279,7 +26046,8 @@
   "⻩⾦": {
     "pinyin": "huáng jīn",
     "class": [
-      "general"
+      "general",
+      "datetime"
     ],
     "translations": {
       "en": "gold",
@@ -25311,7 +26079,8 @@
   "⾮要": {
     "pinyin": "fēi yào",
     "class": [
-      "verb"
+      "verb",
+      "family"
     ],
     "translations": {
       "en": "to insist",
@@ -25391,7 +26160,8 @@
   "铲雪": {
     "pinyin": "chǎn xuě",
     "class": [
-      "verb"
+      "verb",
+      "datetime"
     ],
     "translations": {
       "en": "to shovel snow",
@@ -25423,6 +26193,7 @@
   "练琴": {
     "pinyin": "liàn qín",
     "class": [
+      "transport",
       "verb",
       "expression"
     ],
@@ -25441,7 +26212,8 @@
     "pinyin": "bǎo jié",
     "class": [
       "verb",
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "to do cleaning",
@@ -25473,7 +26245,10 @@
   "保姆": {
     "pinyin": "bǎo mǔ",
     "class": [
-      "general"
+      "general",
+      "building",
+      "places",
+      "datetime"
     ],
     "translations": {
       "en": "house maid",
@@ -25489,7 +26264,8 @@
   "呼噜": {
     "pinyin": "hū lū",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to snore",
@@ -25505,6 +26281,7 @@
   "打得⼭响": {
     "pinyin": "dǎ dé shān xiǎng",
     "class": [
+      "transport",
       "verb",
       "expression"
     ],
@@ -25538,7 +26315,9 @@
   "物价": {
     "pinyin": "wù jià",
     "class": [
-      "general"
+      "business",
+      "general",
+      "jobs"
     ],
     "translations": {
       "en": "price",
@@ -25571,7 +26350,8 @@
   "特殊": {
     "pinyin": "tè shū",
     "class": [
-      "adjective"
+      "adjective",
+      "family"
     ],
     "translations": {
       "en": "special",
@@ -25587,6 +26367,7 @@
   "抓阄": {
     "pinyin": "zhuā jiū",
     "class": [
+      "transport",
       "verb",
       "expression"
     ],
@@ -25636,6 +26417,9 @@
   "全透明": {
     "pinyin": "quán tòu míng",
     "class": [
+      "business",
+      "jobs",
+      "family",
       "expression"
     ],
     "translations": {
@@ -25668,6 +26452,7 @@
   "排队": {
     "pinyin": "pái duì",
     "class": [
+      "communication",
       "verb"
     ],
     "translations": {
@@ -25684,6 +26469,7 @@
   "⼩意思": {
     "pinyin": "xiǎo yì sī",
     "class": [
+      "food",
       "expression"
     ],
     "translations": {
@@ -25732,7 +26518,9 @@
   "安全带": {
     "pinyin": "ān quán dài",
     "class": [
-      "general"
+      "food",
+      "general",
+      "family"
     ],
     "translations": {
       "en": "seat belt",
@@ -25748,7 +26536,8 @@
   "让道": {
     "pinyin": "ràng dào",
     "class": [
-      "expression"
+      "expression",
+      "datetime"
     ],
     "translations": {
       "en": "to give way",
@@ -25796,7 +26585,9 @@
   "驾校": {
     "pinyin": "jià xiào",
     "class": [
-      "general"
+      "general",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "driving school",
@@ -25812,7 +26603,8 @@
   "那⼀套": {
     "pinyin": "nà yī tào",
     "class": [
-      "general"
+      "general",
+      "body"
     ],
     "translations": {
       "en": "that kind of stuff",
@@ -25860,7 +26652,8 @@
   "批评": {
     "pinyin": "pī píng",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to criticize",
@@ -25924,6 +26717,7 @@
   "打哆嗦": {
     "pinyin": "dǎ duō suo",
     "class": [
+      "family",
       "expression"
     ],
     "translations": {
@@ -25956,7 +26750,8 @@
   "形象": {
     "pinyin": "xíng xiàng",
     "class": [
-      "general"
+      "general",
+      "datetime"
     ],
     "translations": {
       "en": "image",
@@ -25988,7 +26783,8 @@
   "还礼": {
     "pinyin": "huán lǐ",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to return a favor",
@@ -26004,7 +26800,8 @@
   "提货": {
     "pinyin": "tí huò",
     "class": [
-      "verb"
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "to pick up goods",
@@ -26068,7 +26865,10 @@
   "管家": {
     "pinyin": "guǎn jiā",
     "class": [
-      "jobs"
+      "jobs",
+      "family",
+      "building",
+      "places"
     ],
     "translations": {
       "en": "housekeeper",
@@ -26084,7 +26884,8 @@
   "跑腿⼉": {
     "pinyin": "pǎo tuǐ ér",
     "class": [
-      "verb"
+      "verb",
+      "body"
     ],
     "translations": {
       "en": "to run errands",
@@ -26116,7 +26917,8 @@
   "实施": {
     "pinyin": "shí shī",
     "class": [
-      "verb"
+      "verb",
+      "transport"
     ],
     "translations": {
       "en": "to carry out",
@@ -26132,6 +26934,7 @@
   "啰嗦": {
     "pinyin": "luō suo",
     "class": [
+      "communication",
       "adjective"
     ],
     "translations": {
