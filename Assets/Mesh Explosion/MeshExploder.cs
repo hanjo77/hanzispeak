@@ -475,7 +475,7 @@ public class MeshExploder : MonoBehaviour {
 				boxCollider.size = size;
 
 				const float fragmentDensity = 1;
-				rb.SetDensity(fragmentDensity);
+				rb.mass = fragmentDensity;
 			}
 			
 			return null;

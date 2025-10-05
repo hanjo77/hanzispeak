@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.InputSystem;
 
 public class AppManager : MonoBehaviour
 {
@@ -13,14 +14,15 @@ public class AppManager : MonoBehaviour
     public SettingsView settingsView;
     public GameOverView gameOverView;
     public TrainingView trainingView;
+    public GameObject quitWarning;
 
     [Header("Elements")]
     public GameObject uiBackground;
 
     [Header("Speech")]
     public VoskSpeechToText voskEngine;
-    private bool isVoskInitialized;
     public float checkInterval = 1.5f;
+    private bool isVoskInitialized;
 
     private void Awake()
     {
@@ -38,6 +40,7 @@ public class AppManager : MonoBehaviour
         {
             MicWarningView();
         }
+        MicWarningView();
         HanziGroupDB.Initialize();
     }
 
@@ -66,7 +69,6 @@ public class AppManager : MonoBehaviour
 
     public void StartTraining(string hanziGroup)
     {
-        PlayerPrefs.SetString("hanzifilter", HanziGroupDB.GetGroup(hanziGroup));
         PlayView();
     }
 

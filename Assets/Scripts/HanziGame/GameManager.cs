@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void SetTranslation(HanziData hanziData)
     {
-        translationTextField.text = hanziData.GetTranslationString();
+        translationTextField.text = hanziData.GetTranslation();
     }
 
     public void SetPinyin(string pinyin)
@@ -122,6 +123,12 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetString("failedHanzi", GameManager.Instance.failedHanzi);
         PlayerPrefs.SetString("successfulHanzi", GameManager.Instance.successfulHanzi);
         PlayerPrefs.Save();
+    }
+
+    public void VibrateControllers(float amplitude, float duration)
+    {
+        /* leftController.SendHapticImpulse(amplitude, duration);
+        rightController.SendHapticImpulse(amplitude, duration); */
     }
 
     IEnumerator explosionLoader(Transform transform)

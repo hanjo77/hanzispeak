@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Text;
 using TMPro;
 using UnityEngine;
@@ -42,8 +43,20 @@ public class Translator : MonoBehaviour
             {
                 try
                 {
-                    HanziCategory hanziCategory = HanziCategoryDB.GetCategory(index.ToString());
-                    dropDown.options[index].text = hanziCategory.title.GetTranslationString();
+                    HanziTranslations translations;
+                    if (dropDown.name.Contains("VoiceDropdown"))
+                    {
+                        translations = HanziVoiceDB.GetVoice(HanziVoiceDB.GetAllKeys().ElementAt(index));
+                    }
+                    else if (dropDown.name.Contains("LevelDropdown"))
+                    {
+                        translations = HanziLevelDB.GetLevel(HanziLevelDB.GetAllKeys().ElementAt(index));
+                    }
+                    else
+                    {
+                        translations = HanziCategoryDB.GetCategory(HanziCategoryDB.GetAllKeys().ElementAt(index));
+                    }
+                    dropDown.options[index].text = translations.GetTranslationString();
                 }
                 catch (Exception e)
                 {

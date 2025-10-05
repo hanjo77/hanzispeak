@@ -1,5 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class HanziCharacter : MonoBehaviour
 {
@@ -7,12 +10,6 @@ public class HanziCharacter : MonoBehaviour
     public float fadeTime = 1.0f;
     private bool isRecognized;
     private bool hasFailed;
-    HapticFeedbackManager hapticFeedbackManager;
-
-    public void Init()
-    {
-        hapticFeedbackManager = this.gameObject.AddComponent<HapticFeedbackManager>();
-    }
 
     public void MarkRecognized()
     {
@@ -24,9 +21,12 @@ public class HanziCharacter : MonoBehaviour
         // Visual/Audio feedback
         GameManager.Instance.AddSuccessChar(hanziText);
         isRecognized = true;
-        GetComponent<MeshExploder>().Explode();
 
-        hapticFeedbackManager.VibrateControllers(.5f, .1f);
+        foreach (Transform child in transform)
+        {
+            child.gameObject.GetComponent<MeshExploder>().Explode();
+        }
+        GameManager.Instance.VibrateControllers(.5f, .1f);
         GameManager.Instance.PlayExplosion(transform);
         StartCoroutine(WaitForRespawn(false));
     }
@@ -36,7 +36,7 @@ public class HanziCharacter : MonoBehaviour
         if (!isRecognized && !hasFailed)
         {
             GameManager.Instance.AddFailedChar(hanziText);
-            hapticFeedbackManager.VibrateControllers(1f, .5f);
+            GameManager.Instance.VibrateControllers(1f, .5f);
             GameManager.Instance.PlayPinyinAudio("explosion");
             StartCoroutine(WaitForRespawn(true));
             hasFailed = true;
@@ -49,7 +49,10 @@ public class HanziCharacter : MonoBehaviour
         {
             GameManager.Instance.ShakeCamera();
         }
-        GetComponent<MeshRenderer>().enabled = false;
+        foreach (Transform child in transform)
+        {
+            child.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        }
         yield return new WaitForSecondsRealtime(2f);
         HanziSpawner.Instance.SpawnCharacter(removeLive);
     }

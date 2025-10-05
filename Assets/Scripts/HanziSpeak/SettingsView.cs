@@ -1,21 +1,27 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SettingsView : AppView
 {
     public GameObject passthroughLayer;
+    public List<GameObject> startButtons;
     public TMP_Dropdown languageDropdown;
     public TMP_Dropdown categoryDropdown;
+    public TMP_Dropdown voiceDropdown;
     public UnityEngine.UI.Toggle pinyinToggle;
     public UnityEngine.UI.Toggle translationToggle;
     public UnityEngine.UI.Toggle speakToggle;
     public UnityEngine.UI.Toggle passthroughToggle;
 
     // Example dictionary
-    private Dictionary<string, HanziCategory> categories;
+    private Dictionary<string, HanziTranslations> categories;
+    private Dictionary<string, HanziTranslations> voices;
     private string needsPracticeIndex;
+    private List<List<int>> levelCounts;
     private string passthroughKey = "passthrough";
 
     private Dictionary<string, string> languages = new Dictionary<string, string>
@@ -34,64 +40,35 @@ public class SettingsView : AppView
     void Start()
     {
         HanziCategoryDB.Initialize();
+        HanziLevelDB.Initialize();
+        HanziVoiceDB.Initialize();
         TranslationDB.Initialize();
 
         UpdateCategories();
+        UpdateVoices();
 
-        // Add listener for value change
-        languageDropdown.onValueChanged.AddListener(OnLanguageChanged);
-        categoryDropdown.onValueChanged.AddListener(OnCategoryChanged);
-        pinyinToggle.onValueChanged.AddListener(OnPinyinChanged);
-        translationToggle.onValueChanged.AddListener(OnTranslationChanged);
-        speakToggle.onValueChanged.AddListener(OnSpeakChanged);
-        passthroughToggle.onValueChanged.AddListener(OnPassthroughChanged);
-        foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
-        {
-            translator.UpdateTranslation();
-        }
-    }
-
-    public override void ShowView()
-    {
-        base.ShowView();
-        UpdateCategories();
-        InitPlayerPrefs();
-    }
-
-    public void UpdateCategories()
-    {
-        categoryDropdown.options.Clear();
-        categories = HanziCategoryDB.Categories;
-        AddNeedsPracticeOption(PlayerPrefs.GetString("failedHanzi"));
-        categoryDropdown.AddOptions(categories.Keys.ToList());
-        foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
-        {
-            translator.UpdateTranslation();
-        }
-    }
-
-    private void InitPlayerPrefs()
-    {
         int savedIndex;
         // Optionally load previously saved value from PlayerPrefs
         string languageKey = PlayerPrefs.GetString("language", "en");
         string savedLanguage = languages.FirstOrDefault(x => x.Key == languageKey).Value;
+        int savedVoice = PlayerPrefs.GetInt("voice", 0);
         int savedCategory = PlayerPrefs.GetInt("category", 0);
         int savedPinyin = PlayerPrefs.GetInt("pinyin", 1);
         int savedTranslation = PlayerPrefs.GetInt("translation", 1);
         int savedSpeak = PlayerPrefs.GetInt("speak", 1);
-        int savedAcceptedRisks = PlayerPrefs.GetInt("acceptedRisks", 1);
         int savedPassthrough = PlayerPrefs.GetInt(passthroughKey, 1);
+        PlayerPrefs.SetInt(passthroughKey, savedPassthrough);
         PlayerPrefs.SetString("hanzifilter", string.Empty);
         PlayerPrefs.SetString("language", languageKey);
+        PlayerPrefs.SetInt("voice", savedVoice < voiceDropdown.options.Count() ? savedVoice : 0);
         PlayerPrefs.SetInt("category", savedCategory < categoryDropdown.options.Count() ? savedCategory : 0);
         PlayerPrefs.SetInt("pinyin", savedPinyin);
         PlayerPrefs.SetInt("translation", savedTranslation);
         PlayerPrefs.SetInt("speak", savedSpeak);
-        PlayerPrefs.SetInt("acceptedRisks", savedAcceptedRisks);
-        PlayerPrefs.SetInt(passthroughKey, savedPassthrough);
         OnCategoryChanged(savedCategory);
+        OnVoiceChanged(savedVoice);
         PlayerPrefs.Save();
+
 
         // Set the dropdown value based on saved value
         savedIndex = languageDropdown.options.FindIndex(option => option.text == savedLanguage);
@@ -106,38 +83,79 @@ public class SettingsView : AppView
         pinyinToggle.isOn = savedPinyin == 1;
         translationToggle.isOn = savedTranslation == 1;
         speakToggle.isOn = savedSpeak == 1;
-        passthroughToggle.isOn = savedPassthrough == 1;
+
+        // Add listener for value change
+        languageDropdown.onValueChanged.AddListener(OnLanguageChanged);
+        categoryDropdown.onValueChanged.AddListener(OnCategoryChanged);
+        voiceDropdown.onValueChanged.AddListener(OnVoiceChanged);
+        pinyinToggle.onValueChanged.AddListener(OnPinyinChanged);
+        translationToggle.onValueChanged.AddListener(OnTranslationChanged);
+        speakToggle.onValueChanged.AddListener(OnSpeakChanged);
+        passthroughToggle.onValueChanged.AddListener(OnPassthroughChanged);
+        foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
+        {
+            translator.UpdateTranslation();
+        }
+    }
+
+    public override void ShowView()
+    {
+        base.ShowView();
+        UpdateCategories();
+        UpdateVoices();
+    }
+
+    public void UpdateCategories()
+    {
+        categoryDropdown.options.Clear();
+        categories = HanziCategoryDB.GetAllCategories();
+        AddNeedsPracticeOption(PlayerPrefs.GetString("failedHanzi"));
+        categoryDropdown.AddOptions(HanziCategoryDB.GetAllKeys().ToList());
+        foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
+        {
+            translator.UpdateTranslation();
+        }
+    }
+
+    public void UpdateVoices()
+    {
+        voiceDropdown.options.Clear();
+        voices = HanziVoiceDB.GetAllVoices();
+        voiceDropdown.AddOptions(HanziVoiceDB.GetAllKeys().ToList());
+        foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
+        {
+            translator.UpdateTranslation();
+        }
     }
 
     private void AddNeedsPracticeOption(string failedChars)
     {
+        UnityEngine.Debug.Log(failedChars);
         if (string.IsNullOrEmpty(failedChars)) {
-            if (needsPracticeIndex != null && HanziCategoryDB.Categories.ContainsKey(needsPracticeIndex))
+            UnityEngine.Debug.Log($"needs practice index: {needsPracticeIndex}");
+            if (needsPracticeIndex != null && HanziCategoryDB.GetAllCategories().ContainsKey(needsPracticeIndex))
             {
-                HanziCategoryDB.Categories.Remove(needsPracticeIndex);
+                HanziCategoryDB.GetAllCategories().Remove(needsPracticeIndex);
             }
             return;
         }
-        if (needsPracticeIndex != null && HanziCategoryDB.Categories.ContainsKey(needsPracticeIndex))
+        if (needsPracticeIndex != null && HanziCategoryDB.GetAllCategories().ContainsKey(needsPracticeIndex))
         {
             return;
         }
-        HanziCategory needsPractice = new HanziCategory();
-        HanziTranslations translations = new HanziTranslations();
+        HanziTranslations needsPractice = new HanziTranslations();
         string translationKey = "needsPractice";
         Translation needsPracticeTranslation = TranslationDB.GetTranslations(translationKey);
-        translations.de = needsPracticeTranslation.de;
-        translations.en = needsPracticeTranslation.en;
-        translations.fr = needsPracticeTranslation.fr;
-        translations.it = needsPracticeTranslation.it;
-        translations.es = needsPracticeTranslation.es;
-        translations.ja = needsPracticeTranslation.ja;
-        translations.ko = needsPracticeTranslation.ko;
-        translations.ru = needsPracticeTranslation.ru;
-        needsPractice.hanzi = PlayerPrefs.GetString("failedHanzi");
-        needsPractice.title = translations;
-        needsPracticeIndex = HanziCategoryDB.Categories.Count.ToString();
-        HanziCategoryDB.Categories.Add(needsPracticeIndex, needsPractice);
+        needsPractice.de = needsPracticeTranslation.de;
+        needsPractice.en = needsPracticeTranslation.en;
+        needsPractice.fr = needsPracticeTranslation.fr;
+        needsPractice.it = needsPracticeTranslation.it;
+        needsPractice.es = needsPracticeTranslation.es;
+        needsPractice.ja = needsPracticeTranslation.ja;
+        needsPractice.ko = needsPracticeTranslation.ko;
+        needsPractice.ru = needsPracticeTranslation.ru;
+        needsPracticeIndex = HanziCategoryDB.GetAllCategories().Count.ToString();
+        HanziCategoryDB.GetAllCategories().Add(needsPracticeIndex, needsPractice);
     }
 
     private void OnDestroy()
@@ -167,20 +185,66 @@ public class SettingsView : AppView
     public void OnCategoryChanged(int index)
     {
         // Get the selected value as a string
-        HanziCategory hanziCategory = HanziCategoryDB.Categories.FirstOrDefault(x => x.Key == index.ToString()).Value;
+        string hanziCategory = index < HanziCategoryDB.GetAllKeys().Count()
+            ? HanziCategoryDB.GetAllKeys().ElementAt(index)
+            : "Needs Practice";
 
         PlayerPrefs.SetInt("needsPractice", 0);
-        if (hanziCategory.title.en == "Needs Practice")
+        if (hanziCategory == "Needs Practice")
         {
             PlayerPrefs.SetInt("needsPractice", 1);
-            PlayerPrefs.SetString("hanzifilter", PlayerPrefs.GetString("failedHanzi"));
         }
-        else
-        {
-            PlayerPrefs.SetString("hanzifilter", hanziCategory.hanzi);
-        }
+
+        HandleStartButtons(hanziCategory);
         // Save the selected value to PlayerPrefs
         PlayerPrefs.SetInt("category", index);
+        PlayerPrefs.Save(); // Ensure changes are saved to disk
+    }
+
+    public void HandleStartButtons(string hanziCategory)
+    {
+        List<int> levelCounts = new List<int>();
+
+        for (int index = 0; index < HanziLevelDB.GetAllKeys().Count(); index++)
+        {
+            string level = HanziLevelDB.GetAllKeys().ElementAt(index);
+            List<string> hanziList = HanziLevelDB.FilterHanzi(hanziCategory, level);
+            if (index < startButtons.Count)
+            {
+                GameObject button = startButtons[index];
+                if (hanziList.Count > 0)
+                {
+                    levelCounts.Add(hanziList.Count);
+                    string levelKey = button.name;
+                    // Show the button
+                    button.SetActive(true);
+
+                    // Remove existing listeners to avoid duplicates
+                    Button btn = button.GetComponent<Button>();
+                    btn.onClick.RemoveAllListeners();
+
+                    int levelCopy = index; // Avoid closure issue
+
+                    // Bind level to button click
+                    btn.onClick.AddListener(() =>
+                    {
+                        PlayerPrefs.SetInt("level", levelCopy);
+                        PlayerPrefs.Save();
+                        AppManager.Instance.PlayView();
+                    });
+                }
+                else if (button)
+                {
+                    // Hide unused buttons
+                    button.SetActive(false);
+                }
+            }
+        }
+    }
+
+    public void OnVoiceChanged(int index)
+    {
+        PlayerPrefs.SetInt("voice", index);
         PlayerPrefs.Save(); // Ensure changes are saved to disk
     }
 
