@@ -118,6 +118,10 @@ public class HanziSpawner : MonoBehaviour
         spawnPos.y = playerHead.position.y; // Keep at eye level
         activeWord = filteredWords.Keys.ElementAt(UnityEngine.Random.Range(0, filteredWords.Keys.Count));
         GameObject prefab = SpawnWord(filteredWords[activeWord], spawnPos, 0.2f);
+        foreach (var renderer in prefab.GetComponentsInChildren<MeshRenderer>())
+        {
+            renderer.sharedMaterial = hanziMaterial;
+        }
 
         // Instantiate random character
         GameObject newChar = Instantiate(
@@ -217,12 +221,10 @@ public class HanziSpawner : MonoBehaviour
         return r ? r.bounds.size.x : 1f;
     }
 
-    private bool ValidateWord(string validationJson)
+    bool ValidateWord(string validationJson)
     {
         Regex HanziRegex = new Regex(@"[\u4e00-\u9fff]+");
-        wrongGuesses = new List<string>();
 
-        // Load pinyin dictionary
         TextAsset jsonFile = Resources.Load<TextAsset>("Text/hanziPinyin");
         if (jsonFile == null)
         {
@@ -230,82 +232,65 @@ public class HanziSpawner : MonoBehaviour
             return false;
         }
 
-        Dictionary<string, List<string>> pinyinData = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(jsonFile.text);
-
+        var pinyinData = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(jsonFile.text);
         if (!activeHanzi) return false;
 
         string fullWord = activeHanzi.hanziText;
-        string[] expectedPinyinList = fullWord.Select(c =>
+        var expectedPinyinList = fullWord.Select(c =>
         {
-            string match = pinyinData.FirstOrDefault(p => p.Value.Contains(c.ToString())).Key;
+            var match = pinyinData.FirstOrDefault(p => p.Value.Contains(c.ToString())).Key;
             return match ?? "";
-        }).ToArray();
+        }).Where(p => !string.IsNullOrEmpty(p)).ToList();
 
-        // Extract all Hanzi from speech result
-        MatchCollection recognizedMatches = HanziRegex.Matches(validationJson);
-        foreach (Match match in recognizedMatches)
+        // Extract recognized Hanzi from result
+        var matches = HanziRegex.Matches(validationJson);
+        foreach (Match m in matches)
         {
-            string recognized = match.Value;
+            string recognized = m.Value;
+            if (recognized.Length == 0) continue;
 
-            // Skip if length mismatch
-            if (recognized.Length != fullWord.Length) continue;
-
-            // Try to map each character
-            string[] recognizedPinyinList = recognized.Select(c =>
+            var recognizedList = recognized.Select(c =>
             {
-                string matchPin = pinyinData.FirstOrDefault(p => p.Value.Contains(c.ToString())).Key;
-                return matchPin ?? "";
-            }).ToArray();
+                var match = pinyinData.FirstOrDefault(p => p.Value.Contains(c.ToString())).Key;
+                return match ?? "";
+            }).Where(p => !string.IsNullOrEmpty(p)).ToList();
 
-            bool matchAll = true;
-            for (int i = 0; i < expectedPinyinList.Length; i++)
+            // Order-agnostic matching: every expected normalized pinyin must appear in recognized set
+            var normalizedExpected = expectedPinyinList
+                .Select(p => NormalizePinyin(p))
+                .ToList();
+
+            var normalizedRecognized = recognizedList
+                .Select(p => NormalizePinyin(p))
+                .ToList();
+
+            wrongGuesses.Clear();
+
+            bool allFound = normalizedExpected.All(ne =>
             {
-                if (recognizedPinyinList[i] != expectedPinyinList[i])
+                bool found = normalizedRecognized.Any(nr => ComparePinyin(ne, nr).IsMatch);
+                if (!found)
                 {
-                    matchAll = false;
-
-                    string wrong = recognizedPinyinList[i];
-                    if (!wrongGuesses.Contains(wrong))
-                    {
-                        wrongGuesses.Add(wrong);
-                        GetComponent<FlyInPinyin>().Fly(wrong, false, playerHead.transform, activeHanzi);
-                    }
+                    // store missing expected syllable for feedback
+                    if (!wrongGuesses.Contains(ne))
+                        wrongGuesses.Add(ne);
                 }
-            }
+                return found;
+            });
 
-            if (matchAll)
+            if (allFound)
             {
                 Debug.Log($"✅ Word match success: {recognized}");
                 return true;
             }
-
-            // Optionally: allow fuzzy match if most characters are correct
-            int correctCount = expectedPinyinList.Zip(recognizedPinyinList, (exp, rec) => exp == rec).Count(b => b);
-            if (correctCount >= fullWord.Length - 1) // allow one wrong
-            {
-                Debug.Log($"✅ Word fuzzy match (allowing 1 wrong): {recognized}");
-                return true;
-            }
         }
 
-        Debug.Log($"❌ No match for word: {fullWord}");
-        return false;
-    }
-
-
-    private bool IsSomehowValid(string pinyin, string targetPinyin)
-    {
-        if (pinyin == null || targetPinyin == null) return false;
-        if (pinyin.Length < targetPinyin.Length) return false;
-
-        for (int i = 0; i < pinyin.Length; ++i)
+        foreach (var wrongGuess in wrongGuesses)
         {
-            if (targetPinyin.IndexOf(pinyin[i]) > -1)
-            {
-                return true;
-            }
+            GetComponent<FlyInPinyin>().Fly(wrongGuess, false, playerHead.transform, activeHanzi);
         }
 
+        Debug.Log($"❌ No match for word: {activeHanzi.hanziText}");
         return false;
     }
 
@@ -342,54 +327,87 @@ public class HanziSpawner : MonoBehaviour
     }
 
     /// <summary>
-    /// Checks if the target pinyin is fairly represented in the list of guesses,
-    /// allowing for tone differences and common pronunciation errors.
+    /// Normalizes pinyin by removing tones and applying conservative, configurable softening rules.
+    /// This preserves 'zh/ch/sh' distinctions but can collapse z/c/s and optionally l/r.
     /// </summary>
-    public static bool IsPinyinFairlyRepresented(string targetPinyin, IEnumerable<string> guesses)
+    private static string NormalizePinyin(string input, bool softenZcs = true, bool softenLr = true)
     {
-        if (string.IsNullOrWhiteSpace(targetPinyin) || targetPinyin.Length < 2)
-            return false;
+        if (string.IsNullOrEmpty(input))
+            return "";
 
-        string normalizedTarget = NormalizePinyin(targetPinyin);
+        string s = input.ToLowerInvariant();
 
-        foreach (string guess in guesses)
-        {
-            if (string.IsNullOrWhiteSpace(guess))
-                continue;
+        /* Remove numeric tone markers
+        s = Regex.Replace(s, @"[1-5]", "");
 
-            string normalizedGuess = NormalizePinyin(guess);
+        // Normalize common diacritics to base vowels
+        s = Regex.Replace(s, "[āáǎà]", "a");
+        s = Regex.Replace(s, "[ēéěè]", "e");
+        s = Regex.Replace(s, "[īíǐì]", "i");
+        s = Regex.Replace(s, "[ōóǒò]", "o");
+        s = Regex.Replace(s, "[ūúǔùǖǘǚǜü]", "u"); */
 
-            // Exact match
-            if (normalizedGuess == normalizedTarget)
-                return true;
+        // Many speech engines confuse z / c / s — map them to 's' group if softenZcs == true
+        s = s.Replace("zh", "s").Replace("ch", "s").Replace("sh", "s");
 
-            // Fuzzy match within 2 edits
-            int distance = LevenshteinDistance(normalizedTarget, normalizedGuess);
-            if (distance <= 1)
-            {
-                Debug.Log($"[Pinyin Match] '{normalizedGuess}' is close to '{normalizedTarget}' (distance: {distance})");
-                return true;
-            }
-        }
+        // Alveolar group: z/c/s → s (Vosk often blurs these)
+        s = s.Replace("z", "s").Replace("c", "s").Replace("j", "s").Replace("q", "s");
 
-        return false;
+        // Alveolar group: z/c/s → s (Vosk often blurs these)
+        s = s.Replace("w", "h");
+
+        // Optionally merge l/r (many learners & engines confuse these)
+        if (softenLr)
+            s = s.Replace("r", "l");
+
+        // Final cleanup: remove any unexpected whitespace
+        s = s.Trim();
+
+        return s;
     }
 
     /// <summary>
-    /// Normalizes pinyin by removing tones and applying common pronunciation mappings.
+    /// Determines whether a target pinyin is fairly represented in guesses.
+    /// Uses normalized comparison and a length-aware edit-distance threshold.
     /// </summary>
-    private static string NormalizePinyin(string input)
+    public static PinyinMatchResult ComparePinyin(string targetPinyin, string guess)
     {
-        string s = input.ToLowerInvariant();
+        var result = new PinyinMatchResult
+        {
+            IsMatch = false,
+            IsSoftMatch = false,
+            Distance = int.MaxValue,
+            Note = ""
+        };
 
-        // Remove numeric tones
-        s = Regex.Replace(s, @"[1-5]", "");
+        if (string.IsNullOrWhiteSpace(targetPinyin) || string.IsNullOrWhiteSpace(guess))
+            return result;
 
-        // Handle confusing initials and substitutions
-        s = s.Replace("c", "z").Replace("zh", "j").Replace("ch", "q").Replace("sh", "x");
-        s = s.Replace("z", "j").Replace("c", "q").Replace("s", "x");
+        string normT = NormalizePinyin(targetPinyin);
+        string normG = NormalizePinyin(guess);
 
-        return s;
+        result.NormalizedTarget = normT;
+        result.NormalizedGuess = normG;
+
+        if (normT == normG)
+        {
+            result.IsMatch = true;
+            result.Distance = 0;
+            return result;
+        }
+
+        int dist = LevenshteinDistance(normT, normG);
+        result.Distance = dist;
+
+        int maxAllowed = normT.Length <= 3 ? 1 : 2;
+        if (dist <= maxAllowed)
+        {
+            result.IsMatch = true;
+            result.IsSoftMatch = true;
+            result.Note = "within edit distance";
+        }
+
+        return result;
     }
 
     /// <summary>
@@ -418,5 +436,21 @@ public class HanziSpawner : MonoBehaviour
         }
 
         return d[s.Length, t.Length];
+    }
+}
+
+public struct PinyinMatchResult
+{
+    public bool IsMatch;          // overall success (after normalization + distance)
+    public bool IsSoftMatch;      // matched only after normalization / distance tolerance
+    public string NormalizedTarget;
+    public string NormalizedGuess;
+    public int Distance;
+    public string Note;           // optional info like "merged zh→j" or "tone ignored"
+
+    public override string ToString()
+    {
+        string type = IsSoftMatch ? "≈ (soft)" : "=";
+        return $"{NormalizedGuess} {type} {NormalizedTarget}  dist={Distance}  note={Note}";
     }
 }

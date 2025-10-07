@@ -1272,16 +1272,15 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: 88f1272b584b6df40b7d96d8c37e58a8, type: 3}
   - {fileID: 919132149155446097, guid: 9493ee03e034a784280308528312674e, type: 3}
   - {fileID: 919132149155446097, guid: 28a299a4cea17cc4d861a7fd8d4da892, type: 3}
-  playerHead: {fileID: 0}
   hanziMaterial: {fileID: 2100000, guid: 48b0467b7278d1a448700b5227f96617, type: 2}
-  spawnDistance: 1000
+  playerHead: {fileID: 0}
+  spawnDistance: 3000
   moveSpeed: 120
   spawnInterval: 5
   minAngle: 0
   maxAngle: 0
   lives: 2
   checkInterval: 1
-  filteredCharacters: []
 --- !u!114 &8342025725175191420
 MonoBehaviour:
   m_ObjectHideFlags: 0
