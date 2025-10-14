@@ -272,8 +272,57 @@ public class VoskSpeechToText : MonoBehaviour
 		}
 	}
 
-	//Calls the On Phrase Recognized event on the Unity Thread
-	void Update()
+    /// <summary>
+    /// Resets the Vosk recognizer state, clearing accumulated context
+    /// without stopping the microphone or reloading the model.
+    /// </summary>
+    public void ResetRecognizer()
+    {
+        if (_recognizer == null)
+        {
+            Debug.LogWarning("ResetRecognizer() called before recognizer was initialized.");
+            return;
+        }
+
+        lock (_threadedBufferQueue)
+        {
+            _threadedBufferQueue.Clear();
+        }
+
+        while (_threadedResultQueue.TryDequeue(out _)) { }
+
+        _recognizer.Reset(); // native vosk_recognizer_reset
+        Debug.Log("Vosk recognizer context reset.");
+    }
+
+    /// <summary>
+    /// Stops ongoing recording and audio processing gracefully.
+    /// Keeps the model loaded for fast restart.
+    /// </summary>
+    public void PauseRecognizer()
+    {
+        if (!_running) return;
+
+        Debug.Log("Pausing Vosk recognizer...");
+        _running = false;
+        VoiceProcessor.StopRecording();
+    }
+
+    /// <summary>
+    /// Restarts audio capture and recognition immediately.
+    /// </summary>
+    public void ResumeRecognizer()
+    {
+        if (_running) return;
+
+        Debug.Log("Resuming Vosk recognizer...");
+        _running = true;
+        VoiceProcessor.StartRecording();
+        Task.Run(ThreadedWork).ConfigureAwait(false);
+    }
+
+    //Calls the On Phrase Recognized event on the Unity Thread
+    void Update()
 	{
 		if (_threadedResultQueue.TryDequeue(out string voiceResult))
 		{

@@ -14,6 +14,7 @@ public class SettingsView : AppView
     public UnityEngine.UI.Toggle pinyinToggle;
     public UnityEngine.UI.Toggle translationToggle;
     public UnityEngine.UI.Toggle speakToggle;
+    public UnityEngine.UI.Toggle playMusicToggle;
 
     // Example dictionary
     private Dictionary<string, HanziTranslations> categories;
@@ -53,6 +54,7 @@ public class SettingsView : AppView
         int savedPinyin = PlayerPrefs.GetInt("pinyin", 1);
         int savedTranslation = PlayerPrefs.GetInt("translation", 1);
         int savedSpeak = PlayerPrefs.GetInt("speak", 1);
+        int savedPlayMusic = PlayerPrefs.GetInt("music", 1);
         PlayerPrefs.SetString("hanzifilter", string.Empty);
         PlayerPrefs.SetString("language", languageKey);
         PlayerPrefs.SetInt("voice", savedVoice < voiceDropdown.options.Count() ? savedVoice : 0);
@@ -60,6 +62,7 @@ public class SettingsView : AppView
         PlayerPrefs.SetInt("pinyin", savedPinyin);
         PlayerPrefs.SetInt("translation", savedTranslation);
         PlayerPrefs.SetInt("speak", savedSpeak);
+        PlayerPrefs.SetInt("music", savedPlayMusic);
         OnCategoryChanged(savedCategory);
         OnVoiceChanged(savedVoice);
         PlayerPrefs.Save();
@@ -78,6 +81,7 @@ public class SettingsView : AppView
         pinyinToggle.isOn = savedPinyin == 1;
         translationToggle.isOn = savedTranslation == 1;
         speakToggle.isOn = savedSpeak == 1;
+        playMusicToggle.isOn = savedPlayMusic == 1;
 
         // Add listener for value change
         languageDropdown.onValueChanged.AddListener(OnLanguageChanged);
@@ -86,6 +90,7 @@ public class SettingsView : AppView
         pinyinToggle.onValueChanged.AddListener(OnPinyinChanged);
         translationToggle.onValueChanged.AddListener(OnTranslationChanged);
         speakToggle.onValueChanged.AddListener(OnSpeakChanged);
+        playMusicToggle.onValueChanged.AddListener(OnPlayMusicChanged);
         foreach (Translator translator in Resources.FindObjectsOfTypeAll(typeof(Translator)) as Translator[])
         {
             translator.UpdateTranslation();
@@ -253,6 +258,16 @@ public class SettingsView : AppView
         int actualValue = speakToggle.isOn ? 1 : 0;
         PlayerPrefs.SetInt("speak", actualValue);
         PlayerPrefs.Save(); // Ensure changes are saved to disk
+
+        UnityEngine.Debug.Log("Selected speak Value: " + actualValue); // Optional debug log
+    }
+
+    public void OnPlayMusicChanged(bool value)
+    {
+        int actualValue = playMusicToggle.isOn ? 1 : 0;
+        PlayerPrefs.SetInt("music", actualValue);
+        PlayerPrefs.Save(); // Ensure changes are saved to disk
+        AppManager.Instance.PlayMusic(value);
 
         UnityEngine.Debug.Log("Selected speak Value: " + actualValue); // Optional debug log
     }

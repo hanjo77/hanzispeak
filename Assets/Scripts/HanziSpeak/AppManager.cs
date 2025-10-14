@@ -1,7 +1,11 @@
-﻿using System.Collections;
+﻿using NUnit.Framework;
+using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Android;
 using UnityEngine.InputSystem;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class AppManager : MonoBehaviour
 {
@@ -18,6 +22,7 @@ public class AppManager : MonoBehaviour
 
     [Header("Elements")]
     public GameObject uiBackground;
+    public AudioSource bgMusic;
 
     [Header("Speech")]
     public VoskSpeechToText voskEngine;
@@ -29,6 +34,8 @@ public class AppManager : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
+        HanziDB.Initialize();
+        HanziGroupDB.Initialize();
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         if (Permission.HasUserAuthorizedPermission(Permission.Microphone))
         {
@@ -38,8 +45,8 @@ public class AppManager : MonoBehaviour
         {
             MicWarningView();
         }
-        MicWarningView();
-        HanziGroupDB.Initialize();
+        PlayMusic(PlayerPrefs.GetInt("music", 1) == 1);
+        // Warm up Unity subsystems and Addressables early
     }
 
     void Update()
@@ -69,6 +76,9 @@ public class AppManager : MonoBehaviour
                 if (duration > 1.5f)
                 {
                     Debug.Log("Quitting game...");
+                    GameManager.Instance.StopGame();
+                    voskEngine.ResetRecognizer();
+                    voskEngine.PauseRecognizer();
                     AppManager.Instance.SettingsView();
                     ResetTouch();
                 }
@@ -114,16 +124,20 @@ public class AppManager : MonoBehaviour
         HideAllViews();
         uiBackground.SetActive(false);
         gameView.ShowView();
+        GameManager.Instance.StartGame();
+        voskEngine.ResumeRecognizer();
     }
 
     public void SettingsView()
     {
+        GameManager.Instance?.StopGame();
         HideAllViews();
         settingsView.ShowView();
     }
 
     public void GameOverView(bool isCompleted = false)
     {
+        GameManager.Instance?.StopGame();
         HideAllViews();
         gameOverView.ChooseKeys(isCompleted);
         gameOverView.ShowView();
@@ -139,6 +153,18 @@ public class AppManager : MonoBehaviour
         else
         {
             StartView();
+        }
+    }
+
+    public void PlayMusic(bool doPlay = true)
+    {
+        if (doPlay)
+        {
+            bgMusic.Play();
+        }
+        else
+        {
+            bgMusic.Pause();
         }
     }
 

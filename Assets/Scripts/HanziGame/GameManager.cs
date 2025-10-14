@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     // Singleton for easy access
     private HanziSpawner hanziSpawnerInstance;
+    private bool isPlaying;
 
     void Awake () {
         Instance = this;
@@ -33,14 +34,19 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        hanziSpawnerInstance = Instantiate(hanziSpawner);
-        hanziSpawnerInstance.transform.parent = GetComponent<GameView>().transform;
-        hanziSpawnerInstance.playerHead = playerHead;
-        explosionClip.SetActive(false);
+        if (!hanziSpawnerInstance)
+        {
+            hanziSpawnerInstance = Instantiate(hanziSpawner);
+            hanziSpawnerInstance.transform.parent = GetComponent<GameView>().transform;
+            hanziSpawnerInstance.playerHead = playerHead;
+            explosionClip.SetActive(false);
+        }
+        isPlaying = true;
     }
 
     public void StopGame()
     {
+        isPlaying = false;
         Destroy(hanziSpawnerInstance);
         foreach (var obj in GameObject.FindGameObjectsWithTag("PinyinHintClone"))
         {
@@ -66,6 +72,11 @@ public class GameManager : MonoBehaviour
     public void SetPinyin(string pinyin)
     {
         pinyinTextField.text = pinyin;
+    }
+
+    public bool IsPlaying()
+    {
+        return isPlaying;
     }
 
     public async void PlayPinyinAudio(string pinyin)

@@ -8,13 +8,11 @@ public class GameView : AppView
     public override void ShowView()
     {
         base.ShowView();
-        GameManager.Instance.StartGame();
         hanziInfo.SetActive(true);
     }
     public override void HideView()
     {
         hanziInfo.SetActive(false);
-        GameManager.Instance?.StopGame();
         base.HideView();
     }
 }

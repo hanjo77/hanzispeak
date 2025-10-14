@@ -25,32 +25,26 @@ public class HanziSpawner : MonoBehaviour
     [Header("Game Settings")]
     public int lives = 5;
 
-    // Singleton for easy access
+    // Singleton
     public static HanziSpawner Instance;
 
-    // Assign in Inspector
-    public float checkInterval = 1.5f;
-
-    // Track active characters
     private HanziCharacter activeHanzi;
-    private Coroutine checkRoutine;
-
-    public Dictionary<string, List<GameObject>> filteredWords;
-
-    private int score = 0;
-    private int currentLives;
     private bool isPlaying;
     private string activeWord;
-    private List<string> wrongGuesses = new List<string>();
+    private int score;
+    private int currentLives;
 
+    private List<string> filteredWordKeys = new();
+    private Dictionary<string, GameObject> prefabCache = new(); // cache loaded Hanzi prefabs
+    private List<string> wrongGuesses = new();
 
     void Awake() => Instance = this;
 
-    void Start()
+    async void Start()
     {
         if (isPlaying) return;
 
-        UnityEngine.Debug.Log("StartGame");
+        // Initialize Hanzi database
         HanziDB.Initialize();
 
         string desiredLevel = HanziLevelDB.GetAllKeys().ElementAt(PlayerPrefs.GetInt("level")).ToLower();
@@ -60,42 +54,45 @@ public class HanziSpawner : MonoBehaviour
         currentLives = lives;
         GameManager.Instance.SetLives(currentLives);
         GameManager.Instance.SetScore(score);
-        PrepareWordPrefabs(
-            HanziLevelDB.FilterHanzi(desiredClass, desiredLevel)
-        );
+
+        // Prepare filtered list (only keys)
+        filteredWordKeys = HanziLevelDB.FilterHanzi(desiredClass, desiredLevel);
+        Debug.Log($"Filtered {filteredWordKeys.Count} words for spawning.");
+
+        AppManager.Instance.voskEngine.ResetRecognizer();
+        AppManager.Instance.voskEngine.OnTranscriptionResult = OnVoiceInput;
+        isPlaying = true;
+
+        await SpawnCharacter(false);
     }
 
     void OnDestroy()
     {
         if (activeHanzi)
-        {
             Destroy(activeHanzi.gameObject);
-        }
+
         isPlaying = false;
         AppManager.Instance.voskEngine.OnTranscriptionResult = null;
-        UnityEngine.Debug.Log("Spawner StopGame");
+        Debug.Log("Spawner stopped.");
     }
 
-    void OnVoiceInput(string jsonResult)
+    private void OnVoiceInput(string jsonResult)
     {
         if (ValidateWord(jsonResult))
         {
             GameManager.Instance.SetScore(++score);
-            filteredWords.Remove(activeWord);
+            filteredWordKeys.Remove(activeWord);
             activeHanzi.OnRecognized();
-            if (filteredWords.Count <= 0)
-            {
+
+            if (filteredWordKeys.Count <= 0)
                 AppManager.Instance.GameOverView(true);
-            }
         }
     }
 
-    public void SpawnCharacter(bool removeLive)
+    public async System.Threading.Tasks.Task SpawnCharacter(bool removeLive)
     {
-        if (!isPlaying)
-        {
-            return;
-        }
+        if (!isPlaying) return;
+
         if (removeLive)
         {
             currentLives--;
@@ -104,127 +101,136 @@ public class HanziSpawner : MonoBehaviour
                 AppManager.Instance.GameOverView(false);
                 return;
             }
-            else
-            {
-                GameManager.Instance.SetLives(currentLives);
-            }
+            GameManager.Instance.SetLives(currentLives);
         }
-        // Random position in front arc
+
         if (activeHanzi)
-        {
             Destroy(activeHanzi.gameObject);
+
+        if (filteredWordKeys.Count == 0)
+        {
+            AppManager.Instance.GameOverView(true);
+            return;
         }
+
+        // Pick random word
+        activeWord = filteredWordKeys[UnityEngine.Random.Range(0, filteredWordKeys.Count)];
         float randomAngle = UnityEngine.Random.Range(minAngle, maxAngle);
         Vector3 spawnDir = Quaternion.Euler(0, randomAngle, 0) * playerHead.forward;
         Vector3 spawnPos = playerHead.position + spawnDir * spawnDistance;
-        spawnPos.y = playerHead.position.y; // Keep at eye level
-        activeWord = filteredWords.Keys.ElementAt(UnityEngine.Random.Range(0, filteredWords.Keys.Count));
-        GameObject prefab = SpawnWord(filteredWords[activeWord], spawnPos, 0.2f);
+        spawnPos.y = playerHead.position.y;
 
-        // Instantiate random character
-        GameObject newChar = Instantiate(
-            prefab,
-            spawnPos,
-            Quaternion.LookRotation(spawnPos - playerHead.position) // Face player
-        );
+        // Load prefabs dynamically per character
+        GameObject wordObj = await LoadAndSpawnWord(activeWord, spawnPos, 0.2f);
+        if (wordObj == null)
+        {
+            Debug.LogWarning($"⚠️ Could not load word '{activeWord}'");
+            return;
+        }
 
+        // Instantiate
+        GameObject newChar = Instantiate(wordObj, spawnPos, Quaternion.LookRotation(spawnPos - playerHead.position));
+        newChar.transform.localScale = Vector3.one * 100f;
+
+        // Set up data
         try
         {
             HanziData hanziData = HanziDB.GetCharacter(activeWord);
             if (PlayerPrefs.GetInt("translation") > 0)
-            {
                 GameManager.Instance.SetTranslation(hanziData);
-            }
-
             if (PlayerPrefs.GetInt("pinyin") > 0)
-            {
                 GameManager.Instance.SetPinyin(hanziData.pinyin);
-            }
         }
         catch
         {
-            UnityEngine.Debug.Log($"Hanzi for {prefab.name} not found");
+            Debug.Log($"Hanzi data for {activeWord} not found.");
         }
 
-        newChar.transform.localScale = new Vector3(100, 100, 100);
+        // Audio
         if (PlayerPrefs.GetInt("speak") > 0)
-        {
-            GameManager.Instance.PlayPinyinAudio($"{GetAudioFileName(activeWord)}");
-        }
+            GameManager.Instance.PlayPinyinAudio(GetAudioFileName(activeWord));
 
-        // Add movement script
+        // Movement
         newChar.AddComponent<ApproachingCharacter>().Init(playerHead, moveSpeed);
         activeHanzi = newChar.AddComponent<HanziCharacter>();
         activeHanzi.hanziText = activeWord;
         activeHanzi.transform.parent = transform;
     }
 
-    public string GetAudioFileName(string hanzi)
+    private async System.Threading.Tasks.Task<GameObject> LoadAndSpawnWord(string word, Vector3 startPosition, float spacing)
     {
-        List<string> hexCodes = new List<string>();
-
-        foreach (char c in hanzi)
-        {
-            hexCodes.Add($"{((int)c):x4}");
-        }
-
-        return $"{HanziVoiceDB.GetAllKeys().ElementAt(PlayerPrefs.GetInt("voice"))}/u{string.Join("_", hexCodes)}";
-    }
-
-    public GameObject SpawnWord(List<GameObject> characterPrefabs, Vector3 startPosition, float spacing)
-    {
-        GameObject wordObj = new GameObject("Word_Spawned");
-
-        List<GameObject> characters = new List<GameObject>();
-        List<float> widths = new List<float>();
-
+        var chars = new List<GameObject>();
+        var widths = new List<float>();
         float totalWidth = 0f;
 
-        // Step 1: Instantiate all character prefabs, collect widths
-        foreach (var prefab in characterPrefabs)
+        foreach (char c in word)
         {
-            GameObject charObj = GameObject.Instantiate(prefab, wordObj.transform);
-            float width = GetModelWidth(charObj);
+            string hex = ((int)c).ToString("x4");
+            string key = $"Characters/u{hex}";
 
+            if (!prefabCache.TryGetValue(key, out var prefab))
+            {
+                AsyncOperationHandle<GameObject> handle = Addressables.LoadAssetAsync<GameObject>(key);
+                await handle.Task;
+
+                if (handle.Status == AsyncOperationStatus.Succeeded)
+                {
+                    prefab = handle.Result;
+                    prefabCache[key] = prefab;
+                }
+                else
+                {
+                    Debug.LogWarning($"⚠️ Missing Addressable prefab for '{c}' ({key})");
+                    continue;
+                }
+            }
+
+            GameObject charObj = Instantiate(prefab);
+            charObj.GetComponentInChildren<Renderer>().sharedMaterial = hanziMaterial;
+            charObj.transform.SetParent(null);
+            float width = GetModelWidth(charObj);
             widths.Add(width);
-            characters.Add(charObj);
+            chars.Add(charObj);
             totalWidth += width + spacing;
         }
 
-        // Adjust final spacing (remove last extra gap)
-        totalWidth -= spacing;
+        if (chars.Count == 0)
+            return null;
 
-        // Step 2: Layout characters with center alignment
+        // Layout horizontally
+        totalWidth -= spacing;
         float startX = -totalWidth / 2f;
         float currentX = startX + (widths[0] / 2);
 
-        for (int i = 0; i < characters.Count; i++)
+        GameObject wordObj = new GameObject($"Word_{word}");
+        for (int i = 0; i < chars.Count; i++)
         {
-            characters[i].transform.localPosition = new Vector3(currentX, 0, 0);
-            characters[i].AddComponent<MeshExploder>();
-
+            chars[i].transform.SetParent(wordObj.transform, false);
+            chars[i].transform.localPosition = new Vector3(currentX, 0, 0);
+            chars[i].AddComponent<MeshExploder>();
             currentX += widths[i] + spacing;
         }
 
-        // Set final word position and reset rotation
         wordObj.transform.position = startPosition;
         wordObj.transform.rotation = Quaternion.identity;
-
         return wordObj;
     }
 
     private float GetModelWidth(GameObject go)
     {
-        Renderer r = go.GetComponentInChildren<Renderer>();
+        var r = go.GetComponentInChildren<Renderer>();
         return r ? r.bounds.size.x : 1f;
     }
 
-    private bool ValidateWord(string validationJson)
+    private string GetAudioFileName(string hanzi)
+    {
+        List<string> hexCodes = hanzi.Select(c => ((int)c).ToString("x4")).ToList();
+        return $"{HanziVoiceDB.GetAllKeys().ElementAt(PlayerPrefs.GetInt("voice"))}/u{string.Join("_", hexCodes)}";
+    }
+    bool ValidateWord(string validationJson)
     {
         Regex HanziRegex = new Regex(@"[\u4e00-\u9fff]+");
-        wrongGuesses = new List<string>();
 
-        // Load pinyin dictionary
         TextAsset jsonFile = Resources.Load<TextAsset>("Text/hanziPinyin");
         if (jsonFile == null)
         {
@@ -237,165 +243,136 @@ public class HanziSpawner : MonoBehaviour
         if (!activeHanzi) return false;
 
         string fullWord = activeHanzi.hanziText;
-        string[] expectedPinyinList = fullWord.Select(c =>
+        var expectedPinyinList = fullWord.Select(c =>
         {
-            string match = pinyinData.FirstOrDefault(p => p.Value.Contains(c.ToString())).Key;
+            var match = pinyinData.FirstOrDefault(p => p.Value.Contains(c.ToString())).Key;
             return match ?? "";
-        }).ToArray();
+        }).Where(p => !string.IsNullOrEmpty(p)).ToList();
 
-        // Extract all Hanzi from speech result
-        MatchCollection recognizedMatches = HanziRegex.Matches(validationJson);
-        foreach (Match match in recognizedMatches)
+        // Extract recognized Hanzi from result
+        var matches = HanziRegex.Matches(validationJson);
+        foreach (Match m in matches)
         {
-            string recognized = match.Value;
+            string recognized = m.Value;
+            if (recognized.Length == 0) continue;
 
-            // Skip if length mismatch
-            if (recognized.Length != fullWord.Length) continue;
-
-            // Try to map each character
-            string[] recognizedPinyinList = recognized.Select(c =>
+            var recognizedList = recognized.Select(c =>
             {
-                string matchPin = pinyinData.FirstOrDefault(p => p.Value.Contains(c.ToString())).Key;
-                return matchPin ?? "";
-            }).ToArray();
+                var match = pinyinData.FirstOrDefault(p => p.Value.Contains(c.ToString())).Key;
+                return match ?? "";
+            }).Where(p => !string.IsNullOrEmpty(p)).ToList();
 
-            bool matchAll = true;
-            for (int i = 0; i < expectedPinyinList.Length; i++)
+            // Order-agnostic matching: every expected normalized pinyin must appear in recognized set
+            var normalizedExpected = expectedPinyinList
+                .Select(p => NormalizePinyin(p))
+                .ToList();
+
+            var normalizedRecognized = recognizedList
+                .Select(p => NormalizePinyin(p))
+                .ToList();
+
+            wrongGuesses.Clear();
+
+            bool allFound = normalizedExpected.All(ne =>
             {
-                if (recognizedPinyinList[i] != expectedPinyinList[i])
+                bool found = normalizedRecognized.Any(nr => ComparePinyin(ne, nr).IsMatch);
+                if (!found)
                 {
-                    matchAll = false;
-
-                    string wrong = recognizedPinyinList[i];
-                    if (!wrongGuesses.Contains(wrong))
-                    {
-                        wrongGuesses.Add(wrong);
-                        GetComponent<FlyInPinyin>().Fly(wrong, false, playerHead.transform, activeHanzi);
-                    }
+                    // store missing expected syllable for feedback
+                    if (!wrongGuesses.Contains(ne))
+                        wrongGuesses.Add(ne);
                 }
-            }
+                return found;
+            });
 
-            if (matchAll)
+            if (allFound)
             {
                 Debug.Log($"✅ Word match success: {recognized}");
                 return true;
             }
-
-            // Optionally: allow fuzzy match if most characters are correct
-            int correctCount = expectedPinyinList.Zip(recognizedPinyinList, (exp, rec) => exp == rec).Count(b => b);
-            if (correctCount >= fullWord.Length - 1) // allow one wrong
-            {
-                Debug.Log($"✅ Word fuzzy match (allowing 1 wrong): {recognized}");
-                return true;
-            }
         }
 
-        Debug.Log($"❌ No match for word: {fullWord}");
-        return false;
-    }
-
-
-    private bool IsSomehowValid(string pinyin, string targetPinyin)
-    {
-        if (pinyin == null || targetPinyin == null) return false;
-        if (pinyin.Length < targetPinyin.Length) return false;
-
-        for (int i = 0; i < pinyin.Length; ++i)
+        foreach (var wrongGuess in wrongGuesses)
         {
-            if (targetPinyin.IndexOf(pinyin[i]) > -1)
-            {
-                return true;
-            }
+            GetComponent<FlyInPinyin>().Fly(wrongGuess, false, playerHead.transform, activeHanzi);
         }
 
-        return false;
-    }
-
-    public async void PrepareWordPrefabs(List<string> words)
-    {
-        filteredWords = new Dictionary<string, List<GameObject>>();
-        foreach (var word in words)
-        {
-            List<GameObject> charPrefabs = new List<GameObject>();
-
-            foreach (char c in word)
-            {
-                string hex = ((int)c).ToString("x4");
-                string path = $"Characters/u{hex}";
-
-                AsyncOperationHandle<GameObject> handle = Addressables.LoadAssetAsync<GameObject>(path);
-                await handle.Task;
-
-                if (handle.Status == AsyncOperationStatus.Succeeded)
-                {
-                    GameObject prefab = handle.Result;
-                    prefab.GetComponent<Renderer>().material = hanziMaterial;
-                    charPrefabs.Add(prefab);
-                }
-                else
-                    Debug.LogWarning($"⚠️ Missing prefab for '{c}' at {path}");
-            }
-
-            filteredWords[word] = charPrefabs;
-
-            if (!isPlaying)
-            {
-                AppManager.Instance.voskEngine.OnTranscriptionResult = OnVoiceInput;
-                isPlaying = true;
-            }
-        }
-        SpawnCharacter(false);
-    }
-
-    /// <summary>
-    /// Checks if the target pinyin is fairly represented in the list of guesses,
-    /// allowing for tone differences and common pronunciation errors.
-    /// </summary>
-    public static bool IsPinyinFairlyRepresented(string targetPinyin, IEnumerable<string> guesses)
-    {
-        if (string.IsNullOrWhiteSpace(targetPinyin) || targetPinyin.Length < 2)
-            return false;
-
-        string normalizedTarget = NormalizePinyin(targetPinyin);
-
-        foreach (string guess in guesses)
-        {
-            if (string.IsNullOrWhiteSpace(guess))
-                continue;
-
-            string normalizedGuess = NormalizePinyin(guess);
-
-            // Exact match
-            if (normalizedGuess == normalizedTarget)
-                return true;
-
-            // Fuzzy match within 2 edits
-            int distance = LevenshteinDistance(normalizedTarget, normalizedGuess);
-            if (distance <= 1)
-            {
-                Debug.Log($"[Pinyin Match] '{normalizedGuess}' is close to '{normalizedTarget}' (distance: {distance})");
-                return true;
-            }
-        }
-
+        Debug.Log($"❌ No match for word: {activeHanzi.hanziText}");
         return false;
     }
 
     /// <summary>
-    /// Normalizes pinyin by removing tones and applying common pronunciation mappings.
+    /// Normalizes pinyin by removing tones and applying conservative, configurable softening rules.
+    /// This preserves 'zh/ch/sh' distinctions but can collapse z/c/s and optionally l/r.
     /// </summary>
-    private static string NormalizePinyin(string input)
+    private static string NormalizePinyin(string input, bool softenZcs = true, bool softenLr = true)
     {
+        if (string.IsNullOrEmpty(input))
+            return "";
+
         string s = input.ToLowerInvariant();
 
-        // Remove numeric tones
-        s = Regex.Replace(s, @"[1-5]", "");
+        // Many speech engines confuse z / c / s — map them to 's' group if softenZcs == true
+        s = s.Replace("zh", "s").Replace("ch", "s").Replace("sh", "s");
 
-        // Handle confusing initials and substitutions
-        s = s.Replace("c", "z").Replace("zh", "j").Replace("ch", "q").Replace("sh", "x");
-        s = s.Replace("z", "j").Replace("c", "q").Replace("s", "x");
+        // Alveolar group: z/c/s → s (Vosk often blurs these)
+        s = s.Replace("z", "s").Replace("c", "s").Replace("j", "s").Replace("q", "s");
+
+        // Alveolar group: z/c/s → s (Vosk often blurs these)
+        s = s.Replace("w", "h");
+
+        // Optionally merge l/r (many learners & engines confuse these)
+        if (softenLr)
+            s = s.Replace("r", "l");
+
+        // Final cleanup: remove any unexpected whitespace
+        s = s.Trim();
 
         return s;
+    }
+
+    /// <summary>
+    /// Determines whether a target pinyin is fairly represented in guesses.
+    /// Uses normalized comparison and a length-aware edit-distance threshold.
+    /// </summary>
+    public static PinyinMatchResult ComparePinyin(string targetPinyin, string guess)
+    {
+        var result = new PinyinMatchResult
+        {
+            IsMatch = false,
+            IsSoftMatch = false,
+            Distance = int.MaxValue,
+            Note = ""
+        };
+
+        if (string.IsNullOrWhiteSpace(targetPinyin) || string.IsNullOrWhiteSpace(guess))
+            return result;
+
+        string normT = NormalizePinyin(targetPinyin);
+        string normG = NormalizePinyin(guess);
+
+        result.NormalizedTarget = normT;
+        result.NormalizedGuess = normG;
+
+        if (normT == normG)
+        {
+            result.IsMatch = true;
+            result.Distance = 0;
+            return result;
+        }
+
+        int dist = LevenshteinDistance(normT, normG);
+        result.Distance = dist;
+
+        int maxAllowed = normT.Length <= 3 ? 1 : 2;
+        if (dist <= maxAllowed)
+        {
+            result.IsMatch = true;
+            result.IsSoftMatch = true;
+            result.Note = "within edit distance";
+        }
+
+        return result;
     }
 
     /// <summary>
@@ -424,5 +401,21 @@ public class HanziSpawner : MonoBehaviour
         }
 
         return d[s.Length, t.Length];
+    }
+}
+
+public struct PinyinMatchResult
+{
+    public bool IsMatch;          // overall success (after normalization + distance)
+    public bool IsSoftMatch;      // matched only after normalization / distance tolerance
+    public string NormalizedTarget;
+    public string NormalizedGuess;
+    public int Distance;
+    public string Note;           // optional info like "merged zh→j" or "tone ignored"
+
+    public override string ToString()
+    {
+        string type = IsSoftMatch ? "≈ (soft)" : "=";
+        return $"{NormalizedGuess} {type} {NormalizedTarget}  dist={Distance}  note={Note}";
     }
 }
